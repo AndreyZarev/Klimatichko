@@ -1,0 +1,42 @@
+nav.navbar {
+    border: black double 5px;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+.logo-icon {
+    height: 1.5em;
+}
+
+.logo-text {
+    font-size: 3em;
+}
+
+
+#navbarCollapse div a {
+    padding: auto;
+    font-weight: 700;
+
+}
+
+#navbarCollapse div a.phone-in-menu {
+    background-color: #00b771;
+    margin: 0.6em;
+}
+
+#navbarCollapse div a p.phone-in-menu {
+    display: block;
+    margin: auto;
+    font-family: 2em;
+}
+
+
+
+#navbarCollapse div a.phone-in-menu:hover {
+    background-color: #0a6140;
+}
+
+
+#navbarCollapse div a img.phone-in-menu {
+    height: 2em;
+}
