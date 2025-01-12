@@ -1,5 +1,5 @@
 .container-xxl {
-    overflow: hidden;
+    overflow: auto;
 }
 
 nav.navbar {
@@ -54,4 +54,12 @@ nav.navbar {
 
 div.img-models {
     border-radius: 0;
+}
+
+
+/* classes for JS manipulations  */
+
+
+.invisible {
+    display: none;
 }
