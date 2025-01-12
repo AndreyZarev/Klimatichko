@@ -1,7 +1,12 @@
+.container-xxl {
+    overflow: hidden;
+}
+
 nav.navbar {
     border: black double 5px;
     padding-left: 1.5em;
     padding-right: 1.5em;
+    margin: auto;
 }
 
 .logo-icon {
@@ -39,4 +44,14 @@ nav.navbar {
 
 #navbarCollapse div a img.phone-in-menu {
     height: 2em;
+}
+
+
+
+/* products section */
+
+
+
+div.img-models {
+    border-radius: 0;
 }
