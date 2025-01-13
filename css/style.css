@@ -115,6 +115,7 @@
 }
 
 @media (max-width: 991.98px) {
+
     .nav-bar {
         margin: 0;
         padding: 0;
@@ -171,18 +172,17 @@
 }
 
 @media (min-width: 1350px) {
-    .header {
-        margin-top: -120px;
-    }
 
-    html {
-        margin: 0;
-        padding: 0;
-    }
-
+    .container,
+    .header,
     .footer {
         width: 100%;
-        margin: 0;
+        max-width: 1920px;
+        /* Or adjust as per your design */
+        margin: 0 auto;
+        /* Center content */
+        padding: 0 15px;
+        /* Add some spacing */
     }
 
 }
@@ -461,3 +461,5 @@
     padding-right: 0;
     border-right: none;
 }
+
+/* my code only */
