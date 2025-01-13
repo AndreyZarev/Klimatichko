@@ -240,6 +240,7 @@
 
 
 /*** About ***/
+
 .about-img img {
     position: relative;
     z-index: 2;
@@ -256,6 +257,7 @@
     transform: skew(20deg);
     z-index: 1;
 }
+
 
 
 /*** Category ***/

@@ -100,29 +100,33 @@ div.img-models {
 .call-section-img {
     position: relative;
     height: 25em;
+    box-sizing: border-box;
 }
 
-.call-section-img::after {
-    content: "Телефон: 0896081213 Емейл: klimatichko@abv.bg";
-    /* The number you want to display */
+.call-section-div {
     font-size: 1em;
-
+    position: relative;
     word-spacing: 0.1em;
     /* Adjust font size as needed */
     color: black;
-    /* Set the desired color */
-    position: absolute;
-    /* Absolute positioning relative to the parent */
-    bottom: 10px;
-    /* Adjust vertical position */
-    right: 100px;
-    /* Adjust horizontal position */
     background: rgba(255, 255, 255, 0.8);
     /* Optional: Background for better visibility */
     padding: 2px 5px;
     /* Optional: Padding around the text */
     border-radius: 5px;
     /* Optional: Rounded corners */
+}
+
+
+
+.call-section {
+    display: block;
+    margin: 2em auto;
+}
+
+.call-section-div p {
+    display: block;
+    margin: auto;
 }
 
 .call-buttons-tel {
@@ -136,4 +140,69 @@ div.img-models {
 
 .call-buttons-email {
     background-color: rgb(78, 236, 162);
+}
+
+.call-section-div {
+    display: flex;
+}
+
+@media (max-width: 799px) {
+    .call-section-img {
+        position: relative;
+
+    }
+
+    .call-us-section-right {
+        margin-top: 5em;
+    }
+
+    .call-section-div {
+        margin: 1em auto;
+        white-space: wrap;
+        /* The number you want to display */
+        font-size: 1em;
+        display: block;
+        word-spacing: 0.1em;
+        /* Adjust font size as needed */
+        color: black;
+        /* Set the desired color */
+
+        /* Absolute positioning relative to the parent */
+
+        /* Adjust horizontal position */
+        background: rgba(255, 255, 255, 0.8);
+        /* Optional: Background for better visibility */
+        padding: 2px 5px;
+        /* Optional: Padding around the text */
+        border-radius: 5px;
+        /* Optional: Rounded corners */
+    }
+}
+
+
+@media (max-width: 488px) {
+    .call-section {
+        margin: auto;
+        width: 100%;
+    }
+
+    .call-section-div {
+        margin: 1em auto;
+        flex-wrap: wrap;
+        /* The number you want to display */
+        font-size: 0.9em;
+        display: block;
+        word-spacing: auto;
+        /* Adjust font size as needed */
+        color: black;
+        margin-bottom: 5em;
+
+    }
+
+    .call-section-h1 {
+        font-family: 1.2em;
+
+    }
+
+    .call-section-img {}
 }
