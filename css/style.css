@@ -180,6 +180,11 @@
         padding: 0;
     }
 
+    .footer {
+        width: 100%;
+        margin: 0;
+    }
+
 }
 
 .header-carousel .owl-nav {
