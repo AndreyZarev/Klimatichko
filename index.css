@@ -72,16 +72,68 @@ nav.navbar {
 
 /* products section */
 
-
+.title-ac-models {
+    color: black;
+    font-size: 1.2em;
+    padding: 1em;
+    letter-spacing: 0.05em;
+    font-family: 'Times New Roman', Times, serif;
+}
 
 div.img-models {
     border-radius: 0;
 }
 
+.div-ac-models {
+    /* background-color: #00b771; */
+}
 
 /* classes for JS manipulations  */
 
 
 .invisible {
     display: none;
+}
+
+
+/* call section */
+.call-section-img {
+    position: relative;
+    height: 25em;
+}
+
+.call-section-img::after {
+    content: "Телефон: 0896081213 Емейл: klimatichko@abv.bg";
+    /* The number you want to display */
+    font-size: 1em;
+
+    word-spacing: 0.1em;
+    /* Adjust font size as needed */
+    color: black;
+    /* Set the desired color */
+    position: absolute;
+    /* Absolute positioning relative to the parent */
+    bottom: 10px;
+    /* Adjust vertical position */
+    right: 100px;
+    /* Adjust horizontal position */
+    background: rgba(255, 255, 255, 0.8);
+    /* Optional: Background for better visibility */
+    padding: 2px 5px;
+    /* Optional: Padding around the text */
+    border-radius: 5px;
+    /* Optional: Rounded corners */
+}
+
+.call-buttons-tel {
+    background-color: #00b26e;
+}
+
+.call-buttons-facebook {
+    background-color: rgb(55, 153, 240);
+    margin-right: .5rem;
+}
+
+.call-buttons-email {
+    background-color: rgb(78, 236, 162);
 }

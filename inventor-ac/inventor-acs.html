@@ -41,7 +41,7 @@
 
 <body>
 
-    <div class="container-xxl bg-white p-0">
+    <div class="container-xxl container-wrap bg-white p-0">
 
         <!-- Navbar Start -->
         <div class="container-fluid nav-bar bg-transparent">
@@ -206,7 +206,8 @@
                     <div id="tab-1" class="tab-pane fade show p-0 active">
                         <div class="row g-4">
                             <div class="col-lg-4 col-md-6 wow">
-                                <div class="property-item rounded overflow-hidden">
+                                <div class="property-item rounded overflow-hidden ac-products" id="klb-24hrhi"
+                                    onclick="getToSingleProductPage(id)">
                                     <div class="position-relative overflow-hidden img-ac-products ">
                                         <a href=""><img class="img-fluid img-ac-products"
                                                 src="../img/new/ac-types/inventor-ac/kaisai/KAISAI ICE KLB-24HRHI.jpg"
@@ -234,7 +235,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 wow">
-                                <div class="property-item rounded overflow-hidden">
+                                <div class="property-item rounded overflow-hidden ac-products">
                                     <div class="position-relative overflow-hidden">
                                         <a href=""><img class="img-fluid img-ac-products"
                                                 src="../img/new/ac-types/inventor-ac/aratsu/invertoren-klimatik-auratsu-awx09ktbi.jpg"
@@ -339,6 +340,30 @@
     <!-- Products List End -->
 
 
+    <!-- About Start -->
+    <div class="container-xxl py-5 single-product invisible">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                        <img class="img-fluid w-100" src="img/about.jpg">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="mb-4">#1 Place To Find The Perfect Property</h1>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet
+                        diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna
+                        dolore erat amet</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Tempor erat elitr rebum at clita</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Aliqu diam amet diam et eos</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Clita duo justo magna dolore erat amet</p>
+                    <a class="btn btn-primary py-3 px-5 mt-3" href="">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow ">
         <div class="container py-5">
@@ -438,6 +463,9 @@
 
     <!-- Template Javascript -->
     <script src="../js/main.js"></script>
+
+    <!-- my js! -->
+    <script src="../index-js/pullling-html.js"></script>
 </body>
 
 </html>
