@@ -463,3 +463,16 @@
 }
 
 /* my code only */
+
+
+.container,
+.header,
+.footer {
+    width: 100%;
+    max-width: 1920px;
+    /* Or adjust as per your design */
+    margin: 0 auto;
+    /* Center content */
+    padding: 0 15px;
+    /* Add some spacing */
+}
