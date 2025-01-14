@@ -36,6 +36,11 @@ nav.navbar {
     border-radius: none;
 }
 
+div.icon {
+    border: none;
+    border-radius: none;
+}
+
 .logo-text {
     font-size: 3em;
 }
