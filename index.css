@@ -138,8 +138,28 @@ div.img-models {
 }
 
 
+.call-buttons-tiktok {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    z-index: -2;
+    padding: 0;
+}
 
 
+
+.call-buttons-tiktok img {
+    background-color: white;
+    z-index: 5;
+}
+
+.call-buttons-vibar {
+    background-color: #6f3faa;
+}
+
+.vibar-img {
+    height: 2em;
+    padding-right: 2px;
+}
 
 .call-section-img {
     padding-bottom: 1em;
