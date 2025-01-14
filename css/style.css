@@ -82,7 +82,9 @@
     z-index: 9999;
 }
 
-.navbar {}
+.navbar {
+    font-size: 4em;
+}
 
 .navbar .dropdown-toggle::after {
     border: none;
@@ -109,7 +111,7 @@
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
-    color: var(--primary);
+    color: #227ae5;
 }
 
 @media (max-width: 991.98px) {
