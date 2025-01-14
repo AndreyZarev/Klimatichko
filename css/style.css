@@ -82,9 +82,7 @@
     z-index: 9999;
 }
 
-.navbar {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
-}
+.navbar {}
 
 .navbar .dropdown-toggle::after {
     border: none;
