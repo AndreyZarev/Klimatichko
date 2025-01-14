@@ -111,7 +111,7 @@ div.img-models {
 
 .call-section {
     display: block;
-    margin: 5em 10em;
+    margin: 5em 8em;
 
 
 }
@@ -137,6 +137,30 @@ div.img-models {
     /* Optional: Rounded corners */
 }
 
+div.call-us-section-right-div {
+    display: flex;
+}
+
+.call-buttons-tiktok,
+.call-buttons-facebook,
+.call-buttons-instagram,
+.call-buttons-viber,
+.call-buttons-youtube {
+    width: 9em;
+    height: 4em;
+    display: inline-block;
+    margin-right: 0.1em;
+    margin-bottom: 0.3em;
+}
+
+.call-buttons-facebook {
+    background-color: rgb(55, 153, 240);
+}
+
+.call-buttons-youtube {
+    background-color: #ff3d00;
+}
+
 
 .call-buttons-tiktok {
     background-color: rgb(0, 0, 0);
@@ -152,7 +176,21 @@ div.img-models {
     z-index: 5;
 }
 
-.call-buttons-vibar {
+.call-buttons-instagram {
+    background: rgb(106, 86, 195);
+    background: linear-gradient(90deg, rgba(106, 86, 195, 1) 22%, rgba(210, 51, 133, 1) 50%, rgba(251, 126, 42, 1) 76%);
+}
+
+.call-buttons-instagram div {
+    display: flex;
+
+}
+
+.call-buttons-instagram img {
+    height: 1em;
+}
+
+.call-buttons-viber {
     background-color: #6f3faa;
 }
 
@@ -167,18 +205,10 @@ div.img-models {
 
 
 
-.call-buttons-tel {
-    background-color: #00b26e;
-}
 
-.call-buttons-facebook {
-    background-color: rgb(55, 153, 240);
-    margin-right: .5rem;
-}
 
-.call-buttons-email {
-    background-color: rgb(78, 236, 162);
-}
+
+
 
 .call-section-div {
     display: flex;
