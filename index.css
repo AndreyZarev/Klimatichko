@@ -82,8 +82,13 @@ div.icon {
 
 
 /* products section */
+.ac-categories {
+    /* background-color: black; */
+}
 
 .title-ac-models {
+    display: block;
+    margin: auto;
     color: black;
     font-size: 1.2em;
     padding: 1em;
@@ -151,6 +156,7 @@ div.call-us-section-right-div {
     display: inline-block;
     margin-right: 0.1em;
     margin-bottom: 0.3em;
+    color: white;
 }
 
 .call-buttons-tiktok:hover,
@@ -159,6 +165,7 @@ div.call-us-section-right-div {
 .call-buttons-viber:hover,
 .call-buttons-youtube:hover {
     background-color: rgba(81, 70, 240, 0.826);
+    color: white;
 
 
 }
