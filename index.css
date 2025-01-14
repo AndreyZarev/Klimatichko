@@ -25,14 +25,15 @@ body {
 }
 
 nav.navbar {
-    border: black double 5px;
     padding-left: 1.5em;
     padding-right: 1.5em;
     margin: auto;
 }
 
 .logo-icon {
-    height: 1.5em;
+    height: 7em;
+    border: none;
+    border-radius: none;
 }
 
 .logo-text {
