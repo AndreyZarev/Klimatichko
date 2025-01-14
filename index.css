@@ -153,6 +153,24 @@ div.call-us-section-right-div {
     margin-bottom: 0.3em;
 }
 
+.call-buttons-tiktok:hover,
+.call-buttons-facebook:hover,
+.call-buttons-instagram:hover,
+.call-buttons-viber:hover,
+.call-buttons-youtube:hover {
+    background-color: rgba(81, 70, 240, 0.826);
+
+
+}
+
+.call-buttons-tiktok:hover img,
+.call-buttons-facebook:hover i,
+.call-buttons-instagram:hover i,
+.call-buttons-viber:hover img,
+.call-buttons-youtube:hover i {
+    visibility: hidden;
+}
+
 .call-buttons-facebook {
     background-color: rgb(55, 153, 240);
 }
@@ -178,7 +196,7 @@ div.call-us-section-right-div {
 
 .call-buttons-instagram {
     background: rgb(106, 86, 195);
-    background: linear-gradient(90deg, rgba(106, 86, 195, 1) 22%, rgba(210, 51, 133, 1) 50%, rgba(251, 126, 42, 1) 76%);
+    /* background: linear-gradient(90deg, rgba(106, 86, 195, 1) 22%, rgba(210, 51, 133, 1) 50%, rgba(251, 126, 42, 1) 76%); */
 }
 
 .call-buttons-instagram div {
