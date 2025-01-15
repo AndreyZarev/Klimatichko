@@ -496,6 +496,12 @@ div.call-us-section-right-div {
 
 
 @media (max-width: 320px) {
+    .call-section-img {
+        position: relative;
+        height: 10em;
+        box-sizing: border-box;
+
+    }
 
     .category-section {
         padding: 0.5em;
