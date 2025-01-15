@@ -476,4 +476,37 @@ div.call-us-section-right-div {
     }
 
 
+
+
+}
+
+
+
+@media (max-width: 320px) {
+
+    .category-section {
+        padding: 0.5em;
+    }
+
+    .category-section .container {
+        width: 85%;
+    }
+
+    .title-ac-models {
+
+        font-size: 0.8em;
+        padding: 0.1em;
+
+        letter-spacing: 0.01em;
+    }
+
+    .rounded span {
+        font-size: 0.4em;
+    }
+
+    .category-section {
+        padding: 0.5em;
+    }
+
+
 }
