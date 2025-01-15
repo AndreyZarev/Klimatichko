@@ -81,17 +81,27 @@ div.icon {
 
 
 
-/* products section */
+/* category section */
+
+.rounded span {
+    color: #227ae5;
+}
+
 .convector-span {
-    padding-bottom: 1.5em;
     display: block;
+
+}
+
+.ac-categories:hover div {
+    background-color: #227ae5;
 
 }
 
 .convector-div a div {}
 
 .convector p {
-    padding-bottom: 4.5em;
+    /* padding-bottom: 4.5em; */
+    margin-bottom: 0;
 }
 
 .title-ac-models {
@@ -101,6 +111,8 @@ div.icon {
     font-size: 1.2em;
     padding: 0.5em;
     padding-top: 0;
+    padding-bottom: 0;
+
     letter-spacing: 0.05em;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -118,7 +130,7 @@ div.img-models {
 
 
 .invisible {
-    display: none;
+    visibility: hidden;
 }
 
 
@@ -264,29 +276,48 @@ div.call-us-section-right-div {
 }
 
 
-@media (max-width: 1287px) {
-    .convector-span {
-        padding-bottom: 2.9em;
+@media (max-width: 1400px) {
+
+    .ac-categories-div {
+        margin: auto;
+    }
+
+    .ac-categories {
+        width: 27%;
+        /* padding: ; */
+        margin-left: 2em;
+        margin-right: 2em;
+        /* margin-bottom: 5em; */
+    }
+
+
+}
+
+@media (max-width: 1250px) {
+
+    .ac-categories {
+        width: 29%;
+        /* padding: ; */
+        margin-left: 1em;
+        margin-right: 1em;
+        /* margin-bottom: 5em; */
     }
 }
 
 @media (max-width: 991px) {
-    .convector-span {
-        padding-bottom: 0;
+
+    .ac-categories {
+        width: 45%;
+        /* padding: ; */
+        margin-left: 1em;
+        margin-right: 1em;
+        /* margin-bottom: 5em; */
     }
 }
 
-@media (max-width: 964px) {
-    .convector-span {
-        padding-bottom: 0.2em;
-    }
-}
+@media (max-width: 964px) {}
 
-@media (min-width: 730px) and (max-width: 963px) {
-    .convector-span {
-        padding-bottom: 1.5em;
-    }
-}
+@media (min-width: 730px) and (max-width: 963px) {}
 
 /* media 800 */
 
@@ -325,11 +356,7 @@ div.call-us-section-right-div {
     }
 }
 
-@media (min-width: 582px) and (max-width: 729px) {
-    .convector-span {
-        padding-bottom: 2.9em;
-    }
-}
+@media (min-width: 582px) and (max-width: 729px) {}
 
 @media (max-width: 488px) {
 
@@ -377,9 +404,7 @@ div.call-us-section-right-div {
 
 
 @media (max-width: 343px) {
-    .rounded span {
-        font-size: 0.5em;
-    }
+
 
     .title-ac-models {
 

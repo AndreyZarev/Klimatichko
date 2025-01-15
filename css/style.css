@@ -1,5 +1,6 @@
 /********** Template CSS **********/
 :root {
+    --blue: #227ae591;
     --primary: #00B98E;
     --secondary: #FF6922;
     --light: #EFFDF5;
@@ -263,7 +264,7 @@
 /*** Category ***/
 .cat-item div {
     background: #FFFFFF;
-    border: 1px dashed rgba(0, 185, 142, .3);
+    border: 1px dashed var(--blue);
     transition: .5s;
 }
 
