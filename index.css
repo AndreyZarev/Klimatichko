@@ -449,22 +449,31 @@ div.call-us-section-right-div {
 }
 
 
-@media (max-width: 343px) {
-
-
-    .title-ac-models {
-
-        font-size: 0.8em;
-        padding: 0.2em;
-
-        letter-spacing: 0.01em;
-    }
+@media (max-width: 459px) {
 
     .category-section {
         padding: 1em;
     }
 
     .category-section .container {
-        width: 80%;
+        width: 85%;
     }
+
+    .title-ac-models {
+
+        font-size: 1em;
+        padding: 0.2em;
+
+        letter-spacing: 0.01em;
+    }
+
+    .rounded span {
+        font-size: 0.6em;
+    }
+
+    .category-section {
+        padding: 1em;
+    }
+
+
 }
