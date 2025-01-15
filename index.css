@@ -303,6 +303,9 @@ div.call-us-section-right-div {
 
 /* labels section  */
 
+.label-div p {
+    margin-bottom: 11px;
+}
 
 .label-section {
     display: block;
