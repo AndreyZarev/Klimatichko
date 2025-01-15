@@ -463,6 +463,31 @@ div.call-us-section-right-div {
 
 
 @media (max-width: 459px) {
+    .nav-item {
+        margin-left: 2em;
+    }
+
+    .navbar-nav {
+        display: flex;
+    }
+
+    nav.navbar {
+        padding-left: 1em;
+        padding-right: 1em;
+
+    }
+
+    .nav-bar {
+        margin: 2 0;
+        padding: 3em;
+    }
+
+    .logo-icon {
+        height: 7em;
+        border: none;
+        border-radius: none;
+        margin-bottom: 5em;
+    }
 
     .category-section {
         padding: 1em;
