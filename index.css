@@ -369,6 +369,13 @@ div.call-us-section-right-div {
 }
 
 @media (max-width: 653px) {
+    .call-section-img {
+        position: relative;
+        height: 20em;
+        box-sizing: border-box;
+
+    }
+
     .call-section {
         width: 85%;
         display: block;
@@ -406,6 +413,12 @@ div.call-us-section-right-div {
 }
 
 @media (max-width: 488px) {
+    .call-section-img {
+        position: relative;
+        height: 15em;
+        box-sizing: border-box;
+
+    }
 
     .category-section {
         padding: 2em;
