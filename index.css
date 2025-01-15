@@ -97,6 +97,14 @@ div.icon {
 
 }
 
+
+
+.labels div:hover .rounded,
+.labels div:hover div.img-models {
+    background-color: #227ae5;
+
+}
+
 .convector-div a div {}
 
 .convector p {
