@@ -458,12 +458,15 @@ div.call-us-section-right-div {
 
 @media (max-width: 653px) {
 
-    .test-div {
-        display: inline-block;
+    /* test  */
+    .test-div3 div {
+        display: block;
         border: solid 1px black;
-        width: 80%;
-        margin: 2em;
+        margin: 1em;
+        padding: 0;
     }
+
+
 
     .call-section-img {
         position: relative;
@@ -703,11 +706,16 @@ body {
 }
 
 .test-div {
-    display: inline-block;
+    /* display: inline-block; */
     border: solid 1px black;
-    width: 25%;
-    margin: 2em;
+    /* width: 25%; */
+    margin: 1em;
     padding: 0;
+}
+
+.test-div3 div {
+    display: block;
+    padding: 5em;
 }
 
 .test-div2 {
@@ -715,9 +723,15 @@ body {
 }
 
 .test-div3 {
+    flex-wrap: wrap;
     display: flex;
 }
 
 .test-div3 div {
-    padding: 5em;
+    padding: 2em;
+}
+
+.test-div4 {
+    border: solid black 2px;
+    margin: 2em;
 }
