@@ -5,7 +5,7 @@ window.addEventListener("load", function () {
 
     let dynamicSection = document.getElementById("dynamic-section")
 
-    fetch("../inventor-ac/inventor-acs.html")
+    fetch("inventor-ac/inventor-acs.html")
 
         .then(response => {
             if (!response.ok) {
