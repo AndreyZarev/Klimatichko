@@ -24,6 +24,10 @@ body {
     padding: 0 5em;
 }
 
+
+/* navbar starts here  */
+
+
 nav.navbar {
     padding-left: 1.5em;
     padding-right: 1.5em;
@@ -83,7 +87,11 @@ a.phone-in-menu {
     max-width: 10em;
 }
 
+/* search bar starts here */
 
+.search-bar {
+    margin-top: 3em;
+}
 
 /* category section */
 
@@ -372,6 +380,16 @@ div.call-us-section-right-div {
 }
 
 @media (max-width: 991px) {
+    .navbar-collapse {
+        margin-top: 1.5em;
+    }
+
+    .logo-icon {
+        margin-top: 5em;
+        height: 7em;
+        margin-bottom: 2em;
+    }
+
     .navbar-nav a.phone-in-menu {
         margin-left: 0;
         max-width: 10em;
@@ -440,10 +458,11 @@ div.call-us-section-right-div {
 
 @media (max-width: 653px) {
 
-    .logo-icon {
-        margin-top: 2em;
-        margin-bottom: 2em;
-        /* height: 5em; */
+    .test-div {
+        display: inline-block;
+        border: solid 1px black;
+        width: 80%;
+        margin: 2em;
     }
 
     .call-section-img {
@@ -510,11 +529,11 @@ div.call-us-section-right-div {
         margin: auto;
     }
 
-    .logo-icon {
+    /* .logo-icon {
         margin-top: 2em;
         margin-bottom: 2em;
         height: 5em;
-    }
+    } */
 
     .logo-text {
         font-size: 2em;
@@ -544,11 +563,7 @@ div.call-us-section-right-div {
         display: none;
     }
 
-    .logo-icon {
-        margin-top: 2em;
-        height: 5em;
-        margin-bottom: 2em;
-    }
+
 
     .nav-item {
         margin-left: 2em;
@@ -609,6 +624,12 @@ div.call-us-section-right-div {
 
 
 @media (max-width: 320px) {
+    .logo-icon {
+        margin-top: 3em;
+        height: 6em;
+        margin-bottom: 5em;
+    }
+
     .call-section-img {
         position: relative;
         height: 10em;
@@ -686,4 +707,9 @@ body {
     border: solid 1px black;
     width: 25%;
     margin: 2em;
+    padding: 0;
+}
+
+.test-div2 {
+    padding: 0 !important;
 }
