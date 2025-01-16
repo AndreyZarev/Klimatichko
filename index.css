@@ -167,6 +167,7 @@ div.img-models,
     margin: 5em 8em;
 
 
+
 }
 
 .call-section-img {
@@ -327,6 +328,14 @@ div.call-us-section-right-div {
 } */
 
 @media (min-width: 1400px) {
+    .call-section {
+        display: block;
+        margin: 5em auto;
+        max-width: 1258px;
+
+
+    }
+
     .container-xxl {
         /* width: 2099px; */
         margin: auto;
