@@ -335,6 +335,8 @@ div.call-us-section-right-div {
     }
 } */
 
+
+
 @media (min-width: 1400px) {
     .call-section {
         display: block;
@@ -343,6 +345,8 @@ div.call-us-section-right-div {
 
 
     }
+
+
 
     .container-xxl {
         /* width: 2099px; */
@@ -355,7 +359,11 @@ div.call-us-section-right-div {
 
 @media (max-width: 1400px) {
 
-
+    .ac-products {
+        display: block;
+        max-width: 277px;
+        margin: auto;
+    }
 
     .ac-categories,
     .ac-labels {

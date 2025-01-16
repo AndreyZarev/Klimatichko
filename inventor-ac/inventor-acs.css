@@ -1,7 +1,57 @@
 /* navbar ends here  */
+/* .tab-content {
+    display: flex;
+    margin: 7em auto;
+} */
 
+/* .tab-content div {
 
+    margin: 2em auto;
+}
+
+.ac-products-div {
+    display: block;
+} */
 
 .img-ac-products {
     background-color: white;
+
+}
+
+
+@media (min-width: 1841px) {
+    .ac-products {
+        display: block;
+        max-width: 375px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 1640px) {
+    .ac-products {
+        display: block;
+        max-width: 325px;
+        margin: auto;
+    }
+}
+
+
+
+
+@media (min-width: 1400px) {
+    .ac-products {
+        display: block;
+        max-width: 270px;
+        margin: auto;
+    }
+}
+
+
+@media (max-width: 1400px) {
+
+    .ac-products {
+        display: block;
+        max-width: 235px;
+        margin: auto;
+    }
 }
