@@ -671,3 +671,19 @@ body {
     margin: 0;
     width: 100%;
 }
+
+
+/* test */
+
+
+
+.img-labels {
+    border: solid 1px black;
+}
+
+.test-div {
+    display: inline-block;
+    border: solid 1px black;
+    width: 25%;
+    margin: 2em;
+}
