@@ -95,8 +95,8 @@
                                 <input type="text" class="form-control border-0 py-3" placeholder="Търси">
                             </div>
                             <div class="col-md-4">
-                                <select class="form-select border-0 py-3">
-                                    <option selected>Всички</option>
+                                <select class="form-select type-ac-options border-0 py-3">
+                                    <option selected>Всички климатици</option>
                                     <option value="1">Инверторни климатици</option>
                                     <option value="2">Конвектори</option>
                                     <option value="4">Стенни климатици</option>
@@ -110,8 +110,8 @@
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <select class="form-select border-0 py-3">
-                                    <option selected>Марка</option>
+                                <select class="form-select labels-ac-options border-0 py-3">
+                                    <option selected>Всички марки</option>
                                     <option value="1">Auratsu</option>
                                     <option value="2">Fuji Electric</option>
                                     <option value="2">Fujitsu General </option>
@@ -126,7 +126,8 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-dark border-0 w-100 py-3">Search</button>
+                        <button class="btn btn-dark border-0 w-100 py-3 search-button"
+                            onclick="search()">Search</button>
                     </div>
                 </div>
             </div>
@@ -134,7 +135,8 @@
         <!-- Search End -->
 
 
-
+        <!-- Dinamic products -->
+        <section id="dynamic-section"></section>
 
 
 
@@ -595,7 +597,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script src="index-js/pullling-html.js"></script>
+    <script src="./index-js/dynamic-products.js"></script>
 
 </body>
 
