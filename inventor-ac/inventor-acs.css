@@ -13,6 +13,9 @@
     display: block;
 } */
 
+.ac-products {
+    margin-bottom: 2em;
+}
 
 .h1-promo {
     display: block;
@@ -32,6 +35,8 @@
         display: block;
         max-width: 375px;
         margin: auto;
+        margin-bottom: 2em;
+
     }
 }
 
@@ -40,6 +45,8 @@
         display: block;
         max-width: 325px;
         margin: auto;
+        margin-bottom: 2em;
+
     }
 }
 
@@ -51,6 +58,8 @@
         display: block;
         max-width: 270px;
         margin: auto;
+        margin-bottom: 2em;
+
     }
 }
 
@@ -61,5 +70,7 @@
         display: block;
         max-width: 235px;
         margin: auto;
+        margin-bottom: 2em;
+
     }
 }
