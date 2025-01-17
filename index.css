@@ -337,6 +337,8 @@ div.labels-img-div {
     border: solid 1px black;
     margin: 1em;
     padding: 0;
+    margin-bottom: 2em;
+
 }
 
 
@@ -344,7 +346,6 @@ div.labels-img-div {
     height: 15em;
     width: 15em;
     padding: 0;
-    margin: 2em auto;
 }
 
 /* .ac-labels {
