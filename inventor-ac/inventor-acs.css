@@ -38,7 +38,7 @@
 @media (min-width: 1841px) {
     .ac-products {
         display: block;
-        max-width: 480px;
+        max-width: 550px;
         margin: auto;
         margin-bottom: 2em;
 
@@ -48,7 +48,7 @@
 @media (max-width: 1640px) {
     .ac-products {
         display: block;
-        max-width: 380px;
+        max-width: 400px;
         margin: auto;
         margin-bottom: 2em;
 
@@ -61,7 +61,7 @@
 @media (min-width: 1400px) {
     .ac-products {
         display: block;
-        max-width: 310px;
+        max-width: 350px;
         margin: auto;
         margin-bottom: 2em;
 
@@ -80,12 +80,23 @@
     }
 }
 
+@media (max-width: 1200px) {
+
+    .ac-products {
+        display: block;
+        max-width: 250px;
+        margin: auto;
+        margin-bottom: 2em;
+
+    }
+}
+
 
 @media (max-width: 998px) {
 
     .ac-products {
         display: block;
-        max-width: 220px;
+        max-width: 250px;
         margin: auto;
         margin-bottom: 2em;
 
@@ -110,6 +121,58 @@
 
     .ac-products {
         max-width: 220px;
+        margin: auto;
+        margin-bottom: 2em;
+
+    }
+
+
+}
+
+@media (max-width: 510px) {
+    .div-price {
+        padding-top: 0.3em;
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+    }
+
+    .div-price h5 {
+        font-size: 0.9em;
+        margin-bottom: 0.15em;
+    }
+
+    .div-price a {
+        font-size: 0.8em;
+    }
+
+    .ac-products {
+        max-width: 190px;
+        margin: auto;
+        margin-bottom: 2em;
+
+    }
+
+
+}
+
+@media (max-width: 352px) {
+    .div-price {
+        padding-top: 0.3em;
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+    }
+
+    .div-price h5 {
+        font-size: 0.8em;
+        margin-bottom: 0.15em;
+    }
+
+    .div-price a {
+        font-size: 0.7em;
+    }
+
+    .ac-products {
+        /* max-width: 150px; */
         margin: auto;
         margin-bottom: 2em;
 
