@@ -327,6 +327,11 @@ div.labels-img-div {
     flex-wrap: wrap;
 }
 
+.labels-img-div a {
+    display: block;
+    margin: auto;
+}
+
 .labels-img-div a div {
     display: block;
     border: solid 1px black;
@@ -339,7 +344,7 @@ div.labels-img-div {
     height: 15em;
     width: 15em;
     padding: 0;
-    margin: 2em;
+    margin: 2em auto;
 }
 
 /* .ac-labels {
@@ -536,6 +541,14 @@ div.labels-img-div {
 }
 
 @media (max-width: 488px) {
+
+
+    .labels-img {
+        height: 10em;
+        width: 10em;
+        padding: 0;
+    }
+
     .call-section-img {
         position: relative;
         height: 15em;
