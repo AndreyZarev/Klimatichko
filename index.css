@@ -322,6 +322,26 @@ div.call-us-section-right-div {
     padding: 5em;
 }
 
+div.labels-img-div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.labels-img-div a div {
+    display: block;
+    border: solid 1px black;
+    margin: 1em;
+    padding: 0;
+}
+
+
+.labels-img {
+    height: 15em;
+    width: 15em;
+    padding: 0;
+    margin: 2em;
+}
+
 /* .ac-labels {
     margin: 2em;
 } */
@@ -467,12 +487,7 @@ div.call-us-section-right-div {
 @media (max-width: 653px) {
 
     /* test  */
-    .test-div3 div {
-        display: block;
-        border: solid 1px black;
-        margin: 1em;
-        padding: 0;
-    }
+
 
 
 
