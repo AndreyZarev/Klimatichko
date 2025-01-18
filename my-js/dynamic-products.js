@@ -20,7 +20,7 @@ window.addEventListener("load", function () {
 
 
 
-    function createProductSection(product) {
+    function createPromoProductSection(product) {
         return `
          
                             <div class="property-item rounded overflow-hidden " id="klb-24hrhi"
@@ -48,16 +48,18 @@ window.addEventListener("load", function () {
                    
             `;
     }
+
+
     let container = document.createElement('div')
-    container.classList.add("g-4", "row")
+    container.classList.add("g-4", "row", "promo-div")
     // Fetching the products from a JSON file
-    fetch('data-json/promotion-ac.json')
+    fetch('data-json/types/promo-ac.json')
         .then(response => response.json())
         .then(products => {
             console.log(products);
 
             products.forEach(product => {
-                const sectionHTML = createProductSection(product);
+                const sectionHTML = createPromoProductSection(product);
                 let sectionElement = document.createElement('div')
 
                 sectionElement.innerHTML = sectionHTML;
@@ -74,7 +76,6 @@ window.addEventListener("load", function () {
         .catch(error => console.error('Error fetching product data:', error));
 
 
-    let productList = document.getElementById("product-list")
 
 
 
