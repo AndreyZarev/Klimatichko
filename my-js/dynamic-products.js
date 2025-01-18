@@ -35,9 +35,9 @@ window.addEventListener("load", function () {
 
                                 </div>
                                 <div class=" pb-0 div-price">
-                                    <h5 class="text-primary mb-3">${product.price}</h5>
-                                    <a class="d-block mb-2" href="">${product.type} ${product.name}</a>
-                                    <p><i class="fa fa-map-marker-alt text-primary me-2"></i>${product.location}</p>
+                                    <h5 class="">${product.price}</h5>
+                                    <a class="d-block" href="">${product.type} ${product.name}</a>
+                                    <p><i class="fa fa-map-marker-alt text-primary "></i>${product.location}</p>
                                 </div>
                                 <div class="d-flex border-top">
                                     <small class="flex-fill text-center border-end py-2">${product.power}</small>

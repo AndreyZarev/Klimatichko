@@ -13,8 +13,33 @@
     display: block;
 } */
 
+.container-xxl .container-products {
+    padding: 0;
+}
+
+.div-price {
+    padding: 2em;
+}
+
+.div-price h5 {
+    color: #227ae5;
+}
+
+.div-price a {
+    color: black;
+    font-weight: 600;
+}
+
+.div-price p {
+    margin-bottom: 0;
+    margin-top: 0.5em;
+    font-size: 0.8em;
+    color: black;
+}
+
 .ac-products {
     margin-bottom: 2em;
+    padding: 1em;
 }
 
 .h1-promo {
@@ -106,8 +131,8 @@
 @media (max-width: 630px) {
     .div-price {
         padding-top: 0.5em;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
+        padding-left: 1em;
+        padding-right: 1em;
     }
 
     .div-price h5 {
@@ -132,8 +157,8 @@
 @media (max-width: 510px) {
     .div-price {
         padding-top: 0.3em;
-        padding-left: 0.3em;
-        padding-right: 0.3em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
     }
 
     .div-price h5 {
@@ -158,8 +183,8 @@
 @media (max-width: 452px) {
     .div-price {
         padding-top: 0.3em;
-        padding-left: 0.3em;
-        padding-right: 0.3em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
     }
 
     .div-price h5 {
@@ -172,7 +197,7 @@
     }
 
     .ac-products {
-        max-width: 140px;
+        max-width: 160px;
         margin: auto;
         margin-bottom: 2em;
 
@@ -181,11 +206,18 @@
 
 }
 
-@media (max-width: 352px) {
+@media (max-width: 360px) {
+    .div-price p {
+        margin-bottom: 0;
+        margin-top: 0.5em;
+        font-size: 0.7em;
+        color: black;
+    }
+
     .div-price {
         padding-top: 0.3em;
-        padding-left: 0.3em;
-        padding-right: 0.3em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
     }
 
     .div-price h5 {
@@ -198,7 +230,7 @@
     }
 
     .ac-products {
-        max-width: 130px;
+        max-width: 200px;
         margin: auto;
         margin-bottom: 2em;
 
