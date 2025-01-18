@@ -27,6 +27,11 @@ body {
 
 /* navbar starts here  */
 
+.navbar-nav div {
+    margin-left: 2em;
+    display: flex;
+    justify-content: flex-end;
+}
 
 nav.navbar {
     padding-left: 1.5em;
@@ -40,10 +45,9 @@ nav.navbar {
 }
 
 .logo-icon {
-    height: 7em;
+    height: 9em;
     border: none;
     border-radius: none;
-    margin-bottom: 2em;
 }
 
 div.icon {
@@ -59,6 +63,7 @@ div.icon {
 #navbarCollapse div a {
     padding: auto;
     font-weight: 700;
+    display: block;
 
 }
 
@@ -67,30 +72,35 @@ div.icon {
 p.phone-in-menu {
     display: block;
     margin: auto;
-    font-family: 2em;
+    font-size: 0.3em;
+    padding: 0.3em;
+    background-color: #227ae5;
+    border-radius: 0.2em;
+    color: white;
+
+
 }
 
 
 
 a.phone-in-menu {
-    background-color: #227ae5;
-    margin: 0.6em;
+    margin: auto;
 }
 
-#navbarCollapse div a.phone-in-menu:hover {
+#navbarCollapse div a.phone-in-menu:hover p {
     background-color: #042143;
 }
 
 
 #navbarCollapse div a img.phone-in-menu {
-    height: 2em;
-    max-width: 10em;
+    height: 1em;
+    max-width: 2em;
 }
 
 /* search bar starts here */
 
 .search-bar {
-    margin-top: 3em;
+    margin-top: 1.5em;
 }
 
 /* category section */
@@ -425,7 +435,7 @@ div.labels-img-div {
     }
 
     .navbar-nav a.phone-in-menu {
-        margin-left: 0;
+
         max-width: 10em;
 
     }
