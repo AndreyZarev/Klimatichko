@@ -33,6 +33,17 @@ body {
     justify-content: flex-end;
 }
 
+.navbar-toggler {
+    display: block;
+    margin-top: 2em;
+}
+
+.menu {
+    display: block;
+    width: 4em;
+    color: black;
+}
+
 nav.navbar {
     padding-left: 1.5em;
     padding-right: 1.5em;
@@ -85,6 +96,7 @@ p.phone-in-menu {
 
 a.phone-in-menu {
     margin: auto;
+    padding-left: 1em;
 }
 
 #navbarCollapse div a.phone-in-menu:hover p {
@@ -373,6 +385,15 @@ div.labels-img-div {
 
 
 
+@media (min-width: 1600px) {
+    a.phone-in-menu {
+        padding-left: 0;
+        display: flex;
+        margin-left: 3em;
+    }
+
+}
+
 @media (min-width: 1400px) {
     .call-section {
         display: block;
@@ -394,6 +415,9 @@ div.labels-img-div {
 }
 
 @media (max-width: 1400px) {
+    a.phone-in-menu {
+        margin-left: 0.5em;
+    }
 
     .ac-products {
         display: block;
@@ -413,6 +437,11 @@ div.labels-img-div {
 }
 
 @media (max-width: 1250px) {
+    a.phone-in-menu {
+        padding-left: 0;
+        display: flex;
+        margin-left: 0.2em;
+    }
 
     .ac-categories,
     .ac-labels {
@@ -424,12 +453,18 @@ div.labels-img-div {
 }
 
 @media (max-width: 991px) {
+    a.phone-in-menu {
+        padding-left: 0;
+        display: flex;
+        margin-left: 0;
+    }
+
     .navbar-collapse {
         margin-top: 1.5em;
     }
 
     .logo-icon {
-        margin-top: 5em;
+
         height: 7em;
         margin-bottom: 2em;
     }
@@ -476,7 +511,11 @@ div.labels-img-div {
 /* media 800 */
 
 @media (max-width: 799px) {
-
+    a.phone-in-menu {
+        padding-left: 0;
+        display: flex;
+        margin-left: 0;
+    }
 
     .call-section-img {
         position: relative;
@@ -502,7 +541,20 @@ div.labels-img-div {
 
 @media (max-width: 653px) {
 
-    /* test  */
+    a.phone-in-menu {
+        padding-left: 0;
+        display: flex;
+        margin-left: 0;
+    }
+
+    .navbar-toggler {
+
+        margin-top: 4em;
+    }
+
+    .navbar-collapse {
+        margin-top: 0.6em;
+    }
 
 
 
@@ -535,13 +587,6 @@ div.labels-img-div {
         /* margin-bottom: 5em; */
     }
 
-    /* .title-ac-models {
-        display: block;
-        font-size: 0.8em;
-        padding: 0.1em;
-
-        letter-spacing: 0.01em;
-    } */
 
 
 
@@ -552,7 +597,20 @@ div.labels-img-div {
 }
 
 @media (max-width: 488px) {
+    a.phone-in-menu {
+        padding-left: 0;
+        display: flex;
+        margin-left: 0;
+    }
 
+    .navbar-toggler {
+
+        margin-top: 4em;
+    }
+
+    .navbar-collapse {
+        margin-top: 0.5em;
+    }
 
     .labels-img {
         height: 10em;
@@ -613,7 +671,16 @@ div.labels-img-div {
         display: none;
     }
 
+    a.phone-in-menu {
+        padding-left: 0;
+        display: flex;
+        margin-left: 0.25em;
+    }
 
+
+    .navbar-collapse {
+        margin-top: 0.2em;
+    }
 
     .nav-item {
         margin-left: 2em;
@@ -674,6 +741,12 @@ div.labels-img-div {
 
 
 @media (max-width: 320px) {
+    a.phone-in-menu {
+        padding-left: 0;
+        display: flex;
+        margin-left: 0.25em;
+    }
+
     .logo-icon {
         margin-top: 3em;
         height: 6em;
