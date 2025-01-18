@@ -626,10 +626,10 @@ div.labels-img-div {
 
     .logo-icon {
         margin-top: 2em;
-        height: 4em;
+        height: 6em;
         border: none;
         border-radius: none;
-        margin-bottom: 5em;
+        margin-bottom: 1em;
     }
 
     .category-section {
@@ -667,7 +667,7 @@ div.labels-img-div {
     .logo-icon {
         margin-top: 3em;
         height: 6em;
-        margin-bottom: 5em;
+        margin-bottom: 1em;
     }
 
     .call-section-img {
