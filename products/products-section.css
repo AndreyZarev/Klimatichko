@@ -12,6 +12,9 @@
 .ac-products-div {
     display: block;
 } */
+.product-list .container-xxl {
+    padding-top: 0;
+}
 
 .container-xxl .container-products {
     padding: 0;
@@ -19,6 +22,14 @@
 
 .div-price {
     padding: 2em;
+}
+
+.header-text {
+    display: block;
+    margin: auto;
+    color: black;
+    text-align: center;
+    margin-bottom: 2em;
 }
 
 .div-price h5 {
