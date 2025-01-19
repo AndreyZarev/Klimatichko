@@ -64,7 +64,7 @@
 
     .ac-categories,
     .ac-labels {
-        width: 27%;
+        max-width: 277px;
         /* padding: ; */
         margin: auto;
         /* margin-bottom: 5em; */
@@ -82,7 +82,8 @@
 
     .ac-categories,
     .ac-labels {
-        width: 29%;
+        max-width: 277px;
+
         /* padding: ; */
         margin: auto;
         /* margin-bottom: 5em; */

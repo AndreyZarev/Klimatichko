@@ -401,15 +401,15 @@ div.labels-img-div {
 /* .ac-labels {
     margin: 2em;
 } */
-/* @media (min-width: 1360px) {
 
-    html,
-    body,
-    .label-section,
-    .category-section {
-        width: 100%;
-    }
-} */
+
+
+.label-section,
+.category-section {
+    width: 100%;
+    padding: 5em;
+}
+
 
 
 
@@ -429,6 +429,7 @@ div.labels-img-div {
     display: block;
     margin: auto;
     margin-bottom: 5em;
+
 }
 
 .h1-models,

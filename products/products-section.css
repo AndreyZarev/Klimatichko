@@ -29,7 +29,7 @@
 }
 
 .container-xxl .container-products {
-    padding: 0.5em;
+    padding: 1.1em;
 }
 
 .div-price {
@@ -84,6 +84,10 @@
 
 
 @media (min-width: 1841px) {
+    .container-xxl .container-products {
+        padding: 15em;
+    }
+
     .ac-products {
         display: block;
         max-width: 550px;
@@ -94,6 +98,10 @@
 }
 
 @media (max-width: 1640px) {
+    .container-xxl .container-products {
+        padding: 10em;
+    }
+
     .ac-products {
         display: block;
         max-width: 400px;
@@ -107,6 +115,10 @@
 
 
 @media (min-width: 1400px) {
+    .container-xxl .container-products {
+        padding: 5em;
+    }
+
     .ac-products {
         display: block;
         max-width: 350px;
@@ -118,6 +130,9 @@
 
 
 @media (max-width: 1400px) {
+    .container-xxl .container-products {
+        padding: 2em;
+    }
 
     .ac-products {
         display: block;
@@ -129,6 +144,9 @@
 }
 
 @media (max-width: 1200px) {
+    .container-xxl .container-products {
+        padding: 2em;
+    }
 
     .ac-products {
         display: block;
@@ -144,6 +162,17 @@
 
     .ac-products {
         display: block;
+        max-width: 280px;
+        margin: auto;
+        margin-bottom: 2em;
+
+    }
+}
+
+@media (max-width: 898px) {
+
+    .ac-products {
+        display: block;
         max-width: 300px;
         margin: auto;
         margin-bottom: 2em;
@@ -152,6 +181,14 @@
 }
 
 @media (max-width: 630px) {
+    .container-xxl .container-products {
+        padding: 1.3em;
+    }
+
+    .border-top small {
+        font-size: 0.8em;
+    }
+
     .div-price {
         padding-top: 0.5em;
         padding-left: 1em;
@@ -168,7 +205,7 @@
     }
 
     .ac-products {
-        max-width: 250px;
+        max-width: 220px;
         margin: auto;
         margin-bottom: 2em;
 
@@ -177,7 +214,11 @@
 
 }
 
-@media (max-width: 510px) {
+@media (max-width: 518px) {
+    .container-xxl .container-products {
+        padding: 1.2em;
+    }
+
     .div-price {
         padding-top: 0.3em;
         padding-left: 0.5em;
@@ -208,6 +249,11 @@
         padding: 0.5em;
     }
 
+    .border-top small {
+        font-size: 0.6em;
+        font-weight: 500;
+    }
+
     .div-price {
         padding-top: 0.3em;
         padding-left: 0.5em;
@@ -224,7 +270,7 @@
     }
 
     .ac-products {
-        max-width: 185px;
+        max-width: 170px;
         margin: auto;
         padding: 0;
         margin-bottom: 2em;
