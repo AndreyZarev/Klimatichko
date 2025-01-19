@@ -2437,7 +2437,6 @@ textarea.form-control-lg {
 }
 
 .form-select:focus {
-    border-color: #80dcc7;
     outline: 0;
     box-shadow: 0 0 0 .25rem rgba(0, 185, 142, 0.25)
 }
@@ -2885,10 +2884,8 @@ textarea.form-control.is-valid {
     background-position: top calc(.375em + .1875rem) right calc(.375em + .1875rem)
 }
 
-.was-validated .form-select:valid,
-.form-select.is-valid {
-    border-color: #198754
-}
+/* .was-validated .form-select:valid,
+.form-select.is-valid {} */
 
 .was-validated .form-select:valid:not([multiple]):not([size]),
 .was-validated .form-select:valid:not([multiple])[size="1"],
@@ -2900,11 +2897,8 @@ textarea.form-control.is-valid {
     background-size: 16px 12px, calc(.75em + .375rem) calc(.75em + .375rem)
 }
 
-.was-validated .form-select:valid:focus,
-.form-select.is-valid:focus {
-    border-color: #198754;
-    box-shadow: 0 0 0 .25rem rgba(25, 135, 84, 0.25)
-}
+/* .was-validated .form-select:valid:focus,
+.form-select.is-valid:focus {} */
 
 .was-validated .form-check-input:valid,
 .form-check-input.is-valid {
@@ -3853,7 +3847,8 @@ fieldset:disabled .btn {
     padding: .5rem 0;
     margin: 0;
     font-size: 1rem;
-    color: #666565;
+    /* font-weight: 600; */
+    color: black;
     text-align: left;
     list-style: none;
     background-color: #fff;
@@ -3865,7 +3860,7 @@ fieldset:disabled .btn {
 .dropdown-menu[data-bs-popper] {
     top: 100%;
     left: 0;
-    margin-top: .125rem
+    margin-top: .125rem;
 }
 
 .dropdown-menu-start {
@@ -4381,6 +4376,8 @@ fieldset:disabled .btn {
 }
 
 .nav-tabs .dropdown-menu {
+    color: black;
+
     margin-top: -1px;
     border-top-left-radius: 0;
     border-top-right-radius: 0
