@@ -29,7 +29,7 @@
 }
 
 .container-xxl .container-products {
-    padding: 0;
+    padding: 0.5em;
 }
 
 .div-price {
@@ -121,7 +121,7 @@
 
     .ac-products {
         display: block;
-        max-width: 275px;
+        max-width: 350px;
         margin: auto;
         margin-bottom: 2em;
 
@@ -132,7 +132,7 @@
 
     .ac-products {
         display: block;
-        max-width: 250px;
+        max-width: 320px;
         margin: auto;
         margin-bottom: 2em;
 
@@ -204,6 +204,10 @@
 }
 
 @media (max-width: 452px) {
+    .product-list .container-xxl {
+        padding: 0.5em;
+    }
+
     .div-price {
         padding-top: 0.3em;
         padding-left: 0.5em;
@@ -220,8 +224,9 @@
     }
 
     .ac-products {
-        max-width: 210px;
+        max-width: 185px;
         margin: auto;
+        padding: 0;
         margin-bottom: 2em;
 
     }
@@ -253,7 +258,7 @@
     }
 
     .ac-products {
-        max-width: 220px;
+        max-width: 250px;
         margin: auto;
         margin-bottom: 2em;
 
