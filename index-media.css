@@ -339,7 +339,7 @@
         height: 6em;
         border: none;
         border-radius: none;
-        margin-bottom: 3em;
+        margin-bottom: 4em;
     }
 
     .category-section {
@@ -374,7 +374,7 @@
 
 
 @media (max-width: 320px) {
-    .navbar-collapse {
+    .navbar-toggler {
         margin-top: 2em;
     }
 
@@ -385,9 +385,9 @@
     }
 
     .logo-icon {
-        margin-top: 3em;
+        margin-top: 1em;
         height: 6em;
-        margin-bottom: 1em;
+        margin-bottom: 2em;
     }
 
     .call-section-img {

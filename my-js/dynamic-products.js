@@ -27,7 +27,7 @@ window.addEventListener("load", function () {
                                 onclick="getToSingleProductPage(id)">
                                 <div class="position-relative overflow-hidden img-ac-products ">
                                     <a href=""><img class="img-fluid img-ac-products"
-                                            src="img/new/ac-types/inventor-ac/kaisai/KAISAI ICE KLB-24HRHI.jpg"
+                                            src="${product.img}"
                                             alt=""></a>
                                     <div
                                         class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
@@ -41,9 +41,9 @@ window.addEventListener("load", function () {
 
                                 </div>
                                 <div class="d-flex border-top">
-                                    <small class="flex-fill text-center border-end py-2">${product.power}</small>
-                                    <small class="flex-fill text-center border-end py-2">3 Bed</small>
-                                    <small class="flex-fill text-center py-2">${product.energy}</small>
+                                    <small class="flex-fill text-center border-end py-2">${product.size} BTU</small>
+                                    <small class="flex-fill text-center border-end py-2"><a class="label-link" href="#">${product.label}</a></small>
+                                    <small class="flex-fill text-center py-2">Клас: ${product.energy}</small>
                                 </div>
                             </div>
                    

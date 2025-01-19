@@ -12,8 +12,20 @@
 .ac-products-div {
     display: block;
 } */
+.border-top small {
+    color: black;
+}
+
+.label-link {
+    color: black;
+}
+
+.label-link:hover {
+    color: #227ae5;
+}
+
 .product-list .container-xxl {
-    padding-top: 0;
+    padding: 0;
 }
 
 .container-xxl .container-products {
@@ -132,7 +144,7 @@
 
     .ac-products {
         display: block;
-        max-width: 250px;
+        max-width: 300px;
         margin: auto;
         margin-bottom: 2em;
 
@@ -156,7 +168,7 @@
     }
 
     .ac-products {
-        max-width: 220px;
+        max-width: 250px;
         margin: auto;
         margin-bottom: 2em;
 
@@ -182,7 +194,7 @@
     }
 
     .ac-products {
-        max-width: 190px;
+        max-width: 220px;
         margin: auto;
         margin-bottom: 2em;
 
@@ -208,7 +220,7 @@
     }
 
     .ac-products {
-        max-width: 160px;
+        max-width: 210px;
         margin: auto;
         margin-bottom: 2em;
 
@@ -241,7 +253,7 @@
     }
 
     .ac-products {
-        max-width: 200px;
+        max-width: 220px;
         margin: auto;
         margin-bottom: 2em;
 
