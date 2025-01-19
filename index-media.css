@@ -314,16 +314,14 @@
 
 
     .navbar-collapse {
-        margin-top: 0.5em;
+        margin-top: 0.2em;
     }
 
-    .nav-item {
+    /* .nav-item {
         margin-left: 2em;
-    }
+    } */
 
-    .navbar-nav {
-        display: flex;
-    }
+
 
     nav.navbar {
         padding-left: 1em;
@@ -337,11 +335,11 @@
     }
 
     .logo-icon {
-        margin-top: 2em;
+        margin-top: 1em;
         height: 6em;
         border: none;
         border-radius: none;
-        margin-bottom: 1em;
+        margin-bottom: 3em;
     }
 
     .category-section {
