@@ -113,7 +113,8 @@ p.phone-in-menu {
 
 .menu-invisible,
 .menu-invisible1,
-.menu-invisible2 {
+.menu-invisible2,
+.menu-invisible3 {
     font-size: 1em;
     display: none;
 }
@@ -418,9 +419,17 @@ div.labels-img-div {
 .ac-categories-div,
 .labels {
     display: flex;
+    flex-wrap: wrap;
 
 }
 
+.call-section {
+    display: block;
+    margin: 5em auto;
+    max-width: 1258px;
+
+
+}
 
 
 .ac-categories,

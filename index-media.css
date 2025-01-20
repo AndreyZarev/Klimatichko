@@ -1,21 +1,58 @@
 @media (min-width: 1840px) {
     #category-section {
-        padding: 7em;
+        padding: 8em;
     }
 
-    /* p.menu-invisible2 {
+    p.menu-invisible {
         display: block;
         font-size: 0.5em;
         visibility: hidden;
-    } */
-    .col-lg-4 {
+    }
+
+    p.menu-invisible1 {
+        display: block;
+        font-size: 0.5em;
+        visibility: hidden;
+    }
+
+    p.menu-invisible2 {
+        display: block;
+        font-size: 0.5em;
+        visibility: hidden;
+    }
+
+    p.menu-invisible3 {
+        display: block;
+        font-size: 0.5em;
+        visibility: hidden;
+    }
+
+    div.ac-categories {
         width: 17%;
     }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 1700px) and (max-width: 1839px) {
+    p.menu-invisible {
+        display: block;
+        font-size: 0.5em;
+        visibility: hidden;
+    }
+
+    p.menu-invisible1 {
+        display: block;
+        font-size: 0.5em;
+        visibility: hidden;
+    }
+
+    p.menu-invisible2 {
+        display: block;
+        font-size: 0.5em;
+        visibility: hidden;
+    }
+
     #category-section {
-        padding: 6em;
+        padding: 7em;
     }
 
     h6.title-ac-models {
@@ -27,30 +64,51 @@
         font-size: 0.5em;
         visibility: hidden;
     } */
-    .col-lg-4 {
-        width: 20%;
+    div.ac-categories {
+        width: 22%;
     }
 }
 
-@media (min-width: 1600px) {
-    p.menu-invisible2 {
+@media (min-width: 1600px) and (max-width: 1699px) {
+    .nav-item .nav-link {
+        font-size: 2em;
+    }
+
+    p.menu-invisible {
         display: block;
         font-size: 0.5em;
         visibility: hidden;
     }
+
+    p.menu-invisible1 {
+        display: block;
+        font-size: 0.5em;
+        visibility: hidden;
+    }
+
 
     .col-lg-4 {
         width: 24%;
     }
 
     div.ac-categories {
-        max-width: 24%;
+        max-width: 23%;
         /* padding: ; */
         /* margin-bottom: 5em; */
     }
+
+    #category-section {
+        padding: 6em;
+    }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1500px) and (max-width: 1599px) {
+    p.menu-invisible {
+        display: block;
+        font-size: 0.5em;
+        visibility: hidden;
+    }
+
     p.menu-invisible1 {
         display: block;
         font-size: 0.5em;
@@ -68,18 +126,12 @@
     }
 
     #category-section {
-        padding: 5em;
+        padding: 6em;
     }
 }
 
-@media (min-width: 1400px) {
-    .call-section {
-        display: block;
-        margin: 5em auto;
-        max-width: 1258px;
+@media (min-width: 1400px) and (max-width: 1499px) {
 
-
-    }
 
 
     p.menu-invisible {
@@ -118,28 +170,9 @@
 
 }
 
-@media (min-width: 1459px) {
-
-    div.ac-categories {
-        max-width: 26%;
 
 
-
-    }
-
-    .nav-item,
-    .nav-link {
-        font-size: 0.8em;
-    }
-
-
-
-
-}
-
-
-
-@media (min-width: 1250px) {
+@media (min-width: 1250px) and (max-width: 1399px) {
     a.phone-in-menu {
         padding-left: 0;
         display: flex;
@@ -160,7 +193,7 @@
     }
 }
 
-@media (min-width: 999px) {
+@media (min-width: 999px) and (max-width: 1249px) {
     #category-section {
         padding: 3.5em;
     }
@@ -200,7 +233,7 @@
     }
 }
 
-@media (min-width: 834px) {
+@media (min-width: 834px) and (max-width: 998px) {
     a.phone-in-menu {
         padding-left: 0;
         margin: 0;
@@ -219,11 +252,11 @@
     }
 }
 
-@media (min-width: 730px) and (max-width: 963px) {}
+
 
 /* media 800 */
 
-@media (max-width: 799px) {
+@media (min-width: 654px) and (max-width: 833px) {
     #category-section {
         padding: 2.5em;
     }
@@ -259,7 +292,7 @@
     }
 }
 
-@media (min-width: 653px) {
+@media (min-width: 489px) and (max-width: 653px) {
 
     a.phone-in-menu {
         padding-left: 0;
@@ -312,7 +345,7 @@
 
 }
 
-@media (min-width: 488px) {
+@media (min-width: 400px) and (max-width: 488px) {
     a.phone-in-menu {
         padding-left: 0;
         display: flex;
@@ -392,7 +425,7 @@
 }
 
 
-@media (min-width: 459px) {
+@media (min-width: 321px)and (max-width: 399px) {
     .invisible-label {
         display: none;
     }
@@ -461,7 +494,7 @@
 
 
 
-@media (min-width: 320px) {
+@media (max-width: 320px) {
     .navbar-toggler {
         margin-top: 2em;
     }
