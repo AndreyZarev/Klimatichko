@@ -247,7 +247,7 @@
 
     .ac-categories,
     .col-lg-4 {
-        max-width: 45%;
+        max-width: 29%;
 
     }
 }
@@ -259,6 +259,12 @@
 @media (min-width: 654px) and (max-width: 833px) {
     #category-section {
         padding: 2.5em;
+    }
+
+    .ac-categories,
+    .col-lg-4 {
+        max-width: 29%;
+
     }
 
     a.phone-in-menu {
@@ -289,10 +295,18 @@
         background: rgba(255, 255, 255, 0.8);
         padding: 2px 5px;
         border-radius: 5px;
+
     }
 }
 
 @media (min-width: 489px) and (max-width: 653px) {
+    .title-ac-models {
+
+        font-size: 0.75em;
+        padding: 0.2em;
+
+        letter-spacing: 0.05em;
+    }
 
     a.phone-in-menu {
         padding-left: 0;
@@ -389,7 +403,7 @@
     }
 
     .title-ac-models {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 
     .call-section {
@@ -428,6 +442,11 @@
 @media (min-width: 321px)and (max-width: 399px) {
     .invisible-label {
         display: none;
+    }
+
+    .ac-categories {
+        max-width: 45%;
+
     }
 
     a.phone-in-menu {
@@ -475,7 +494,7 @@
 
     .title-ac-models {
 
-        font-size: 1em;
+        font-size: 0.7em;
         padding: 0.2em;
 
         letter-spacing: 0.01em;
@@ -495,6 +514,11 @@
 
 
 @media (max-width: 320px) {
+    .ac-categories {
+        max-width: 80%;
+
+    }
+
     .navbar-toggler {
         margin-top: 2em;
     }

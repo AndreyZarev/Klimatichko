@@ -21,6 +21,8 @@ window.addEventListener("load", function () {
 
 
     function createPromoProductSection(product) {
+        let currentPrice = product.price * 0.95
+        currentPrice = currentPrice.toFixed(2)
         return `
          
                             <div class="property-item rounded overflow-hidden " id="klb-24hrhi"
@@ -30,16 +32,22 @@ window.addEventListener("load", function () {
                                             src="${product.img}"
                                             alt=""></a>
                                     <div
-                                        class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                        class="bg-primary discount rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
                                         ${product.discount}</div>
 
                                 </div>
                                 <div class=" pb-0 div-price">
-                                    <h5 class="">${product.price}</h5>
+                                    <h5 class="first-price">${product.price.toFixed(2)}лв. </h5>
+                                    <h5 class = "second-price">${currentPrice}лв.</h5>
 
                                     <a class="d-block" href="">${product.type} ${product.name}</a>
 
                                 </div>
+                                <a class="call-us" href="tel: 0896081213">
+                                 <span>
+                                    <img class="call-us-icon" src="img/new/icons8-phone-50.png" alt="" srcset="">
+                                </span>
+                                Обади се</a>
                                 <div class="d-flex border-top">
                                     <small class="flex-fill text-center border-end py-2">${product.size} BTU</small>
                                     <small class="flex-fill text-center border-end py-2"><a class="label-link" href="#">${product.label}</a></small>
