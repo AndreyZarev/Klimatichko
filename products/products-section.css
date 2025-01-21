@@ -87,7 +87,7 @@
 
 .div-price h5.second-price {
     display: inline-block;
-    color: #227ae5;
+    color: red;
     margin-left: 1em;
 }
 
@@ -145,7 +145,17 @@
 
 @media (min-width: 1841px) {
     .container-xxl .container-products {
-        padding: 10em;
+        padding: 7em;
+    }
+
+    .div-price h5.first-price {
+        font-size: 1.2em;
+        margin-bottom: 0.15em;
+    }
+
+    .div-price h5.second-price {
+        font-size: 1.3em;
+        margin-bottom: 0.15em;
     }
 
     .ac-products {
@@ -159,7 +169,17 @@
 
 @media (min-width: 1640px) and (max-width: 1840px) {
     .container-xxl .container-products {
-        padding: 7em;
+        padding: 5em;
+    }
+
+    .div-price h5.first-price {
+        font-size: 1em;
+        margin-bottom: 0.15em;
+    }
+
+    .div-price h5.second-price {
+        font-size: 1.1em;
+        margin-bottom: 0.15em;
     }
 
     .ac-products {
@@ -176,12 +196,22 @@
 
 @media (min-width: 1400px) and (max-width: 1639px) {
     .container-xxl .container-products {
-        padding: 5em;
+        padding: 4em;
+    }
+
+    .div-price h5.first-price {
+        font-size: 0.9em;
+        margin-bottom: 0.15em;
+    }
+
+    .div-price h5.second-price {
+        font-size: 1em;
+        margin-bottom: 0.15em;
     }
 
     .ac-products {
         display: block;
-        max-width: 350px;
+        max-width: 360px;
         margin: auto;
         margin-bottom: 2em;
 
@@ -192,6 +222,20 @@
 @media (min-width: 1201px) and (max-width: 1400px) {
     .container-xxl .container-products {
         padding: 2em;
+    }
+
+    .div-price h6 {
+        font-size: 1em;
+    }
+
+    .div-price h5.first-price {
+        font-size: 0.9em;
+        margin-bottom: 0.15em;
+    }
+
+    .div-price h5.second-price {
+        font-size: 1em;
+        margin-bottom: 0.15em;
     }
 
     .ac-products {
@@ -208,6 +252,24 @@
         padding: 2em;
     }
 
+    .discount {
+        font-size: 0.9em;
+    }
+
+    .div-price h6 {
+        font-size: 0.8em;
+    }
+
+    .div-price h5.first-price {
+        font-size: 0.8em;
+        margin-bottom: 0.15em;
+    }
+
+    .div-price h5.second-price {
+        font-size: 0.9em;
+        margin-bottom: 0.15em;
+    }
+
     .ac-products {
         display: block;
         max-width: 320px;
@@ -215,10 +277,31 @@
         margin-bottom: 2em;
 
     }
+
+    .call-us {
+        max-width: 40%;
+    }
 }
 
 
-@media (min-width: 631px) and (max-width: 998px) {
+@media (min-width:801px) and (max-width: 998px) {
+    .call-us {
+        max-width: 40%;
+    }
+
+    .discount {
+        font-size: 0.8em;
+    }
+
+    .div-price h5.first-price {
+        font-size: 0.8em;
+        margin-bottom: 0.15em;
+    }
+
+    .div-price h5.second-price {
+        font-size: 0.9em;
+        margin-bottom: 0.15em;
+    }
 
     .ac-products {
         display: block;
@@ -229,7 +312,24 @@
     }
 }
 
-@media (max-width: 898px) {
+@media (min-width: 631px) and (max-width: 800px) {
+    .call-us {
+        max-width: 40%;
+    }
+
+    .discount {
+        font-size: 0.75em;
+    }
+
+    .div-price h5.first-price {
+        font-size: 0.8em;
+        margin-bottom: 0.15em;
+    }
+
+    .div-price h5.second-price {
+        font-size: 0.9em;
+        margin-bottom: 0.15em;
+    }
 
     .ac-products {
         display: block;
@@ -242,7 +342,21 @@
 
 @media (min-width: 518px) and (max-width: 630px) {
     .call-us {
-        max-width: 40%;
+        max-width: 45%;
+    }
+
+    .discount {
+        font-size: 0.7em;
+    }
+
+    .div-price h5.first-price {
+        font-size: 0.7em;
+        margin-bottom: 0.15em;
+    }
+
+    .div-price h5.second-price {
+        font-size: 0.8em;
+        margin-bottom: 0.15em;
     }
 
     .container-xxl .container-products {
@@ -283,8 +397,16 @@
         padding: 1.2em;
     }
 
+    .discount {
+        font-size: 0.65em;
+    }
+
     .call-us {
-        max-width: 40%;
+        max-width: 45%;
+    }
+
+    .call-us-icon {
+        height: 1em;
     }
 
     .div-price {
@@ -293,8 +415,13 @@
         padding-right: 0.5em;
     }
 
-    .div-price h5 {
-        font-size: 0.9em;
+    .div-price h5.first-price {
+        font-size: 0.7em;
+        margin-bottom: 0.15em;
+    }
+
+    .div-price h5.second-price {
+        font-size: 0.8em;
         margin-bottom: 0.15em;
     }
 
@@ -317,8 +444,26 @@
         padding: 0.5em;
     }
 
+    .discount {
+        font-size: 0.6em;
+    }
+
+    .call-us-icon {
+        height: 1.7em;
+    }
+
+    .div-price h5.first-price {
+        font-size: 0.6em;
+        margin-bottom: 0.15em;
+    }
+
+    .div-price h5.second-price {
+        font-size: 0.7em;
+        margin-bottom: 0.15em;
+    }
+
     .call-us {
-        max-width: 40%;
+        max-width: 50%;
     }
 
     .border-top small {
@@ -360,8 +505,16 @@
         color: black;
     }
 
+    .discount {
+        font-size: 0.7em;
+    }
+
     .call-us {
         max-width: 40%;
+    }
+
+    .call-us-icon {
+        height: 1.6em;
     }
 
     .div-price {

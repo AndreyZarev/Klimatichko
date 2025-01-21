@@ -37,8 +37,8 @@ window.addEventListener("load", function () {
 
                                 </div>
                                 <div class=" pb-0 div-price">
-                                    <h5 class="first-price">${product.price.toFixed(2)}лв. </h5>
-                                    <h5 class = "second-price">${currentPrice}лв.</h5>
+                                    <h5 class="first-price">${product.price.toFixed(2)}лв </h5>
+                                    <h5 class = "second-price">${currentPrice}лв</h5>
 
                                     <a class="d-block" href="">${product.type} ${product.name}</a>
 
