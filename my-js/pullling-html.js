@@ -9,12 +9,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
     searchButton.addEventListener("click", search)
+
+
+
+
+
+
+
+
     function search() {
-        debugger
-        let dynamicSection = document.getElementById("dynamic-section")
-
-
-
 
         function pullProducts() {
             let container = document.getElementsByClassName("promo-div")[0];
@@ -52,170 +55,71 @@ window.addEventListener("DOMContentLoaded", () => {
                         container.appendChild(sectionElement);
                     });
 
-                    // Update pagination controls
                     let title = document.getElementsByClassName("h1-promo")[0]
+
                     title.textContent = "Резултати от търсенето"
+
+                    // Update pagination controls
+
                     renderPaginationControls(totalPages);
                 })
                 .catch(error => console.error('Error fetching product data:', error));
         }
 
         pullProducts()
-        function renderPaginationControls(totalPages) {
-            const paginationContainer = document.getElementById("pagination-controls");
-            paginationContainer.innerHTML = ""; // Clear existing controls
-
-            const dynamicSection = document.getElementById("dynamic-section"); // The section to scroll to
-
-            // Previous Button
-            const prevButton = document.createElement("button");
-            prevButton.textContent = "Предишна";
-            prevButton.disabled = currentPage === 1;
-            prevButton.addEventListener("click", () => {
-                if (currentPage > 1) {
-                    currentPage--;
-                    pullProducts();
-                    dynamicSection.scrollIntoView({ behavior: "smooth" });
-                }
-            });
-            paginationContainer.appendChild(prevButton);
-
-            // Page Numbers
-            for (let i = 1; i <= totalPages; i++) {
-                const pageButton = document.createElement("button");
-                pageButton.textContent = i;
-                pageButton.classList.toggle("active", i === currentPage);
-                pageButton.addEventListener("click", () => {
-                    currentPage = i;
-                    pullProducts();
-                    dynamicSection.scrollIntoView({ behavior: "smooth" });
-                });
-                paginationContainer.appendChild(pageButton);
-            }
-
-            // Next Button
-            const nextButton = document.createElement("button");
-            nextButton.textContent = "Следваща";
-            nextButton.disabled = currentPage === totalPages;
-            nextButton.addEventListener("click", () => {
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    pullProducts();
-                    dynamicSection.scrollIntoView({ behavior: "smooth" });
-                }
-            });
-            paginationContainer.appendChild(nextButton);
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // if (selectedTypeValue == "Всички климатици") {
-        //     console.log("all acs");
-
-        // } else if (selectedTypeValue == 1) {
-        //     let container = document.createElement('div')
-        //     container.classList.add("g-4", "row", "inventor-div")
-        //     let url = 'data-json/types/inventor-ac.json'
-        //     pullProducts(url)
-
-
-        // } else if (selectedTypeValue == "Конвектори") {
-
-
-        // } else if (selectedTypeValue == "Стенни климатици") {
-        //     console.log("wall acs");
-
-
-        // } else if (selectedTypeValue == "Подови климатици") {
-        //     console.log("flor acs");
-
-
-        // } else if (selectedTypeValue == "Колонни климатици") {
-        //     console.log("colon acs");
-
-
-        // } else if (selectedTypeValue == "Касетъчни климатици") {
-        //     console.log("kaset acs");
-
-
-        // } else if (selectedTypeValue == "Всички климатици") {
-        //     console.log("all acs");
-
-        // }
-
-
-        // Подово-таванни климатици</
-
-        // За много ниски температури
-
-        // if (selectedLabelValue == "Всички марки") {
-        //     console.log("all labels");
-
-        // } else if (selectedLabelValue == 1) {
-        //     let title = document.getElementsByClassName("h1-promo")[0]
-        //     title.textContent = "Климатици Auratsu"
-        //     let url = 'data-json/labels/auratsu.json'
-        //     pullProducts(url)
-
-        // } else if (selectedLabelValue == 2 || selectedLabelValue == 3) {
-        //     let title = document.getElementsByClassName("h1-promo")[0]
-        //     title.textContent = "Климатици Fujitsu"
-        //     let url = 'data-json/labels/fujitsu.json'
-        //     pullProducts(url)
-
-        // } else if (selectedLabelValue == 4) {
-        //     let title = document.getElementsByClassName("h1-promo")[0]
-        //     title.textContent = "Климатици Midea"
-        //     let url = 'data-json/labels/midea.json'
-        //     pullProducts(url)
-
-        // } else if (selectedLabelValue == 5 || selectedLabelValue == 6) {
-        //     let title = document.getElementsByClassName("h1-promo")[0]
-        //     title.textContent = "Климатици Mitsubishi"
-        //     let url = 'data-json/labels/mitsubishi.json'
-        //     pullProducts(url)
-
-        // } else if (selectedLabelValue == 7) {
-        //     let title = document.getElementsByClassName("h1-promo")[0]
-        //     title.textContent = "Климатици Toshiba"
-        //     let url = 'data-json/labels/toshiba.json'
-        //     pullProducts(url)
-
-        // } else if (selectedLabelValue == 8) {
-        //     let title = document.getElementsByClassName("h1-promo")[0]
-        //     title.textContent = "Климатици Daikin"
-        //     let url = 'data-json/labels/daikin.json'
-        //     pullProducts(url)
-
-        // } else if (selectedLabelValue == 9) {
-        //     let title = document.getElementsByClassName("h1-promo")[0]
-        //     title.textContent = "Климатици Williams"
-        //     let url = 'data-json/labels/williams.json'
-        //     pullProducts(url)
-
-        // }
-
-        // console.log("nothing");
+        renderPaginationControls(totalPages)
 
 
     }
+
+
+
+    function renderPaginationControls(totalPages) {
+        const paginationContainer = document.getElementById("pagination-controls");
+        paginationContainer.innerHTML = ""; // Clear existing controls
+
+        const dynamicSection = document.getElementById("dynamic-section"); // The section to scroll to
+
+        // Previous Button
+        const prevButton = document.createElement("button");
+        prevButton.textContent = "Предишна";
+        prevButton.disabled = currentPage === 1;
+        prevButton.addEventListener("click", () => {
+            if (currentPage > 1) {
+                currentPage--;
+                pullProducts(e);
+                dynamicSection.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+        paginationContainer.appendChild(prevButton);
+
+        // Page Numbers
+        for (let i = 1; i <= totalPages; i++) {
+            const pageButton = document.createElement("button");
+            pageButton.textContent = i;
+            pageButton.classList.toggle("active", i === currentPage);
+            pageButton.addEventListener("click", () => {
+                currentPage = i;
+                pullProducts();
+                dynamicSection.scrollIntoView({ behavior: "smooth" });
+            });
+            paginationContainer.appendChild(pageButton);
+        }
+
+        // Next Button
+        const nextButton = document.createElement("button");
+        nextButton.textContent = "Следваща";
+        nextButton.disabled = currentPage === totalPages;
+        nextButton.addEventListener("click", () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                pullProducts();
+                dynamicSection.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+        paginationContainer.appendChild(nextButton);
+    }
+
 
 
 
@@ -256,3 +160,97 @@ window.addEventListener("DOMContentLoaded", () => {
 }
 
 )
+
+
+
+
+
+
+
+// if (selectedTypeValue == "Всички климатици") {
+//     console.log("all acs");
+
+// } else if (selectedTypeValue == 1) {
+//     let container = document.createElement('div')
+//     container.classList.add("g-4", "row", "inventor-div")
+//     let url = 'data-json/types/inventor-ac.json'
+//     pullProducts(url)
+
+
+// } else if (selectedTypeValue == "Конвектори") {
+
+
+// } else if (selectedTypeValue == "Стенни климатици") {
+//     console.log("wall acs");
+
+
+// } else if (selectedTypeValue == "Подови климатици") {
+//     console.log("flor acs");
+
+
+// } else if (selectedTypeValue == "Колонни климатици") {
+//     console.log("colon acs");
+
+
+// } else if (selectedTypeValue == "Касетъчни климатици") {
+//     console.log("kaset acs");
+
+
+// } else if (selectedTypeValue == "Всички климатици") {
+//     console.log("all acs");
+
+// }
+
+
+// Подово-таванни климатици</
+
+// За много ниски температури
+
+// if (selectedLabelValue == "Всички марки") {
+//     console.log("all labels");
+
+// } else if (selectedLabelValue == 1) {
+//     let title = document.getElementsByClassName("h1-promo")[0]
+//     title.textContent = "Климатици Auratsu"
+//     let url = 'data-json/labels/auratsu.json'
+//     pullProducts(url)
+
+// } else if (selectedLabelValue == 2 || selectedLabelValue == 3) {
+//     let title = document.getElementsByClassName("h1-promo")[0]
+//     title.textContent = "Климатици Fujitsu"
+//     let url = 'data-json/labels/fujitsu.json'
+//     pullProducts(url)
+
+// } else if (selectedLabelValue == 4) {
+//     let title = document.getElementsByClassName("h1-promo")[0]
+//     title.textContent = "Климатици Midea"
+//     let url = 'data-json/labels/midea.json'
+//     pullProducts(url)
+
+// } else if (selectedLabelValue == 5 || selectedLabelValue == 6) {
+//     let title = document.getElementsByClassName("h1-promo")[0]
+//     title.textContent = "Климатици Mitsubishi"
+//     let url = 'data-json/labels/mitsubishi.json'
+//     pullProducts(url)
+
+// } else if (selectedLabelValue == 7) {
+//     let title = document.getElementsByClassName("h1-promo")[0]
+//     title.textContent = "Климатици Toshiba"
+//     let url = 'data-json/labels/toshiba.json'
+//     pullProducts(url)
+
+// } else if (selectedLabelValue == 8) {
+//     let title = document.getElementsByClassName("h1-promo")[0]
+//     title.textContent = "Климатици Daikin"
+//     let url = 'data-json/labels/daikin.json'
+//     pullProducts(url)
+
+// } else if (selectedLabelValue == 9) {
+//     let title = document.getElementsByClassName("h1-promo")[0]
+//     title.textContent = "Климатици Williams"
+//     let url = 'data-json/labels/williams.json'
+//     pullProducts(url)
+
+// }
+
+// console.log("nothing");
