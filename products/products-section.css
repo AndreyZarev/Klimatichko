@@ -1,17 +1,20 @@
-/* navbar ends here  */
-/* .tab-content {
-    display: flex;
-    margin: 7em auto;
-} */
-
-/* .tab-content div {
-
-    margin: 2em auto;
+.pagination-container button {
+    margin: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
-.ac-products-div {
-    display: block;
-} */
+.pagination-container button.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.pagination-container button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
 .normal-price {
     text-align: center;
     color: #227ae5;

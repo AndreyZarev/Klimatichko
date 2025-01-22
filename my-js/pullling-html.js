@@ -3,7 +3,8 @@ window.addEventListener("DOMContentLoaded", () => {
     let typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
     let labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
     let searchButton = document.getElementsByClassName("search-button")[0];
-
+    let currentPage = 1;
+    const itemsPerPage = 9;
 
 
 
@@ -16,26 +17,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
         function pullProducts() {
-            let container = document.getElementsByClassName("promo-div")[0]
-            let selectedKeyword = document.getElementsByClassName("search-field")[0].value
-
+            let container = document.getElementsByClassName("promo-div")[0];
+            let selectedKeyword = document.getElementsByClassName("search-field")[0].value;
             let selectedTypeValue = typeAcOptions.value;
             let selectedLabelValue = labelsAcOptions.value;
-            container.innerHTML = "";
+
+            container.innerHTML = ""; // Clear previous content
+
             fetch("data-json/all-products.json")
                 .then(response => response.json())
                 .then(products => {
-                    console.log(products);
-
                     const filteredResults = products.filter(item => {
-                        console.log(selectedKeyword, item.keyword);
-
-                        console.log(!selectedKeyword || item.keyword.toLowerCase().includes(selectedKeyword.toLowerCase()));
-                        console.log(selectedTypeValue === "Категории" || item.type === selectedTypeValue);
-                        console.log(selectedLabelValue === "Избери марка" || item.label === selectedLabelValue);
-                        console.log("--------------------------------");
-
-
                         return (
                             (selectedKeyword === "" || item.keyword.toLowerCase().includes(selectedKeyword.toLowerCase())) &&
                             (selectedTypeValue === "Категории" || item.type === selectedTypeValue) &&
@@ -43,28 +35,77 @@ window.addEventListener("DOMContentLoaded", () => {
                         );
                     });
 
-                    filteredResults.forEach(product => {
+                    // Paginate filtered results
+                    const totalPages = Math.ceil(filteredResults.length / itemsPerPage);
+                    const paginatedResults = filteredResults.slice(
+                        (currentPage - 1) * itemsPerPage,
+                        currentPage * itemsPerPage
+                    );
+
+                    // Display products for the current page
+                    paginatedResults.forEach(product => {
                         const sectionHTML = createProductSection(product);
-                        let sectionElement = document.createElement('div')
+                        let sectionElement = document.createElement('div');
 
                         sectionElement.innerHTML = sectionHTML;
-                        sectionElement.classList.add("col-lg-4", "col-md-6", "wow", "ac-products")
+                        sectionElement.classList.add("col-lg-4", "col-md-6", "wow", "ac-products");
                         container.appendChild(sectionElement);
-
-
-
-
                     });
 
+                    // Update pagination controls
+                    renderPaginationControls(totalPages);
                 })
                 .catch(error => console.error('Error fetching product data:', error));
+        }
 
+        pullProducts()
+        function renderPaginationControls(totalPages) {
+            const paginationContainer = document.getElementById("pagination-controls");
+            paginationContainer.innerHTML = ""; // Clear existing controls
 
+            const dynamicSection = document.getElementById("dynamic-section"); // The section to scroll to
+
+            // Previous Button
+            const prevButton = document.createElement("button");
+            prevButton.textContent = "Предишна";
+            prevButton.disabled = currentPage === 1;
+            prevButton.addEventListener("click", () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    pullProducts();
+                    dynamicSection.scrollIntoView({ behavior: "smooth" });
+                }
+            });
+            paginationContainer.appendChild(prevButton);
+
+            // Page Numbers
+            for (let i = 1; i <= totalPages; i++) {
+                const pageButton = document.createElement("button");
+                pageButton.textContent = i;
+                pageButton.classList.toggle("active", i === currentPage);
+                pageButton.addEventListener("click", () => {
+                    currentPage = i;
+                    pullProducts();
+                    dynamicSection.scrollIntoView({ behavior: "smooth" });
+                });
+                paginationContainer.appendChild(pageButton);
+            }
+
+            // Next Button
+            const nextButton = document.createElement("button");
+            nextButton.textContent = "Следваща";
+            nextButton.disabled = currentPage === totalPages;
+            nextButton.addEventListener("click", () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    pullProducts();
+                    dynamicSection.scrollIntoView({ behavior: "smooth" });
+                }
+            });
+            paginationContainer.appendChild(nextButton);
         }
 
 
-
-        pullProducts()
 
 
 
@@ -189,7 +230,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 
                                     <h5 class = "normal-price">${product.price.toFixed(2)}лв</h5>
 
-                                    <a class="d-block " href="">${product.type} ${product.name}</a>
+                                    <a class="d-block " href="">${product.name}</a>
 
                                 </div>
                                 <a class="call-us" href="tel: 0896081213">
