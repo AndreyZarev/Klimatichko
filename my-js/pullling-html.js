@@ -5,46 +5,41 @@ window.addEventListener("DOMContentLoaded", () => {
     let searchButton = document.getElementsByClassName("search-button")[0];
 
 
-    // typeAcOptions.addEventListener("change", function () {
-    //     var selectedTypeValue = typeAcOptions.value;
-    //     console.log("Selected Type Value:", selectedTypeValue);
-    //     console.log(selectedTypeValue);
 
-    // });
-
-    // // Get selected value for the second dropdown
-    // labelsAcOptions.addEventListener("change", function () {
-    //     var selectedLabelValue = labelsAcOptions.value;
-    //     console.log("Selected Label Value:", selectedLabelValue);
-    //     console.log(selectedLabelValue);
-    // })
 
     searchButton.addEventListener("click", search)
     function search() {
         debugger
         let dynamicSection = document.getElementById("dynamic-section")
 
-        let selectedTypeValue = typeAcOptions.value;
-        let selectedLabelValue = labelsAcOptions.value;
-        // console.log(selectedTypeValue, selectedLabelValue);
 
-        if (selectedTypeValue == "Всички климатици") {
-            console.log("all acs");
 
-        } else if (selectedTypeValue == 1) {
-            let container = document.createElement('div')
-            container.classList.add("g-4", "row", "inventor-div")
-            // Fetching the products from a JSON file
-            fetch('data-json/types/inventor-ac.json')
+
+        function pullProducts() {
+            let container = document.getElementsByClassName("promo-div")[0]
+            let selectedKeyword = document.getElementsByClassName("search-field")[0].value
+
+            let selectedTypeValue = typeAcOptions.value;
+            let selectedLabelValue = labelsAcOptions.value;
+            container.innerHTML = "";
+            fetch("data-json/all-products.json")
                 .then(response => response.json())
                 .then(products => {
                     console.log(products);
-                    let promoSection = document.getElementsByClassName("promo-div")[0]
-                    let attachElement = document.getElementById("attach-promo")
 
-                    attachElement.removeChild(promoSection)
+                    const filteredResults = products.filter(item => {
+                        console.log((!selectedKeyword || item.keyword.toLowerCase().includes(selectedKeyword)));
+                        console.log((selectedTypeValue === "Всички климатици" || item.type === selectedTypeValue));
+                        console.log((selectedLabelValue === "Всички марки" || item.label === selectedLabelValue));
 
-                    products.forEach(product => {
+                        return (
+                            (selectedKeyword === "" || item.keyword.toLowerCase().includes(selectedKeyword)) &&
+                            (selectedTypeValue === "Категории" || item.type === selectedTypeValue) &&
+                            (selectedLabelValue === "Избери марка" || item.label === selectedLabelValue)
+                        );
+                    });
+
+                    filteredResults.forEach(product => {
                         const sectionHTML = createProductSection(product);
                         let sectionElement = document.createElement('div')
 
@@ -53,7 +48,7 @@ window.addEventListener("DOMContentLoaded", () => {
                         container.appendChild(sectionElement);
 
 
-                        attachElement.appendChild(container)
+
 
                     });
 
@@ -61,45 +56,114 @@ window.addEventListener("DOMContentLoaded", () => {
                 .catch(error => console.error('Error fetching product data:', error));
 
 
-
-
-
-        } else if (selectedTypeValue == "Конвектори") {
-            console.log("convectors");
-
-
-        } else if (selectedTypeValue == "Стенни климатици") {
-            console.log("wall acs");
-
-
-        } else if (selectedTypeValue == "Подови климатици") {
-            console.log("flor acs");
-
-
-        } else if (selectedTypeValue == "Колонни климатици") {
-            console.log("colon acs");
-
-
-        } else if (selectedTypeValue == "Касетъчни климатици") {
-            console.log("kaset acs");
-
-
-        } else if (selectedTypeValue == "Всички климатици") {
-            console.log("all acs");
-
         }
+
+
+
+        pullProducts()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // if (selectedTypeValue == "Всички климатици") {
+        //     console.log("all acs");
+
+        // } else if (selectedTypeValue == 1) {
+        //     let container = document.createElement('div')
+        //     container.classList.add("g-4", "row", "inventor-div")
+        //     let url = 'data-json/types/inventor-ac.json'
+        //     pullProducts(url)
+
+
+        // } else if (selectedTypeValue == "Конвектори") {
+
+
+        // } else if (selectedTypeValue == "Стенни климатици") {
+        //     console.log("wall acs");
+
+
+        // } else if (selectedTypeValue == "Подови климатици") {
+        //     console.log("flor acs");
+
+
+        // } else if (selectedTypeValue == "Колонни климатици") {
+        //     console.log("colon acs");
+
+
+        // } else if (selectedTypeValue == "Касетъчни климатици") {
+        //     console.log("kaset acs");
+
+
+        // } else if (selectedTypeValue == "Всички климатици") {
+        //     console.log("all acs");
+
+        // }
 
 
         // Подово-таванни климатици</
 
         // За много ниски температури
 
-        if (selectedLabelValue == "Всички марки") {
-            console.log("all labels");
+        // if (selectedLabelValue == "Всички марки") {
+        //     console.log("all labels");
 
-        } else if (selectedLabelValue == "ARATSU") {
+        // } else if (selectedLabelValue == 1) {
+        //     let title = document.getElementsByClassName("h1-promo")[0]
+        //     title.textContent = "Климатици Auratsu"
+        //     let url = 'data-json/labels/auratsu.json'
+        //     pullProducts(url)
 
-        }
+        // } else if (selectedLabelValue == 2 || selectedLabelValue == 3) {
+        //     let title = document.getElementsByClassName("h1-promo")[0]
+        //     title.textContent = "Климатици Fujitsu"
+        //     let url = 'data-json/labels/fujitsu.json'
+        //     pullProducts(url)
+
+        // } else if (selectedLabelValue == 4) {
+        //     let title = document.getElementsByClassName("h1-promo")[0]
+        //     title.textContent = "Климатици Midea"
+        //     let url = 'data-json/labels/midea.json'
+        //     pullProducts(url)
+
+        // } else if (selectedLabelValue == 5 || selectedLabelValue == 6) {
+        //     let title = document.getElementsByClassName("h1-promo")[0]
+        //     title.textContent = "Климатици Mitsubishi"
+        //     let url = 'data-json/labels/mitsubishi.json'
+        //     pullProducts(url)
+
+        // } else if (selectedLabelValue == 7) {
+        //     let title = document.getElementsByClassName("h1-promo")[0]
+        //     title.textContent = "Климатици Toshiba"
+        //     let url = 'data-json/labels/toshiba.json'
+        //     pullProducts(url)
+
+        // } else if (selectedLabelValue == 8) {
+        //     let title = document.getElementsByClassName("h1-promo")[0]
+        //     title.textContent = "Климатици Daikin"
+        //     let url = 'data-json/labels/daikin.json'
+        //     pullProducts(url)
+
+        // } else if (selectedLabelValue == 9) {
+        //     let title = document.getElementsByClassName("h1-promo")[0]
+        //     title.textContent = "Климатици Williams"
+        //     let url = 'data-json/labels/williams.json'
+        //     pullProducts(url)
+
+        // }
 
         // console.log("nothing");
 
@@ -110,30 +174,36 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function createProductSection(product) {
         return `
-         
-                            <div class="property-item rounded overflow-hidden " id="klb-24hrhi"
+           <div class="property-item rounded overflow-hidden " id="klb-24hrhi"
                                 onclick="getToSingleProductPage(id)">
                                 <div class="position-relative overflow-hidden img-ac-products ">
                                     <a href=""><img class="img-fluid img-ac-products"
-                                            src="img/new/ac-types/inventor-ac/kaisai/KAISAI ICE KLB-24HRHI.jpg"
+                                            src="${product.img}"
                                             alt=""></a>
                                 
-                                </div>
                                 <div class=" pb-0 div-price">
-                                    <h5 class="">${product.price}</h5>
-                                    <a class="d-block" href="">${product.type} ${product.name}</a>
-                                    <p><i class="fa fa-map-marker-alt text-primary "></i>${product.location}</p>
+                
+                                    <h5 class = "normal-price">${product.price.toFixed(2)}лв</h5>
+
+                                    <a class="d-block " href="">${product.type} ${product.name}</a>
+
                                 </div>
+                                <a class="call-us" href="tel: 0896081213">
+                                 <span>
+                                    <img class="call-us-icon" src="img/new/icons8-phone-50.png" alt="" srcset="">
+                                </span>
+                                Обади се</a>
                                 <div class="d-flex border-top">
-                                    <small class="flex-fill text-center border-end py-2">${product.power}</small>
-                                    <small class="flex-fill text-center border-end py-2">3 Bed</small>
-                                    <small class="flex-fill text-center py-2">${product.energy}</small>
+                                    <small class="flex-fill text-center border-end py-2">${product.size} BTU</small>
+                                    <small class="flex-fill text-center border-end py-2"><a class="label-link" href="#">${product.label}</a></small>
+                                    <small class="flex-fill text-center py-2">Клас: ${product.energy}</small>
                                 </div>
                             </div>
+         
+                          
                    
             `;
     }
-
 
 
 }

@@ -12,6 +12,10 @@
 .ac-products-div {
     display: block;
 } */
+.normal-price {
+    text-align: center;
+    color: #227ae5;
+}
 
 .discount {
     background-color: rgba(255, 27, 27, 0.906);
@@ -68,7 +72,7 @@
 }
 
 .div-price {
-    padding: 2em;
+    padding: 1em;
 }
 
 .header-text {
@@ -158,6 +162,10 @@
         margin-bottom: 0.15em;
     }
 
+    .normal-price {
+        font-size: 1.4em;
+    }
+
     .ac-products {
         display: block;
         max-width: 375px;
@@ -180,6 +188,10 @@
     .div-price h5.second-price {
         font-size: 1.1em;
         margin-bottom: 0.15em;
+    }
+
+    .normal-price {
+        font-size: 1.2em;
     }
 
     .ac-products {
@@ -209,6 +221,10 @@
         margin-bottom: 0.15em;
     }
 
+    .normal-price {
+        font-size: 1.1em;
+    }
+
     .ac-products {
         display: block;
         max-width: 360px;
@@ -236,6 +252,10 @@
     .div-price h5.second-price {
         font-size: 1em;
         margin-bottom: 0.15em;
+    }
+
+    .normal-price {
+        font-size: 1.1em;
     }
 
     .ac-products {
@@ -268,6 +288,10 @@
     .div-price h5.second-price {
         font-size: 0.9em;
         margin-bottom: 0.15em;
+    }
+
+    .normal-price {
+        font-size: 1em;
     }
 
     .ac-products {
@@ -303,6 +327,10 @@
         margin-bottom: 0.15em;
     }
 
+    .normal-price {
+        font-size: 1em;
+    }
+
     .ac-products {
         display: block;
         max-width: 280px;
@@ -331,6 +359,10 @@
         margin-bottom: 0.15em;
     }
 
+    .normal-price {
+        font-size: 1em;
+    }
+
     .ac-products {
         display: block;
         max-width: 300px;
@@ -357,6 +389,10 @@
     .div-price h5.second-price {
         font-size: 0.8em;
         margin-bottom: 0.15em;
+    }
+
+    .normal-price {
+        font-size: 0.9em;
     }
 
     .container-xxl .container-products {
@@ -425,6 +461,10 @@
         margin-bottom: 0.15em;
     }
 
+    .normal-price {
+        font-size: 0.9em;
+    }
+
     .div-price a {
         font-size: 0.8em;
     }
@@ -460,6 +500,10 @@
     .div-price h5.second-price {
         font-size: 0.7em;
         margin-bottom: 0.15em;
+    }
+
+    .normal-price {
+        font-size: 0.8em;
     }
 
     .call-us {

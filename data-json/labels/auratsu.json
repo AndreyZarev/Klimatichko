@@ -1,62 +1,42 @@
 [
     {
         "id": "1",
-        "discount": "5%",
-        "type": "Инверторен стенен климатик ",
-        "name": "KAISAI ICE KLB-24HRHI/KLWB-24HRHO",
-        "price": "2,359.00лв.",
-        "location": "Пловдив",
-        "power": "9000",
-        "energy": "AA+"
-    },
-    {
-        "id": "2",
-        "discount": "5%",
-        "type": "Инверторен стенен климатик ",
+        "img": "img/new/ac-types/inventor-ac/aratsu/auratsu.png",
+        "type": "Инверторен стенен климатик",
         "name": "Auratsu AWX-09KTKI",
-        "price": "1250лв.",
-        "location": "Пловдив",
-        "power": "9000",
-        "energy": "AA+"
+        "price": 789.00,
+        "size": "9000",
+        "label": "Auratsu",
+        "energy": "AAA+"
     },
     {
-        "id": "3",
-        "discount": "5%",
-        "type": "Инверторен стенен климатик ",
-        "name": "KAISAI ICE KLB-24HRHI/KLWB-24HRHO",
-        "price": "2,359.00лв.",
-        "location": "Пловдив",
-        "power": "9000",
-        "energy": "AA+"
-    },
-    {
-        "id": "4",
-        "discount": "5%",
-        "type": "Инверторен стенен климатик ",
+        "id": "1",
+        "img": "img/new/ac-types/inventor-ac/aratsu/auratsu.png",
+        "type": "Инверторен стенен климатик",
         "name": "Auratsu AWX-09KTKI",
-        "price": "1250лв.",
-        "location": "Пловдив",
-        "power": "9000",
-        "energy": "AA+"
+        "price": 789.00,
+        "size": "9000",
+        "label": "Auratsu",
+        "energy": "AAA+"
     },
     {
-        "id": "5",
-        "discount": "5%",
-        "type": "Инверторен стенен климатик ",
-        "name": "KAISAI ICE KLB-24HRHI/KLWB-24HRHO",
-        "price": "2,359.00лв.",
-        "location": "Пловдив",
-        "power": "9000",
-        "energy": "AA+"
-    },
-    {
-        "id": "6",
-        "discount": "5%",
-        "type": "Инверторен стенен климатик ",
+        "id": "1",
+        "img": "img/new/ac-types/inventor-ac/aratsu/auratsu.png",
+        "type": "Инверторен стенен климатик",
         "name": "Auratsu AWX-09KTKI",
-        "price": "1250лв.",
-        "location": "Пловдив",
-        "power": "9000",
-        "energy": "AA+"
+        "price": 789.00,
+        "size": "9000",
+        "label": "Auratsu",
+        "energy": "AAA+"
+    },
+    {
+        "id": "1",
+        "img": "img/new/ac-types/inventor-ac/aratsu/auratsu.png",
+        "type": "Инверторен стенен климатик",
+        "name": "Auratsu AWX-09KTKI",
+        "price": 789.00,
+        "size": "9000",
+        "label": "Auratsu",
+        "energy": "AAA+"
     }
 ]

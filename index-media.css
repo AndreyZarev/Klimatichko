@@ -103,7 +103,7 @@
     }
 
     div.ac-categories {
-        max-width: 26%;
+        max-width: 24%;
 
 
     }
@@ -118,7 +118,11 @@
 }
 
 @media (min-width: 1445px) and (max-width: 1650px) {
-
+    p.menu-invisible {
+        display: block;
+        font-size: 0.5em;
+        visibility: hidden;
+    }
 
     img.logo-icon {
         margin-top: 2em;
@@ -166,6 +170,12 @@
 
 
 @media (min-width: 1258px) and (max-width: 1444px) {
+    p.menu-invisible {
+        display: block;
+        font-size: 0.5em;
+        visibility: hidden;
+    }
+
     a.phone-in-menu {
         padding-left: 0;
         display: flex;
@@ -299,6 +309,16 @@
 }
 
 @media (min-width: 653px) and (max-width: 853px) {
+    .div-labels-for-img {
+        max-width: 45%;
+    }
+
+    .label-section {
+        display: block;
+        margin: 0;
+        padding: 3em;
+    }
+
     .title-ac-models {
 
         font-size: 0.73em;
@@ -366,6 +386,16 @@
 }
 
 @media (min-width: 480px) and (max-width: 653px) {
+    .label-section {
+        display: block;
+        margin: 0;
+        padding: 2em;
+    }
+
+    .div-labels-for-img {
+        max-width: 45%;
+    }
+
     a.phone-in-menu {
         padding-left: 0;
         display: flex;
@@ -454,6 +484,16 @@
         display: none;
     }
 
+    .div-labels-for-img {
+        max-width: 45%;
+    }
+
+    .label-section {
+        display: block;
+        margin: 0;
+        padding: 1.5em;
+    }
+
     .ac-categories {
         max-width: 45%;
 
@@ -527,6 +567,16 @@
     .ac-categories {
         max-width: 80%;
 
+    }
+
+    .div-labels-for-img {
+        max-width: 80%;
+    }
+
+    .label-section {
+        display: block;
+        margin: 0;
+        padding: 1em;
     }
 
     .navbar-toggler {

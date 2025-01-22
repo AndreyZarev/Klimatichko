@@ -61,7 +61,7 @@ window.addEventListener("load", function () {
 
     let container = document.createElement('div')
     container.classList.add("g-4", "row", "promo-div")
-    // Fetching the products from a JSON file
+
     fetch('data-json/types/promo-ac.json')
         .then(response => response.json())
         .then(products => {
