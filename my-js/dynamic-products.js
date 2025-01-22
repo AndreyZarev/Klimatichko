@@ -1,29 +1,31 @@
 
 
 
-window.addEventListener("load", function () {
+window.addEventListener("DOMContentLoaded", () => {
 
-    let dynamicSection = document.getElementById("dynamic-section")
+    function getPromo() {
 
-    fetch("products/product-section.html")
+        let dynamicSection = document.getElementById("dynamic-section")
 
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to load HTML file.");
-            }
-            return response.text(); // Get the HTML content as text
-        })
-        .then(data => {
-            dynamicSection.innerHTML = data;
-        })
-        .catch(error => console.error(error));
+        fetch("products/product-section.html")
+
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to load HTML file.");
+                }
+                return response.text(); // Get the HTML content as text
+            })
+            .then(data => {
+                dynamicSection.innerHTML = data;
+            })
+            .catch(error => console.error(error));
 
 
 
-    function createPromoProductSection(product) {
-        let currentPrice = product.price * 0.95
-        currentPrice = currentPrice.toFixed(2)
-        return `
+        function createPromoProductSection(product) {
+            let currentPrice = product.price * 0.95
+            currentPrice = currentPrice.toFixed(2)
+            return `
          
                             <div class="property-item rounded overflow-hidden " id="klb-24hrhi"
                                 onclick="getToSingleProductPage(id)">
@@ -56,36 +58,35 @@ window.addEventListener("load", function () {
                             </div>
                    
             `;
+        }
+
+
+        let container = document.createElement('div')
+        container.classList.add("g-4", "row", "promo-div")
+
+        fetch('data-json/types/promo-ac.json')
+            .then(response => response.json())
+            .then(products => {
+                console.log(products);
+
+                products.forEach(product => {
+                    const sectionHTML = createPromoProductSection(product);
+                    let sectionElement = document.createElement('div')
+
+                    sectionElement.innerHTML = sectionHTML;
+                    sectionElement.classList.add("col-lg-4", "col-md-6", "wow", "ac-products")
+                    container.appendChild(sectionElement);
+
+                    let attachElement = document.getElementById("attach-promo")
+
+
+                    attachElement.appendChild(container)
+
+                });
+            })
+            .catch(error => console.error('Error fetching product data:', error));
+
     }
 
-
-    let container = document.createElement('div')
-    container.classList.add("g-4", "row", "promo-div")
-
-    fetch('data-json/types/promo-ac.json')
-        .then(response => response.json())
-        .then(products => {
-            console.log(products);
-
-            products.forEach(product => {
-                const sectionHTML = createPromoProductSection(product);
-                let sectionElement = document.createElement('div')
-
-                sectionElement.innerHTML = sectionHTML;
-                sectionElement.classList.add("col-lg-4", "col-md-6", "wow", "ac-products")
-                container.appendChild(sectionElement);
-
-                let attachElement = document.getElementById("attach-promo")
-
-
-                attachElement.appendChild(container)
-
-            });
-        })
-        .catch(error => console.error('Error fetching product data:', error));
-
-
-
-
-
+    getPromo()
 })
