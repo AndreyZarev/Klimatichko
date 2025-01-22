@@ -1,5 +1,5 @@
 .pagination-container button {
-    margin: 5px;
+    margin: 3px;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 0.5em;
@@ -493,6 +493,18 @@
         padding: 0.5em;
     }
 
+    .pagination-container button {
+        margin: 2px;
+        padding: 2px 4px;
+        cursor: pointer;
+        border-radius: 0.5em;
+    }
+
+    #pagination-controls {
+        text-align: center;
+        font-size: 0.7em;
+    }
+
     .discount {
         font-size: 0.6em;
     }
@@ -551,6 +563,18 @@
 }
 
 @media (max-width: 360px) {
+    #pagination-controls {
+        text-align: center;
+        font-size: 0.7em;
+    }
+
+    .pagination-container button {
+        margin: 2px;
+        padding: 2px 4px;
+        cursor: pointer;
+        border-radius: 0.5em;
+    }
+
     .div-price p {
         margin-bottom: 0;
         margin-top: 0.5em;
