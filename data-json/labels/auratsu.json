@@ -7,7 +7,8 @@
         "price": 789.00,
         "size": "9000",
         "label": "Auratsu",
-        "energy": "AAA+"
+        "energy": "AAA+",
+        "keyword": "Auratsu AWX-09KTKI 9000 BTU Инверторен стенен климатик"
     },
     {
         "id": "1",
@@ -17,7 +18,8 @@
         "price": 789.00,
         "size": "9000",
         "label": "Auratsu",
-        "energy": "AAA+"
+        "energy": "AAA+",
+        "keyword": "Auratsu AWX-09KTKI 9000 BTU Инверторен стенен климатик"
     },
     {
         "id": "1",
@@ -27,7 +29,8 @@
         "price": 789.00,
         "size": "9000",
         "label": "Auratsu",
-        "energy": "AAA+"
+        "energy": "AAA+",
+        "keyword": "Auratsu AWX-09KTKI 9000 BTU Инверторен стенен климатик"
     },
     {
         "id": "1",
@@ -37,6 +40,7 @@
         "price": 789.00,
         "size": "9000",
         "label": "Auratsu",
-        "energy": "AAA+"
+        "energy": "AAA+",
+        "keyword": "Auratsu AWX-09KTKI 9000 BTU Инверторен стенен климатик"
     }
 ]

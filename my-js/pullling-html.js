@@ -28,12 +28,16 @@ window.addEventListener("DOMContentLoaded", () => {
                     console.log(products);
 
                     const filteredResults = products.filter(item => {
-                        console.log((!selectedKeyword || item.keyword.toLowerCase().includes(selectedKeyword)));
-                        console.log((selectedTypeValue === "Всички климатици" || item.type === selectedTypeValue));
-                        console.log((selectedLabelValue === "Всички марки" || item.label === selectedLabelValue));
+                        console.log(selectedKeyword, item.keyword);
+
+                        console.log(!selectedKeyword || item.keyword.toLowerCase().includes(selectedKeyword.toLowerCase()));
+                        console.log(selectedTypeValue === "Категории" || item.type === selectedTypeValue);
+                        console.log(selectedLabelValue === "Избери марка" || item.label === selectedLabelValue);
+                        console.log("--------------------------------");
+
 
                         return (
-                            (selectedKeyword === "" || item.keyword.toLowerCase().includes(selectedKeyword)) &&
+                            (selectedKeyword === "" || item.keyword.toLowerCase().includes(selectedKeyword.toLowerCase())) &&
                             (selectedTypeValue === "Категории" || item.type === selectedTypeValue) &&
                             (selectedLabelValue === "Избери марка" || item.label === selectedLabelValue)
                         );
