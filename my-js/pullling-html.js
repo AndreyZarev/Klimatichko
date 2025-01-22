@@ -53,6 +53,8 @@ window.addEventListener("DOMContentLoaded", () => {
                     });
 
                     // Update pagination controls
+                    let title = document.getElementsByClassName("h1-promo")[0]
+                    title.textContent = "Резултати от търсенето"
                     renderPaginationControls(totalPages);
                 })
                 .catch(error => console.error('Error fetching product data:', error));
