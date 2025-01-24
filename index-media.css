@@ -480,6 +480,11 @@
 
 
 @media (min-width: 321px)and (max-width: 480px) {
+    #pagination-controls {
+        text-align: center;
+        font-size: 0.75em;
+    }
+
     .invisible-label {
         display: none;
     }
@@ -564,6 +569,11 @@
 
 
 @media (max-width: 320px) {
+    #pagination-controls {
+        text-align: center;
+        font-size: 0.6em;
+    }
+
     .ac-categories {
         max-width: 80%;
 

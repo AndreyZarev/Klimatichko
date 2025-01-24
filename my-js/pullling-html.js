@@ -20,17 +20,21 @@ window.addEventListener("DOMContentLoaded", () => {
     function search() {
 
 
-        pullProducts()
+        // pullProducts()
+        let selectedKeyword = document.getElementsByClassName("search-field")[0].value;
+        localStorage.setItem("keyward", JSON.stringify(selectedKeyword))
+        let selectedTypeValue = typeAcOptions.value;
+        localStorage.setItem("type", JSON.stringify(selectedTypeValue))
+        let selectedLabelValue = labelsAcOptions.value;
+        localStorage.setItem("label", JSON.stringify(selectedLabelValue))
 
+        window.location.href = "products.html";
 
 
     }
 
     function pullProducts() {
         let container = document.getElementsByClassName("promo-div")[0];
-        let selectedKeyword = document.getElementsByClassName("search-field")[0].value;
-        let selectedTypeValue = typeAcOptions.value;
-        let selectedLabelValue = labelsAcOptions.value;
 
         container.innerHTML = ""; // Clear previous content
 
@@ -68,7 +72,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 let title = document.getElementsByClassName("h1-promo")[0]
 
                 title.textContent = "Резултати от търсенето"
-                history.pushState({ page: page }, `${page}`, `#${page}`);
+
 
 
                 // Update pagination controls

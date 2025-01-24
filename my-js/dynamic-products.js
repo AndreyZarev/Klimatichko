@@ -2,11 +2,7 @@
 
 
 window.addEventListener("DOMContentLoaded", () => {
-    // let typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
-    // let labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
-    // let selectedKeyword = document.getElementsByClassName("search-field")[0].value;
-    // let selectedTypeValue = typeAcOptions.value;
-    // let selectedLabelValue = labelsAcOptions.value;
+
 
 
 
@@ -37,7 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
                             <div class="property-item rounded overflow-hidden " id="klb-24hrhi"
                                 onclick="getToSingleProductPage(id)">
                                 <div class="position-relative overflow-hidden img-ac-products ">
-                                    <a href=""><img class="img-fluid img-ac-products"
+                                    <a href="#"><img class="img-fluid img-ac-products"
                                             src="${product.img}"
                                             alt=""></a>
                                     <div
@@ -49,7 +45,7 @@ window.addEventListener("DOMContentLoaded", () => {
                                     <h5 class="first-price">${product.price.toFixed(2)}лв </h5>
                                     <h5 class = "second-price">${currentPrice}лв</h5>
 
-                                    <a class="d-block" href="">${product.type} ${product.name}</a>
+                                    <a class="d-block" href="#">${product.type} ${product.name}</a>
 
                                 </div>
                                 <a class="call-us" href="tel: 0896081213">

@@ -1,6 +1,19 @@
 window.addEventListener("DOMContentLoaded", () => {
     let searchButton = document.getElementsByClassName("search-button")[0];
 
+    let typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
+    let labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
+
+    let keywordField = document.getElementsByClassName("search-field")[0];
+    let selectedKeyword = JSON.parse(localStorage.getItem("keyword"))
+    keywordField.value = selectedKeyword
+
+    let selectedTypeValue = JSON.parse(localStorage.getItem("type"))
+    typeAcOptions.value = selectedTypeValue
+
+    let selectedLabelValue = JSON.parse(localStorage.getItem("label"))
+    labelsAcOptions.value = selectedLabelValue
+
 
     let currentPage = JSON.parse(localStorage.getItem("currentPage")) || 1;
     const itemsPerPage = 9;
