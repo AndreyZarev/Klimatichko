@@ -2,25 +2,37 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
     const productData = JSON.parse(localStorage.getItem("selectedProduct"));
-    console.log(productData.name);
+    const products = JSON.parse(localStorage.getItem("similarProduct"));
+    console.log(productData);
+    console.log(products);
 
 
 
-    function singleProduct(product) {
-        debugger
+    function singleProduct(productData, products) {
+
 
         let attachProduct = document.getElementById("attach-product")
         const productElement = document.createElement("div");
         // console.log(attachProduct);
 
-        const sectionHTML = createSingleProduct(product);
+        const sectionHTML = createSingleProduct(productData);
         productElement.innerHTML = sectionHTML
 
         attachProduct.appendChild(productElement)
 
         let title = document.getElementsByClassName("h1-promo")[0]
 
-        title.textContent = `${product.name}`;
+        title.textContent = `${productData.name}`;
+        let otherProducts = document.getElementById("other-products")
+        debugger
+        products.forEach(product => {
+
+            let div = document.createElement("div")
+            div.classList.add("col-lg-4", "col-md-6", "wow", "ac-products");
+            div.addEventListener("click", () => { getToSingleProductPage(product.id) })
+            div.innerHTML = createProductSection(product)
+            otherProducts.appendChild(div)
+        });
 
         // if (window.location.href != "single-product-page.html") {
         //     window.location.href = "single-product-page.html";
@@ -28,7 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
         // }
 
     }
-    singleProduct(productData)
+    singleProduct(productData, products)
 
     function createSingleProduct(product) {
         return `
@@ -178,10 +190,67 @@ window.addEventListener("DOMContentLoaded", () => {
             </tbody>
             </table>
         </section>
-
-        
-        
         `
     }
+
+    function createProductSection(product) {
+        return `
+           <div class="property-item rounded overflow-hidden product-html id= "${product.id}">
+                                <div class="position-relative overflow-hidden img-ac-products ">
+                                    <a href="#"><img class="img-fluid img-ac-products"
+                                            src="${product.img}"
+                                            alt=""></a>
+                                
+                                <div class=" pb-0 div-price">
+                
+                                    <h5 class = "normal-price">${product.price.toFixed(2)}лв</h5>
+
+                                    <a class="d-block " href="#">${product.name}</a>
+
+                                </div>
+                                <a class="call-us" href="tel: 0896081213">
+                                 <span>
+                                    <img class="call-us-icon" src="img/new/icons8-phone-50.png" alt="" srcset="">
+                                </span>
+                                Обади се</a>
+                                <div class="d-flex border-top">
+                                    <small class="flex-fill text-center border-end py-2">${product.size} BTU</small>
+                                    <small class="flex-fill text-center border-end py-2"><a class="label-link" href="#">${product.label}</a></small>
+                                    <small class="flex-fill text-center py-2">Клас: ${product.energy}</small>
+                                </div>
+                            </div>
+         
+                          
+                   
+            `;
+    }
+
+
+    function getToSingleProductPage(id) {
+
+
+        fetch('data-json/all-products.json')
+            .then(response => response.json())
+            .then(data => {
+                const specificItem = data.find(item => item.id === id);
+                const specificItems = data.filter(item => (item.id == id + 1) ||
+                    (item.id == id + 2) || (item.id == id - 1));
+
+
+                let container = document.createElement('div')
+                container.classList.add("g-4", "row", "promo-div")
+
+                localStorage.setItem("selectedProduct", JSON.stringify(specificItem));
+                localStorage.setItem("similarProduct", JSON.stringify(specificItems));
+
+                // Navigate to the new page
+                window.location.href = "single-product-page.html";
+
+            })
+            .catch(error => console.error('Error fetching JSON:', error));
+    }
+
+
+
 
 })

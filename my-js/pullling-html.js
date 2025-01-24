@@ -166,19 +166,15 @@ window.addEventListener("DOMContentLoaded", () => {
             .then(response => response.json())
             .then(data => {
                 const specificItem = data.find(item => item.id === id);
+                const specificItems = data.filter(item => (item.id == id + 1) ||
+                    (item.id == id + 2) || (item.id == id - 1));
 
 
                 let container = document.createElement('div')
                 container.classList.add("g-4", "row", "promo-div")
 
-                // const sectionHTML = createProductSection(specificItem);
-                let sectionElement = document.createElement('div');
-
-                // sectionElement.innerHTML = sectionHTML;
-                sectionElement.classList.add("col-lg-4", "col-md-6", "wow", "ac-products");
-                // container.appendChild(sectionElement);
-
                 localStorage.setItem("selectedProduct", JSON.stringify(specificItem));
+                localStorage.setItem("similarProduct", JSON.stringify(specificItems));
 
                 // Navigate to the new page
                 window.location.href = "single-product-page.html";
