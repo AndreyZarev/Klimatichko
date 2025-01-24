@@ -47,6 +47,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
                     sectionElement.innerHTML = sectionHTML;
                     sectionElement.classList.add("col-lg-4", "col-md-6", "wow", "ac-products");
+                    sectionElement.addEventListener("click", () => { getToSingleProductPage(product.id) })
                     container.appendChild(sectionElement);
                 });
 
@@ -61,11 +62,12 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     products()
+
     function renderPaginationControls(totalPages) {
         const paginationContainer = document.getElementById("pagination-controls");
         paginationContainer.innerHTML = ""; // Clear existing controls
 
-        const dynamicSection = document.getElementById("dynamic-section"); // The section to scroll to
+        const dynamicSection = document.getElementById("products-section"); // The section to scroll to
 
         // Previous Button
         const prevButton = document.createElement("button");
@@ -112,8 +114,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function createProductSection(product) {
         return `
-           <div class="property-item rounded overflow-hidden " id="klb-24hrhi"
-                                onclick="getToSingleProductPage(id)">
+           <div class="property-item rounded overflow-hidden" id="${product.id}">
                                 <div class="position-relative overflow-hidden img-ac-products ">
                                     <a href=""><img class="img-fluid img-ac-products"
                                             src="${product.img}"
@@ -123,7 +124,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 
                                     <h5 class = "normal-price">${product.price.toFixed(2)}лв</h5>
 
-                                    <a class="d-block " href="">${product.name}</a>
+                                    <a class="d-block " href="#">${product.name}</a>
 
                                 </div>
                                 <a class="call-us" href="tel: 0896081213">
@@ -141,6 +142,34 @@ window.addEventListener("DOMContentLoaded", () => {
                           
                    
             `;
+    }
+
+    function getToSingleProductPage(id) {
+        debugger
+
+        fetch('data-json/all-products.json')
+            .then(response => response.json())
+            .then(data => {
+
+                const specificItem = data.find(item => item.id === id);
+                let container = document.getElementsByClassName("promo-div")[0];
+                container.innerHTML = ""
+                const sectionHTML = createProductSection(specificItem);
+                let sectionElement = document.createElement('div');
+
+                sectionElement.innerHTML = sectionHTML;
+                sectionElement.classList.add("col-lg-4", "col-md-6", "wow", "ac-products");
+                container.appendChild(sectionElement);
+
+                let title = document.getElementsByClassName("h1-promo")[0]
+
+                title.textContent = "Климатик"
+                const paginationContainer = document.getElementById("pagination-controls");
+                paginationContainer.innerHTML = ""; // Clear existing controls
+                console.log(specificItem); // Output: { id: 2, name: "Product B", price: 20 }
+            })
+            .catch(error => console.error('Error fetching JSON:', error));
+
     }
 }
 

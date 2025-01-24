@@ -1,3 +1,4 @@
+
 window.addEventListener("DOMContentLoaded", () => {
 
     let typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
@@ -16,62 +17,65 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-
     function search() {
 
-        function pullProducts() {
-            let container = document.getElementsByClassName("promo-div")[0];
-            let selectedKeyword = document.getElementsByClassName("search-field")[0].value;
-            let selectedTypeValue = typeAcOptions.value;
-            let selectedLabelValue = labelsAcOptions.value;
-
-            container.innerHTML = ""; // Clear previous content
-
-            fetch("data-json/all-products.json")
-                .then(response => response.json())
-                .then(products => {
-                    const filteredResults = products.filter(item => {
-                        return (
-                            (selectedKeyword === "" || item.keyword.toLowerCase().includes(selectedKeyword.toLowerCase())) &&
-                            (selectedTypeValue === "Категории" || item.type === selectedTypeValue) &&
-                            (selectedLabelValue === "Избери марка" || item.label === selectedLabelValue)
-                        );
-                    });
-
-                    // Paginate filtered results
-                    const totalPages = Math.ceil(filteredResults.length / itemsPerPage);
-                    const paginatedResults = filteredResults.slice(
-                        (currentPage - 1) * itemsPerPage,
-                        currentPage * itemsPerPage
-                    );
-
-                    // Display products for the current page
-                    paginatedResults.forEach(product => {
-                        const sectionHTML = createProductSection(product);
-                        let sectionElement = document.createElement('div');
-
-                        sectionElement.innerHTML = sectionHTML;
-                        sectionElement.classList.add("col-lg-4", "col-md-6", "wow", "ac-products");
-                        container.appendChild(sectionElement);
-                    });
-
-                    let title = document.getElementsByClassName("h1-promo")[0]
-
-                    title.textContent = "Резултати от търсенето"
-
-                    // Update pagination controls
-
-                    renderPaginationControls(totalPages);
-                })
-                .catch(error => console.error('Error fetching product data:', error));
-        }
 
         pullProducts()
-        renderPaginationControls(totalPages)
+
 
 
     }
 
+    function pullProducts() {
+        let container = document.getElementsByClassName("promo-div")[0];
+        let selectedKeyword = document.getElementsByClassName("search-field")[0].value;
+        let selectedTypeValue = typeAcOptions.value;
+        let selectedLabelValue = labelsAcOptions.value;
+
+        container.innerHTML = ""; // Clear previous content
+
+        fetch("data-json/all-products.json")
+            .then(response => response.json())
+            .then(products => {
+                const filteredResults = products.filter(item => {
+                    return (
+                        (selectedKeyword === "" || item.keyword.toLowerCase().includes(selectedKeyword.toLowerCase())) &&
+                        (selectedTypeValue === "Категории" || item.type === selectedTypeValue) &&
+                        (selectedLabelValue === "Избери марка" || item.label === selectedLabelValue)
+                    );
+                });
+
+                // Paginate filtered results
+                const totalPages = Math.ceil(filteredResults.length / itemsPerPage);
+                const paginatedResults = filteredResults.slice(
+                    (currentPage - 1) * itemsPerPage,
+                    currentPage * itemsPerPage
+                );
+
+                // Display products for the current page
+                paginatedResults.forEach(product => {
+                    const sectionHTML = createProductSection(product);
+                    let sectionElement = document.createElement('div');
+
+                    sectionElement.innerHTML = sectionHTML;
+                    sectionElement.classList.add("col-lg-4", "col-md-6", "wow", "ac-products");
+                    sectionElement.addEventListener("click", () => { getToSingleProductPage(product.id) })
+                    container.appendChild(sectionElement);
+
+                });
+                // let productHtml = document.getElementsByClassName("product-html")[0]
+
+
+                let title = document.getElementsByClassName("h1-promo")[0]
+
+                title.textContent = "Резултати от търсенето"
+
+                // Update pagination controls
+
+                renderPaginationControls(totalPages);
+            })
+            .catch(error => console.error('Error fetching product data:', error));
+    }
 
 
     function renderPaginationControls(totalPages) {
@@ -125,10 +129,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function createProductSection(product) {
         return `
-           <div class="property-item rounded overflow-hidden " id="klb-24hrhi"
-                                onclick="getToSingleProductPage(id)">
+           <div class="property-item rounded overflow-hidden product-html id= "${product.id}">
                                 <div class="position-relative overflow-hidden img-ac-products ">
-                                    <a href=""><img class="img-fluid img-ac-products"
+                                    <a href="#"><img class="img-fluid img-ac-products"
                                             src="${product.img}"
                                             alt=""></a>
                                 
@@ -136,7 +139,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 
                                     <h5 class = "normal-price">${product.price.toFixed(2)}лв</h5>
 
-                                    <a class="d-block " href="">${product.name}</a>
+                                    <a class="d-block " href="#">${product.name}</a>
 
                                 </div>
                                 <a class="call-us" href="tel: 0896081213">
@@ -154,6 +157,34 @@ window.addEventListener("DOMContentLoaded", () => {
                           
                    
             `;
+    }
+    function getToSingleProductPage(id) {
+
+        debugger
+
+        fetch('data-json/all-products.json')
+            .then(response => response.json())
+            .then(data => {
+                const specificItem = data.find(item => item.id === id);
+
+
+                let container = document.createElement('div')
+                container.classList.add("g-4", "row", "promo-div")
+
+                // const sectionHTML = createProductSection(specificItem);
+                let sectionElement = document.createElement('div');
+
+                // sectionElement.innerHTML = sectionHTML;
+                sectionElement.classList.add("col-lg-4", "col-md-6", "wow", "ac-products");
+                // container.appendChild(sectionElement);
+
+                localStorage.setItem("selectedProduct", JSON.stringify(specificItem));
+
+                // Navigate to the new page
+                window.location.href = "single-product-page.html";
+
+            })
+            .catch(error => console.error('Error fetching JSON:', error));
     }
 
 
