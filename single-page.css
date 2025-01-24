@@ -1,0 +1,29 @@
+.single-product {
+    display: flex;
+    padding: 2em 2em;
+}
+
+.left-side {
+    width: 60%;
+}
+
+.left-side img {
+    max-width: 80%;
+}
+
+.details-table {
+    display: flex;
+}
+
+.details-table table {
+    /* border: 2px solid black; */
+    padding: 2em;
+    display: block;
+    margin: auto;
+
+}
+
+.details-table table tr td {
+    border: 2px solid black;
+    padding: 0.5em;
+}

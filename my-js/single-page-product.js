@@ -39,8 +39,9 @@ window.addEventListener("DOMContentLoaded", () => {
         <div class="left-side">
             <img src="${product.img}" alt="" srcset="">
         </div>
+
         <div class="right-side">
-            <h4>Характеристики:/h4>
+            <h4>Характеристики:</h4>
                 <ul>
                     <li>Икономичен
                     </li>
@@ -65,6 +66,8 @@ window.addEventListener("DOMContentLoaded", () => {
                     </li>
                 </ul>
         </div>
+        </div>
+
         <section class="details-table">
        <table>
             <tbody>
@@ -177,7 +180,6 @@ window.addEventListener("DOMContentLoaded", () => {
         </section>
 
         
-        </div>
         
         `
     }
