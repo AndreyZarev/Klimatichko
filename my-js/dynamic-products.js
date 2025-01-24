@@ -2,6 +2,13 @@
 
 
 window.addEventListener("DOMContentLoaded", () => {
+    // let typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
+    // let labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
+    // let selectedKeyword = document.getElementsByClassName("search-field")[0].value;
+    // let selectedTypeValue = typeAcOptions.value;
+    // let selectedLabelValue = labelsAcOptions.value;
+
+
 
     function getPromo() {
 
@@ -75,6 +82,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
                     sectionElement.innerHTML = sectionHTML;
                     sectionElement.classList.add("col-lg-4", "col-md-6", "wow", "ac-products")
+                    sectionElement.addEventListener("click", () => { getToSingleProductPage(product.id) })
                     container.appendChild(sectionElement);
 
                     let attachElement = document.getElementById("attach-promo")
@@ -87,6 +95,35 @@ window.addEventListener("DOMContentLoaded", () => {
             .catch(error => console.error('Error fetching product data:', error));
 
     }
+    let title = document.getElementsByClassName("h1-promo")[0]
+    console.log(title);
+
+
+
 
     getPromo()
+
+    function getToSingleProductPage(id) {
+
+        fetch('data-json/types/promo-ac.json')
+            .then(response => response.json())
+            .then(data => {
+                const specificItem = data.find(item => item.id === id);
+                const specificItems = data.filter(item => (item.id == id + 1) ||
+                    (item.id == id + 2) || (item.id == id - 1));
+
+
+                let container = document.createElement('div')
+                container.classList.add("g-4", "row", "promo-div")
+
+                localStorage.setItem("selectedProduct", JSON.stringify(specificItem));
+                localStorage.setItem("similarProduct", JSON.stringify(specificItems));
+
+                // Navigate to the new page
+                window.location.href = "single-product-page.html";
+
+            })
+            .catch(error => console.error('Error fetching JSON:', error));
+    }
+
 })

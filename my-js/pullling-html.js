@@ -1,6 +1,6 @@
 
 window.addEventListener("DOMContentLoaded", () => {
-
+    localStorage.removeItem("currentPage")
     let typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
     let labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
     let searchButton = document.getElementsByClassName("search-button")[0];
@@ -65,14 +65,17 @@ window.addEventListener("DOMContentLoaded", () => {
                 });
                 // let productHtml = document.getElementsByClassName("product-html")[0]
 
-
                 let title = document.getElementsByClassName("h1-promo")[0]
 
                 title.textContent = "Резултати от търсенето"
+                history.pushState({ page: page }, `${page}`, `#${page}`);
+
 
                 // Update pagination controls
 
                 renderPaginationControls(totalPages);
+
+
             })
             .catch(error => console.error('Error fetching product data:', error));
     }
@@ -160,8 +163,8 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     function getToSingleProductPage(id) {
 
-        debugger
 
+        debugger
         fetch('data-json/all-products.json')
             .then(response => response.json())
             .then(data => {

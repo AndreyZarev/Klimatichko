@@ -2,13 +2,18 @@ window.addEventListener("DOMContentLoaded", () => {
     let searchButton = document.getElementsByClassName("search-button")[0];
 
 
-    let currentPage = 1;
+    let currentPage = JSON.parse(localStorage.getItem("currentPage")) || 1;
     const itemsPerPage = 9;
 
     searchButton.addEventListener("click", products)
+    searchButton.addEventListener("click", changeTitle)
 
 
-
+    function changeTitle() {
+        debugger
+        let title = document.getElementsByClassName("h1-promo")[0]
+        title.textContent = "Резултат от търсенето"
+    }
 
     function products() {
         let typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
@@ -51,8 +56,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     container.appendChild(sectionElement);
                 });
 
-                let title = document.getElementsByClassName("h1-promo")[0]
-                title.textContent = "Продукти"
+
 
                 // Update pagination controls
 
@@ -116,7 +120,7 @@ window.addEventListener("DOMContentLoaded", () => {
         return `
            <div class="property-item rounded overflow-hidden" id="${product.id}">
                                 <div class="position-relative overflow-hidden img-ac-products ">
-                                    <a href=""><img class="img-fluid img-ac-products"
+                                    <a href="#"><img class="img-fluid img-ac-products"
                                             src="${product.img}"
                                             alt=""></a>
                                 
@@ -145,31 +149,30 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     function getToSingleProductPage(id) {
+        // let currentPage = document.getElementsByClassName('active')[2]
+        localStorage.setItem("currentPage", JSON.stringify(currentPage));
+
         debugger
 
         fetch('data-json/all-products.json')
             .then(response => response.json())
             .then(data => {
-
                 const specificItem = data.find(item => item.id === id);
-                let container = document.getElementsByClassName("promo-div")[0];
-                container.innerHTML = ""
-                const sectionHTML = createProductSection(specificItem);
-                let sectionElement = document.createElement('div');
+                const specificItems = data.filter(item => (item.id == id + 1) ||
+                    (item.id == id + 2) || (item.id == id - 1));
 
-                sectionElement.innerHTML = sectionHTML;
-                sectionElement.classList.add("col-lg-4", "col-md-6", "wow", "ac-products");
-                container.appendChild(sectionElement);
 
-                let title = document.getElementsByClassName("h1-promo")[0]
+                let container = document.createElement('div')
+                container.classList.add("g-4", "row", "promo-div")
 
-                title.textContent = "Климатик"
-                const paginationContainer = document.getElementById("pagination-controls");
-                paginationContainer.innerHTML = ""; // Clear existing controls
-                console.log(specificItem); // Output: { id: 2, name: "Product B", price: 20 }
+                localStorage.setItem("selectedProduct", JSON.stringify(specificItem));
+                localStorage.setItem("similarProduct", JSON.stringify(specificItems));
+
+                // Navigate to the new page
+                window.location.href = "single-product-page.html";
+
             })
             .catch(error => console.error('Error fetching JSON:', error));
-
     }
 }
 

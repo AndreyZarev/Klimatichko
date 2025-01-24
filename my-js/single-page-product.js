@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const productData = JSON.parse(localStorage.getItem("selectedProduct"));
     const products = JSON.parse(localStorage.getItem("similarProduct"));
+
     console.log(productData);
     console.log(products);
 
@@ -25,6 +26,15 @@ window.addEventListener("DOMContentLoaded", () => {
         title.textContent = `${productData.name}`;
         let otherProducts = document.getElementById("other-products")
         debugger
+        if (products.length > 0) {
+            let h1 = document.createElement("h1")
+            h1.classList.add("other-products-h1")
+            h1.textContent = "Подобни продукти"
+            let div = document.getElementsByClassName("if-h1")[0];
+            div.appendChild(h1)
+
+
+        }
         products.forEach(product => {
 
             let div = document.createElement("div")
@@ -32,6 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
             div.addEventListener("click", () => { getToSingleProductPage(product.id) })
             div.innerHTML = createProductSection(product)
             otherProducts.appendChild(div)
+
         });
 
         // if (window.location.href != "single-product-page.html") {
@@ -190,6 +201,7 @@ window.addEventListener("DOMContentLoaded", () => {
             </tbody>
             </table>
         </section>
+
         `
     }
 
