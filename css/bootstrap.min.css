@@ -884,12 +884,12 @@ progress {
 
 .g-2,
 .gx-2 {
-    --bs-gutter-x: .5rem
+    --bs-gutter-x: 1.0rem
 }
 
 .g-2,
 .gy-2 {
-    --bs-gutter-y: .5rem
+    --bs-gutter-y: 1.0rem
 }
 
 .g-3,
@@ -8054,8 +8054,8 @@ fieldset:disabled .btn {
 }
 
 .py-3 {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important
 }
 
 .py-4 {
