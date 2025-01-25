@@ -469,3 +469,7 @@ body {
     background-color: #227ae5;
     padding: 2em;
 }
+
+.test-search .fields {
+    padding-left: 0.4em;
+}
