@@ -45,7 +45,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     return (
                         (selectedKeyword === "" || item.keyword.toLowerCase().includes(selectedKeyword.toLowerCase())) &&
                         (selectedTypeValue === "Категории" || item.type === selectedTypeValue) &&
-                        (selectedLabelValue === "Избери марка" || item.label === selectedLabelValue)
+                        (selectedLabelValue === "Марка" || item.label === selectedLabelValue)
                     );
                 });
 

@@ -154,6 +154,9 @@ img.phone-in-menu {
 }
 
 /* search bar starts here */
+.search-field-focused {
+    width: 7em;
+}
 
 .search-bar {
     margin-top: 0.1em;

@@ -6,10 +6,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let keywordField = document.getElementsByClassName("search-field")[0];
     let selectedKeyword = JSON.parse(localStorage.getItem("keyword"))
+
+    // keywordField.addEventListener("focus", () => {
+    //     selectedKeyword.classList.add("search-field-focused");
+    // })
+
+
     if (selectedKeyword) {
         keywordField.value = selectedKeyword
         changeTitle()
         localStorage.removeItem("keyword")
+
     }
 
     let selectedTypeValue = JSON.parse(localStorage.getItem("type"))
@@ -50,7 +57,6 @@ window.addEventListener("DOMContentLoaded", () => {
         let container = document.getElementsByClassName("product-div")[0]
         let selectedKeyword = document.getElementsByClassName("search-field")[0].value;
 
-        debugger
         container.innerHTML = "";
         // Clear previous content
 
@@ -61,7 +67,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     return (
                         (selectedKeyword === "" || item.keyword.toLowerCase().includes(selectedKeyword.toLowerCase())) &&
                         (selectedTypeValue === "Категории" || item.type === selectedTypeValue) &&
-                        (selectedLabelValue === "Избери марка" || item.label === selectedLabelValue)
+                        (selectedLabelValue === "Марка" || item.label === selectedLabelValue)
                     );
                 });
 
