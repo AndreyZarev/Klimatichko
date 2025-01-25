@@ -99,6 +99,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     getPromo()
 
+    // jojoj
+
     function getToSingleProductPage(id) {
 
         fetch('data-json/types/promo-ac.json')
