@@ -40,7 +40,36 @@
 }
 
 /* 
-montaje page */
+montaje page and profi page */
+.profi-h2 {
+    margin: 2em 3em;
+}
+
+.profi-img {
+    display: block;
+    margin: auto;
+    max-width: 60%;
+}
+
+.heading-prof {
+    margin: 1em 3em;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.heading-prof2 {
+    text-align: center;
+    margin: 1em 3em;
+    margin-bottom: 2em;
+}
+
+.additional-price p {
+    color: rgba(255, 0, 0, 0.825);
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+}
+
 .entry-content {
     padding: 3em;
 }
@@ -66,4 +95,8 @@ h2 {
     margin: 2em auto;
     color: #227ae5;
 
+}
+
+.profi-p {
+    margin-top: 2em;
 }

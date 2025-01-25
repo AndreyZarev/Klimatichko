@@ -45,11 +45,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
         });
 
-        // if (window.location.href != "single-product-page.html") {
-        //     window.location.href = "single-product-page.html";
 
-        // }
-
+        attachProduct.scrollIntoView({ behavior: "smooth" });
     }
     singleProduct(productData, products)
 
