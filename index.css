@@ -98,12 +98,20 @@ div.icon {
 
 }
 
+.search-bar-2 {
+    display: none;
+}
 
+div.test-search {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
 
 p.phone-in-menu {
     display: block;
     margin: auto;
-    font-size: 0.4em;
+    font-size: 0.35em;
     padding: 0.3em;
     background-color: white;
     border-radius: 0.2em;
@@ -141,9 +149,8 @@ a.phone-in-menu {
 }
 
 
-#navbarCollapse div a img.phone-in-menu {
+img.phone-in-menu {
     height: 2em;
-    max-width: 4em;
 }
 
 /* search bar starts here */
@@ -478,5 +485,5 @@ body {
 }
 
 .test-search .fields {
-    padding-left: 0.4em;
+    padding-right: 0.4em;
 }
