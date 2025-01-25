@@ -59,8 +59,9 @@ body {
 
 .menu {
     display: block;
-    width: 4em;
+    width: 6em;
     color: black;
+    padding: 1em 2em;
 }
 
 nav.navbar {
