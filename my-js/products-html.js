@@ -6,13 +6,24 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let keywordField = document.getElementsByClassName("search-field")[0];
     let selectedKeyword = JSON.parse(localStorage.getItem("keyword"))
-    keywordField.value = selectedKeyword
+    if (selectedKeyword) {
+        keywordField.value = selectedKeyword
+        changeTitle()
+    }
 
     let selectedTypeValue = JSON.parse(localStorage.getItem("type"))
-    typeAcOptions.value = selectedTypeValue
+    if (selectedTypeValue) {
+        typeAcOptions.value = selectedTypeValue
+        changeTitle()
+
+    }
 
     let selectedLabelValue = JSON.parse(localStorage.getItem("label"))
-    labelsAcOptions.value = selectedLabelValue
+    if (selectedLabelValue) {
+        labelsAcOptions.value = selectedLabelValue
+        changeTitle()
+
+    }
 
 
     let currentPage = JSON.parse(localStorage.getItem("currentPage")) || 1;
