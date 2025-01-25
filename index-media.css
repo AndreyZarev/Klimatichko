@@ -36,7 +36,7 @@
         margin-top: 2em;
 
         height: 8em;
-        margin-bottom: 2.5em;
+        margin-bottom: 0em;
     }
 }
 
@@ -63,7 +63,7 @@
         margin-top: 2em;
 
         height: 7em;
-        margin-bottom: 2em;
+        margin-bottom: 0.5em;
     }
 
     .col-lg-4 {
@@ -93,7 +93,8 @@
         margin-top: 2em;
 
         height: 7em;
-        margin-bottom: 2em;
+        margin-bottom: 0.5em;
+
     }
 
     p.menu-invisible1 {
@@ -128,7 +129,8 @@
         margin-top: 2em;
 
         height: 7em;
-        margin-bottom: 2em;
+        margin-bottom: 0.5em;
+
     }
 
     p.menu-invisible {
@@ -191,7 +193,8 @@
         margin-top: 1em;
 
         height: 7em;
-        margin-bottom: 2em;
+        margin-bottom: 0.5em;
+
     }
 
     h6.title-ac-models {
@@ -221,7 +224,8 @@
     img.logo-icon {
         margin-top: 1em;
         height: 7em;
-        margin-bottom: 2em;
+        margin-bottom: 0.5em;
+
     }
 
     h6.title-ac-models {
@@ -273,7 +277,8 @@
 
         height: 6em;
 
-        margin-bottom: 3em;
+        margin-bottom: 0.5em;
+
     }
 
     a.phone-in-menu {
