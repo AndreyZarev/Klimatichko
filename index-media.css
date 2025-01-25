@@ -526,9 +526,9 @@
 
     }
 
-    .nav-bar {
+    div.nav-bar {
         margin: 2 0;
-        padding: 3em;
+        padding: 0.5em;
     }
 
     img.logo-icon {

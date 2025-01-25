@@ -142,7 +142,7 @@ a.phone-in-menu {
 /* search bar starts here */
 
 .search-bar {
-    margin-top: 1.5em;
+    margin-top: 0.1em;
 }
 
 /* category section */
@@ -467,7 +467,7 @@ body {
     width: 100%;
     display: flex;
     background-color: #227ae5;
-    padding: 2em;
+    padding: 0.5em;
 }
 
 .test-search .fields {
