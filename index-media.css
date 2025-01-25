@@ -60,7 +60,8 @@
 
 
     img.logo-icon {
-        margin-top: 2em;
+        margin-top: 0.5em;
+
 
         height: 7em;
         margin-bottom: 0.5em;
@@ -90,7 +91,8 @@
 
 
     img.logo-icon {
-        margin-top: 2em;
+        margin-top: 0.5em;
+
 
         height: 7em;
         margin-bottom: 0.5em;
@@ -126,7 +128,8 @@
     }
 
     img.logo-icon {
-        margin-top: 2em;
+        margin-top: 0.5em;
+
 
         height: 7em;
         margin-bottom: 0.5em;
@@ -190,7 +193,8 @@
     }
 
     img.logo-icon {
-        margin-top: 1em;
+        margin-top: 0.5em;
+
 
         height: 7em;
         margin-bottom: 0.5em;
@@ -222,7 +226,7 @@
     }
 
     img.logo-icon {
-        margin-top: 1em;
+        margin-top: 0.5em;
         height: 7em;
         margin-bottom: 0.5em;
 
@@ -273,7 +277,8 @@
     }
 
     img.logo-icon {
-        margin-top: 1em;
+        margin-top: 0.5em;
+
 
         height: 6em;
 
@@ -333,10 +338,11 @@
     }
 
     img.logo-icon {
-        margin-top: 1em;
+        margin-top: 0.5em;
+
 
         height: 6em;
-        margin-bottom: 2em;
+        margin-bottom: 0.5em;
     }
 
     a.phone-in-menu {
@@ -454,10 +460,11 @@
     }
 
     img.logo-icon {
-        margin-top: 1em;
+        margin-top: 0.5em;
+
 
         height: 6em;
-        margin-bottom: 2em;
+        margin-bottom: 0.5em;
     }
 
 
@@ -537,11 +544,12 @@
     }
 
     img.logo-icon {
-        margin-top: 1em;
+        margin-top: 0.5em;
+
         height: 6em;
         border: none;
         border-radius: none;
-        margin-bottom: 2em;
+        margin-bottom: 0.5em;
     }
 
     #category-section {
@@ -605,9 +613,10 @@
     }
 
     img.logo-icon {
-        margin-top: 1em;
+        margin-top: 0.5em;
+
         height: 5em;
-        margin-bottom: 2em;
+        margin-bottom: 0.5em;
     }
 
     .call-section-img {
