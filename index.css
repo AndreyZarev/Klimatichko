@@ -462,3 +462,10 @@ body {
 .img-labels {
     border: solid 1px black;
 }
+
+.test-search {
+    width: 100%;
+    display: flex;
+    background-color: #227ae5;
+    padding: 2em;
+}
