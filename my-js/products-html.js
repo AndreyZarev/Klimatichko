@@ -9,12 +9,14 @@ window.addEventListener("DOMContentLoaded", () => {
     if (selectedKeyword) {
         keywordField.value = selectedKeyword
         changeTitle()
+        localStorage.removeItem("keyword")
     }
 
     let selectedTypeValue = JSON.parse(localStorage.getItem("type"))
     if (selectedTypeValue) {
         typeAcOptions.value = selectedTypeValue
         changeTitle()
+        localStorage.removeItem("type")
 
     }
 
@@ -22,6 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
     if (selectedLabelValue) {
         labelsAcOptions.value = selectedLabelValue
         changeTitle()
+        localStorage.removeItem("label")
 
     }
 
