@@ -122,4 +122,9 @@ window.addEventListener("DOMContentLoaded", () => {
             .catch(error => console.error('Error fetching JSON:', error));
     }
 
+
 })
+if (title.textContent == "Климатици на промоция") {
+    getPromo()
+
+}
