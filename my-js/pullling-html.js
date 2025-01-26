@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const typeDiv = document.getElementsByClassName("type-div")[0]
     const typeField = document.getElementsByClassName('type-field')[0];
 
-    const labelDiv = document.getElementsByClassName("labels-div")[0]
+    const labelDiv = document.getElementsByClassName("label-div")[0]
     const labelField = document.getElementsByClassName('label-field')[0];
 
     if (keywordInput) {
@@ -35,10 +35,10 @@ window.addEventListener("DOMContentLoaded", () => {
             keywordInput.classList.add('expanded');
             keywordDiv.classList.add('expanded2');
             // Hide the other fields
-            typeField.classList.add('contract');
+            // typeField.classList.add('contract');
             typeDiv.classList.add('contract');
 
-            labelField.classList.add('contract');
+            // labelField.classList.add('contract');
             labelDiv.classList.add('contract');
 
             searchButton.classList.add('contract');
