@@ -6,9 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let searchButton = document.getElementsByClassName("search-button")[0];
 
 
-    const keywordInput = document.getElementById('search-input');
-    const typeField = document.getElementById('category-field');
-    const labelField = document.getElementById('brand-field');
+
 
     let currentPage = 1;
     const itemsPerPage = 9;
@@ -17,30 +15,50 @@ window.addEventListener("DOMContentLoaded", () => {
 
     searchButton.addEventListener("click", search)
 
+
+    const keywordDiv = document.getElementsByClassName("keyword-div")[0];
+    const keywordInput = document.getElementsByClassName('search-field ')[1];
+
+    const typeDiv = document.getElementsByClassName("type-div")[0]
+    const typeField = document.getElementsByClassName('type-field')[0];
+
+    const labelDiv = document.getElementsByClassName("labels-div")[0]
+    const labelField = document.getElementsByClassName('label-field')[0];
+
     if (keywordInput) {
+        console.log(keywordInput);
 
         debugger
         // Add focus event listener to the input field
         keywordInput.addEventListener('focus', () => {
             // Expand the input field
             keywordInput.classList.add('expanded');
-
+            keywordDiv.classList.add('expanded2');
             // Hide the other fields
-            typeField.classList.add('display-none');
-            labelField.classList.add('display-none');
-            searchButton.classList.add('display-none');
+            typeField.classList.add('contract');
+            typeDiv.classList.add('contract');
+
+            labelField.classList.add('contract');
+            labelDiv.classList.add('contract');
+
+            searchButton.classList.add('contract');
 
         });
 
         // Add blur event listener to the input field
-        searchInput.addEventListener('blur', () => {
+        keywordInput.addEventListener('blur', () => {
             // Shrink the input field back to normal
-            searchInput.classList.remove('expanded');
+            keywordInput.classList.remove('expanded');
+            keywordDiv.classList.remove('expanded2');
 
             // Show the other fields
-            categoryField.classList.remove('display-none');
-            brandField.classList.remove('display-none');
-            searchButton.classList.remove('display-none');
+            typeField.classList.remove('contract');
+            typeDiv.classList.remove('contract');
+
+            labelField.classList.remove('contract');
+            labelDiv.classList.remove('contract');
+
+            searchButton.classList.remove('contract');
         });
 
 

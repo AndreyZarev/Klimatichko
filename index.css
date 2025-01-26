@@ -155,7 +155,21 @@ img.phone-in-menu {
 
 /* search bar starts here */
 .expanded {
-    width: 90%;
+    width: 100%;
+    /* Makes the input field expand */
+    transition: width 0.3s ease;
+    /* Smooth animation */
+}
+
+.expanded2 {
+    width: 30em;
+    /* Makes the input field expand */
+    transition: width 0.3s ease;
+    /* Smooth animation */
+}
+
+.contract {
+    width: 40%;
 }
 
 .search-bar {
@@ -489,4 +503,9 @@ body {
 
 .test-search .fields {
     padding-right: 0.4em;
+}
+
+
+.display-none {
+    display: none;
 }
