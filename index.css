@@ -154,8 +154,8 @@ img.phone-in-menu {
 }
 
 /* search bar starts here */
-.search-field-focused {
-    width: 7em;
+.expanded {
+    width: 90%;
 }
 
 .search-bar {

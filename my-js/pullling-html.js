@@ -4,6 +4,12 @@ window.addEventListener("DOMContentLoaded", () => {
     let typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
     let labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
     let searchButton = document.getElementsByClassName("search-button")[0];
+
+
+    const keywordInput = document.getElementById('search-input');
+    const typeField = document.getElementById('category-field');
+    const labelField = document.getElementById('brand-field');
+
     let currentPage = 1;
     const itemsPerPage = 9;
 
@@ -11,10 +17,34 @@ window.addEventListener("DOMContentLoaded", () => {
 
     searchButton.addEventListener("click", search)
 
+    if (keywordInput) {
+
+        debugger
+        // Add focus event listener to the input field
+        keywordInput.addEventListener('focus', () => {
+            // Expand the input field
+            keywordInput.classList.add('expanded');
+
+            // Hide the other fields
+            typeField.classList.add('display-none');
+            labelField.classList.add('display-none');
+            searchButton.classList.add('display-none');
+
+        });
+
+        // Add blur event listener to the input field
+        searchInput.addEventListener('blur', () => {
+            // Shrink the input field back to normal
+            searchInput.classList.remove('expanded');
+
+            // Show the other fields
+            categoryField.classList.remove('display-none');
+            brandField.classList.remove('display-none');
+            searchButton.classList.remove('display-none');
+        });
 
 
-
-
+    }
 
 
     function search() {

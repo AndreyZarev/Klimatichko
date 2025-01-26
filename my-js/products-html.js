@@ -7,9 +7,16 @@ window.addEventListener("DOMContentLoaded", () => {
     let keywordField = document.getElementsByClassName("search-field")[0];
     let selectedKeyword = JSON.parse(localStorage.getItem("keyword"))
 
-    // keywordField.addEventListener("focus", () => {
-    //     selectedKeyword.classList.add("search-field-focused");
-    // })
+    let smallKeywordField = document.getElementsByClassName("search-field")[0];
+
+    if (smallKeywordField) {
+        debugger
+        smallKeywordField.addEventListener("click", () => {
+
+            smallKeywordField.classList.add("search-field-focused");
+        })
+
+    }
 
 
     if (selectedKeyword) {
