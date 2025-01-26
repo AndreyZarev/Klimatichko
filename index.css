@@ -95,8 +95,9 @@ body {
     color: black;
     font-weight: 600;
     display: block;
-    margin: 2em 0 0 3em;
-    padding-top: 1em;
+    margin: 3em 0 0 3em;
+    padding-top: 0.3em;
+    border-radius: 0.3em;
 }
 
 nav.navbar {
@@ -174,7 +175,7 @@ a.phone-in-menu {
 
 
 #navbarCollapse div a.phone-in-menu:hover p,
-.phone-in-menu-small:hover {
+.phone-in-menu-p:hover {
     background-color: #042143;
     color: white;
 }

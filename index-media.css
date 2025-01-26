@@ -970,6 +970,7 @@
 
     p.phone-in-menu-p {
         font-size: 0.3em;
+        margin: 3em 0 0 0;
     }
 
     .test-search .fields {
