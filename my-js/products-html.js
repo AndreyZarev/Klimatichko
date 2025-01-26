@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
-    let searchButton = document.getElementsByClassName("search-button")[0];
+    let searchButton1 = document.getElementsByClassName("search-button")[0];
+    let searchButton2 = document.getElementsByClassName("search-button")[1];
 
     let typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
     let labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
@@ -42,12 +43,61 @@ window.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    // search bar functionallyty for phone fields
+
+    const keywordDiv = document.getElementsByClassName("keyword-div")[0];
+    const keywordInput = document.getElementsByClassName('search-field ')[1];
+
+    const typeDiv = document.getElementsByClassName("type-div")[0]
+    const typeField = document.getElementsByClassName('type-field')[0];
+
+    const labelDiv = document.getElementsByClassName("label-div")[0]
+    const labelField = document.getElementsByClassName('label-field')[0];
+
+    if (keywordInput) {
+        console.log(keywordInput);
+
+        debugger
+        // Add focus event listener to the input field
+        keywordInput.addEventListener('focus', () => {
+            // Expand the input field
+            keywordInput.classList.add('expanded');
+            keywordDiv.classList.add('expanded2');
+            // Hide the other fields
+            typeDiv.classList.add('contract');
+
+            labelDiv.classList.add('contract');
+
+            searchButton2.classList.add('contract');
+
+        });
+
+        // Add blur event listener to the input field
+        keywordInput.addEventListener('blur', () => {
+            // Shrink the input field back to normal
+            keywordInput.classList.remove('expanded');
+            keywordDiv.classList.remove('expanded2');
+
+            // Show the other fields
+            typeDiv.classList.remove('contract');
+
+            labelDiv.classList.remove('contract');
+
+            searchButton2.classList.remove('contract');
+        });
+
+
+    }
+
+
 
     let currentPage = JSON.parse(localStorage.getItem("currentPage")) || 1;
     const itemsPerPage = 9;
 
-    searchButton.addEventListener("click", products)
-    searchButton.addEventListener("click", changeTitle)
+    searchButton1.addEventListener("click", products)
+    searchButton1.addEventListener("click", changeTitle)
+    searchButton2.addEventListener("click", products)
+    searchButton2.addEventListener("click", changeTitle)
 
 
     function changeTitle() {

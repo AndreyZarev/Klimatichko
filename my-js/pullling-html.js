@@ -3,7 +3,8 @@ window.addEventListener("DOMContentLoaded", () => {
     localStorage.removeItem("currentPage")
     let typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
     let labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
-    let searchButton = document.getElementsByClassName("search-button")[0];
+    let searchButton1 = document.getElementsByClassName("search-button")[0];
+    let searchButton2 = document.getElementsByClassName("search-button")[1];
 
 
 
@@ -13,7 +14,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-    searchButton.addEventListener("click", search)
+    searchButton1.addEventListener("click", search)
+    searchButton2.addEventListener("click", search)
 
 
     const keywordDiv = document.getElementsByClassName("keyword-div")[0];
@@ -41,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
             // labelField.classList.add('contract');
             labelDiv.classList.add('contract');
 
-            searchButton.classList.add('contract');
+            searchButton2.classList.add('contract');
 
         });
 
@@ -58,7 +60,7 @@ window.addEventListener("DOMContentLoaded", () => {
             labelField.classList.remove('contract');
             labelDiv.classList.remove('contract');
 
-            searchButton.classList.remove('contract');
+            searchButton2.classList.remove('contract');
         });
 
 
