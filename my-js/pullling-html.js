@@ -81,9 +81,9 @@ window.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("keyword", JSON.stringify(selectedKeyword2))
 
         }
-
+        debugger
         let selectedTypeValue = ""
-        if (typeField.value) {
+        if (typeField.value !== "Категории") {
             selectedTypeValue = typeField.value
         } else {
             selectedTypeValue = typeAcOptions.value;
@@ -91,7 +91,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         let selectedLabelValue = ""
 
-        if (labelField.value) {
+        if (labelField.value != "Марка") {
             selectedLabelValue = labelField.value
         } else {
             selectedLabelValue = labelsAcOptions.value;
