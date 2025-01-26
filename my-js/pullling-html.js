@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", () => {
     localStorage.removeItem("currentPage")
     let typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
     let labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
+
     let searchButton1 = document.getElementsByClassName("search-button")[0];
     let searchButton2 = document.getElementsByClassName("search-button")[1];
 
@@ -71,11 +72,33 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
         // pullProducts()
-        let selectedKeyword = document.getElementsByClassName("search-field")[0].value;
-        localStorage.setItem("keyward", JSON.stringify(selectedKeyword))
-        let selectedTypeValue = typeAcOptions.value;
+        let selectedKeyword1 = document.getElementsByClassName("search-field")[0].value;
+        let selectedKeyword2 = document.getElementsByClassName("search-field")[1].value;
+
+        if (selectedKeyword1) {
+            localStorage.setItem("keyword", JSON.stringify(selectedKeyword1))
+        } else {
+            localStorage.setItem("keyword", JSON.stringify(selectedKeyword2))
+
+        }
+
+        let selectedTypeValue = ""
+        if (typeField.value) {
+            selectedTypeValue = typeField.value
+        } else {
+            selectedTypeValue = typeAcOptions.value;
+        }
+
+        let selectedLabelValue = ""
+
+        if (labelField.value) {
+            selectedLabelValue = labelField.value
+        } else {
+            selectedLabelValue = labelsAcOptions.value;
+
+        }
+
         localStorage.setItem("type", JSON.stringify(selectedTypeValue))
-        let selectedLabelValue = labelsAcOptions.value;
         localStorage.setItem("label", JSON.stringify(selectedLabelValue))
 
         window.location.href = "products.html";

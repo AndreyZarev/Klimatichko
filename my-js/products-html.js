@@ -5,32 +5,33 @@ window.addEventListener("DOMContentLoaded", () => {
     let typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
     let labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
 
-    let keywordField = document.getElementsByClassName("search-field")[0];
+    let keywordField1 = document.getElementsByClassName("search-field")[0];
+    let keywordField2 = document.getElementsByClassName("search-field")[1];
+
     let selectedKeyword = JSON.parse(localStorage.getItem("keyword"))
 
-    let smallKeywordField = document.getElementsByClassName("search-field")[0];
+    const typeField = document.getElementsByClassName('type-field')[0];
 
-    if (smallKeywordField) {
-        debugger
-        smallKeywordField.addEventListener("click", () => {
+    const labelField = document.getElementsByClassName('label-field')[0];
 
-            smallKeywordField.classList.add("search-field-focused");
-        })
 
-    }
+
+
 
 
     if (selectedKeyword) {
-        keywordField.value = selectedKeyword
-        changeTitle()
+        keywordField1.value = selectedKeyword
+        keywordField2.value = selectedKeyword
+
         localStorage.removeItem("keyword")
 
     }
 
     let selectedTypeValue = JSON.parse(localStorage.getItem("type"))
+
     if (selectedTypeValue) {
         typeAcOptions.value = selectedTypeValue
-        changeTitle()
+        typeField.value = selectedTypeValue
         localStorage.removeItem("type")
 
     }
@@ -38,7 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let selectedLabelValue = JSON.parse(localStorage.getItem("label"))
     if (selectedLabelValue) {
         labelsAcOptions.value = selectedLabelValue
-        changeTitle()
+        labelField.value = selectedLabelValue
         localStorage.removeItem("label")
 
     }
@@ -46,22 +47,21 @@ window.addEventListener("DOMContentLoaded", () => {
     // search bar functionallyty for phone fields
 
     const keywordDiv = document.getElementsByClassName("keyword-div")[0];
-    const keywordInput = document.getElementsByClassName('search-field ')[1];
+
 
     const typeDiv = document.getElementsByClassName("type-div")[0]
-    const typeField = document.getElementsByClassName('type-field')[0];
+
 
     const labelDiv = document.getElementsByClassName("label-div")[0]
-    const labelField = document.getElementsByClassName('label-field')[0];
 
-    if (keywordInput) {
-        console.log(keywordInput);
+
+    if (keywordField2) {
 
         debugger
         // Add focus event listener to the input field
-        keywordInput.addEventListener('focus', () => {
+        keywordField2.addEventListener('focus', () => {
             // Expand the input field
-            keywordInput.classList.add('expanded');
+            keywordField2.classList.add('expanded');
             keywordDiv.classList.add('expanded2');
             // Hide the other fields
             typeDiv.classList.add('contract');
@@ -73,9 +73,9 @@ window.addEventListener("DOMContentLoaded", () => {
         });
 
         // Add blur event listener to the input field
-        keywordInput.addEventListener('blur', () => {
+        keywordField2.addEventListener('blur', () => {
             // Shrink the input field back to normal
-            keywordInput.classList.remove('expanded');
+            keywordField2.classList.remove('expanded');
             keywordDiv.classList.remove('expanded2');
 
             // Show the other fields
@@ -107,13 +107,27 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     function products() {
-        let typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
-        let labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
-        let selectedTypeValue = typeAcOptions.value;
-        let selectedLabelValue = labelsAcOptions.value;
-        let container = document.getElementsByClassName("product-div")[0]
-        let selectedKeyword = document.getElementsByClassName("search-field")[0].value;
 
+        let container = document.getElementsByClassName("product-div")[0]
+        let selectedKeyword = ''
+        if (keywordField1.value) {
+            selectedKeyword = keywordField1.value
+        } else {
+            selectedKeyword = keywordField2.value
+        }
+        let selectedTypeValue = ""
+
+        if (typeField.value) {
+            selectedTypeValue = typeField.value
+        } else {
+            selectedTypeValue = typeAcOptions.value
+        }
+        let selectedLabelValue = ""
+        if (labelField.value) {
+            selectedLabelValue = labelField.value
+        } else {
+            selectedLabelValue = labelsAcOptions.value
+        }
         container.innerHTML = "";
         // Clear previous content
 
