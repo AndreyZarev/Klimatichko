@@ -1,3 +1,5 @@
+@import url("single-page-media.css");
+
 .single-product {
     display: flex;
     padding: 2em 2em;
@@ -99,4 +101,24 @@ h2 {
 
 .profi-p {
     margin-top: 2em;
+}
+
+
+
+/* contacts section */
+
+.working-hours-article {
+    margin: 2em 15em;
+}
+
+.h1-contacts {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.working-hours-article p,
+.working-hours-article li {
+    color: black;
+    font-weight: 500;
 }
