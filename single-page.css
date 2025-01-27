@@ -49,7 +49,7 @@ montaje page and profi page */
 
 .profi-img {
     display: block;
-    margin: auto;
+    margin: 1em auto 3em auto;
     max-width: 60%;
 }
 
@@ -92,8 +92,9 @@ montaje page and profi page */
 h2 {
     display: block;
     text-align: center;
-    margin: 2em auto;
+    margin: 2em auto 2em auto;
     color: #227ae5;
+    font-size: 1.5em;
 
 }
 
