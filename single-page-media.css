@@ -1,6 +1,8 @@
 @media (min-width: 2030px) {
     .working-hours-article {
         margin: 2em 15em;
+        font-size: 1.3em;
+
     }
 
     .wp-block-table table {
@@ -20,6 +22,8 @@
 @media (min-width: 1870px) and (max-width: 2030px) {
     .working-hours-article {
         margin: 2em 15em;
+        font-size: 1.2em;
+
     }
 
     .wp-block-table table {
@@ -38,6 +42,8 @@
 @media (min-width: 1700px) and (max-width: 1870px) {
     .working-hours-article {
         margin: 2em 15em;
+        font-size: 1.15em;
+
     }
 
     .wp-block-table table {
@@ -56,6 +62,8 @@
 @media (min-width: 1520px) and (max-width: 1700px) {
     .working-hours-article {
         margin: 2em 15em;
+        font-size: 1.1em;
+
     }
 
     .wp-block-table table {
@@ -191,7 +199,7 @@
 
 @media (min-width: 480px) and (max-width: 630px) {
     article.working-hours-article {
-        margin: 2em 5em;
+        margin: 2em 3em;
     }
 
     div.entry-content {
@@ -228,7 +236,7 @@
 
 @media (min-width: 320px) and (max-width: 480px) {
     article.working-hours-article {
-        margin: 2em 3em;
+        margin: 2em 2em;
     }
 
     div.entry-content {
@@ -249,7 +257,7 @@
 
 @media (max-width: 320px) {
     article.working-hours-article {
-        margin: 2em 2em;
+        margin: 2em 1.5em;
     }
 
     div.entry-content {

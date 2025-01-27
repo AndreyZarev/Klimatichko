@@ -116,8 +116,20 @@ h2 {
     margin-bottom: 2em;
 }
 
-.working-hours-article p,
+
 .working-hours-article li {
     color: black;
     font-weight: 500;
+    padding-bottom: 1em;
+    font-size: 1.2em;
+}
+
+.working-hours li {
+    color: black;
+    font-weight: 600;
+    padding-bottom: 0.4em;
+}
+
+.h3-working {
+    margin: 1em 0.5em 1em 2em;
 }
