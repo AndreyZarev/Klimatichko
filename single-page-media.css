@@ -181,6 +181,12 @@
         display: block;
         margin: auto;
     }
+
+    img.profi-img {
+        display: block;
+        max-width: 80%;
+        margin: 1em auto 3em auto;
+    }
 }
 
 @media (min-width: 480px) and (max-width: 630px) {
@@ -212,6 +218,12 @@
         max-width: 5em;
     }
 
+    img.profi-img {
+        display: block;
+        max-width: 80%;
+        margin: 1em auto 3em auto;
+    }
+
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
@@ -230,8 +242,8 @@
 
     img.profi-img {
         display: block;
-        margin: auto;
-        max-width: 80%;
+        max-width: 90%;
+        margin: 1em auto 3em auto;
     }
 }
 
@@ -251,7 +263,9 @@
 
     img.profi-img {
         display: block;
-        margin: auto;
-        max-width: 80%;
+        max-width: 90%;
+        margin: 1em auto 3em auto;
+
+
     }
 }
