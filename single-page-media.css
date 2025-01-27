@@ -207,6 +207,11 @@
         width: auto;
     }
 
+    tr td.usl-prices {
+        word-wrap: break-word;
+        max-width: 5em;
+    }
+
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
@@ -217,6 +222,12 @@
     div.entry-content {
         padding: 1.5em;
     }
+
+    tr td.usl-prices {
+        word-wrap: break-word;
+        max-width: 4em;
+    }
+
 }
 
 @media (max-width: 320px) {
@@ -227,5 +238,11 @@
     div.entry-content {
         padding: 1.5em;
     }
+
+    tr td.usl-prices {
+        word-wrap: break-word;
+        max-width: 3em;
+    }
+
 
 }
