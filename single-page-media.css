@@ -2,11 +2,36 @@
     .working-hours-article {
         margin: 2em 15em;
     }
+
+    .wp-block-table table {
+        display: block;
+        margin: auto;
+        font-size: 1.5em;
+
+    }
+
+    figure.wp-block-table {
+        max-width: 1500px;
+        margin: auto;
+
+    }
 }
 
 @media (min-width: 1870px) and (max-width: 2030px) {
     .working-hours-article {
         margin: 2em 15em;
+    }
+
+    .wp-block-table table {
+        display: block;
+        margin: auto;
+        font-size: 1.3em;
+    }
+
+    figure.wp-block-table {
+        max-width: 1400px;
+        margin: auto;
+
     }
 }
 
@@ -14,29 +39,115 @@
     .working-hours-article {
         margin: 2em 15em;
     }
+
+    .wp-block-table table {
+        display: block;
+        margin: auto;
+        font-size: 1.2em;
+    }
+
+    figure.wp-block-table {
+        max-width: 1300px;
+        margin: auto;
+
+    }
 }
 
 @media (min-width: 1520px) and (max-width: 1700px) {
     .working-hours-article {
         margin: 2em 15em;
     }
+
+    .wp-block-table table {
+        display: block;
+        margin: auto;
+        font-size: 1.1em;
+
+    }
+
+    figure.wp-block-table {
+        max-width: 1200px;
+        margin: auto;
+
+    }
 }
+
+
 
 @media (min-width: 1360px) and (max-width: 1520px) {
     article.working-hours-article {
         margin: 2em 15em;
     }
+
+    .wp-block-table table tbody tr td.td-numbers {
+        width: 3em;
+
+    }
+
+    td.td-prices {
+
+        width: 6em;
+    }
+
+    .wp-block-table table {
+        display: block;
+        margin: auto;
+        font-size: 1.05em;
+
+
+    }
+
+    figure.wp-block-table {
+        max-width: 1100px;
+        margin: auto;
+
+    }
 }
+
+
 
 @media (min-width: 1200px) and (max-width: 1360px) {
     article.working-hours-article {
         margin: 2em 13em;
     }
+
+    .wp-block-table table tbody tr td.td-numbers {
+        width: 3em;
+
+    }
+
+    td.td-prices {
+
+        width: 6em;
+    }
+
+    .wp-block-table table {
+        display: block;
+        margin: auto;
+    }
+
 }
+
+
 
 @media (min-width: 1070px) and (max-width: 1200px) {
     article.working-hours-article {
         margin: 2em 11em;
+    }
+
+    .wp-block-table table tbody tr td.td-numbers {
+        width: 3em;
+
+    }
+
+    td.td-prices {
+
+        width: 6em;
+    }
+
+    .wp-block-table table {
+        display: block;
+        margin: auto;
     }
 }
 
@@ -44,11 +155,31 @@
     article.working-hours-article {
         margin: 2em 9em;
     }
+
+    .wp-block-table table {
+        display: block;
+        margin: auto;
+    }
 }
 
 @media (min-width: 630px) and (max-width: 900px) {
     article.working-hours-article {
         margin: 2em 7em;
+    }
+
+    .wp-block-table table tbody tr td.td-numbers {
+        width: 2em;
+
+    }
+
+    td.td-prices {
+
+        width: 5em;
+    }
+
+    .wp-block-table table {
+        display: block;
+        margin: auto;
     }
 }
 
@@ -56,11 +187,35 @@
     article.working-hours-article {
         margin: 2em 5em;
     }
+
+    div.entry-content {
+        padding: 1.5em;
+    }
+
+    figure .wp-block-table table tbody tr td.td-numbers {
+        width: auto;
+
+    }
+
+    figure .wp-block-table table {
+        display: block;
+        margin: auto;
+    }
+
+    tr td.td-prices {
+
+        width: auto;
+    }
+
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
     article.working-hours-article {
         margin: 2em 3em;
+    }
+
+    div.entry-content {
+        padding: 1.5em;
     }
 }
 
@@ -68,4 +223,9 @@
     article.working-hours-article {
         margin: 2em 2em;
     }
+
+    div.entry-content {
+        padding: 1.5em;
+    }
+
 }
