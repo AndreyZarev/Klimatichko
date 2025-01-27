@@ -228,6 +228,11 @@
         max-width: 4em;
     }
 
+    img.profi-img {
+        display: block;
+        margin: auto;
+        max-width: 80%;
+    }
 }
 
 @media (max-width: 320px) {
@@ -244,5 +249,9 @@
         max-width: 3em;
     }
 
-
+    img.profi-img {
+        display: block;
+        margin: auto;
+        max-width: 80%;
+    }
 }
