@@ -105,6 +105,18 @@ h2 {
 
 
 /* contacts section */
+.call-section-h3 {
+    margin-bottom: 2em;
+}
+
+h3 a {
+    color: #227ae5;
+}
+
+h3 a:hover {
+    color: #0b59b3;
+    text-decoration: underline;
+}
 
 .working-hours-article {
     margin: 2em 15em;

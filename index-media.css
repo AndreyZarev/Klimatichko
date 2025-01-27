@@ -511,6 +511,13 @@
         padding: 3.5em;
     }
 
+    .call-section {
+        width: 80%;
+        display: block;
+        margin: auto;
+        margin-bottom: 4em;
+    }
+
     #navbarCollapse .nav-link {
         font-size: 13px;
     }
@@ -570,6 +577,13 @@
     img.phone-in-menu {
         height: 1.5em;
 
+    }
+
+    .call-section {
+        width: 70%;
+        display: block;
+        margin: auto;
+        margin-bottom: 4em;
     }
 
     div.button-container div {
@@ -657,6 +671,13 @@
         justify-content: center;
     }
 
+    img.call-section-img {
+        position: relative;
+        height: 27em;
+        box-sizing: border-box;
+
+    }
+
     div.search-bar-2 {
         display: block;
     }
@@ -702,14 +723,6 @@
     }
 
 
-
-
-    .call-section-img {
-        position: relative;
-        height: 20em;
-        box-sizing: border-box;
-
-    }
 
     .call-section {
         width: 85%;
@@ -790,12 +803,7 @@
         padding: 0;
     }
 
-    .call-section-img {
-        position: relative;
-        height: 15em;
-        box-sizing: border-box;
 
-    }
 
     .category-section .container {
         padding: 0;
@@ -855,6 +863,13 @@
 @media (min-width: 350px)and (max-width: 480px) {
     .test-search .fields {
         padding-right: 0.1em;
+    }
+
+    img.call-section-img {
+        position: relative;
+        height: 18em;
+        box-sizing: border-box;
+
     }
 
     .search-bar-1 {
@@ -968,6 +983,13 @@
         font-size: 1em;
     }
 
+    .call-section {
+        width: 98%;
+        display: block;
+        margin: auto;
+        margin-bottom: 4em;
+    }
+
     p.phone-in-menu-p {
         font-size: 0.3em;
         margin: 3em 0 0 0;
@@ -1017,9 +1039,9 @@
         margin-bottom: 0.5em;
     }
 
-    .call-section-img {
+    img.call-section-img {
         position: relative;
-        height: 10em;
+        height: 15em;
         box-sizing: border-box;
 
     }
