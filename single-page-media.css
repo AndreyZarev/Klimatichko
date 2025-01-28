@@ -87,10 +87,7 @@
         margin: 2em 15em;
     }
 
-    .wp-block-table table tbody tr td.td-numbers {
-        width: 3em;
 
-    }
 
     td.td-prices {
 
@@ -119,10 +116,7 @@
         margin: 2em 13em;
     }
 
-    .wp-block-table table tbody tr td.td-numbers {
-        width: 3em;
 
-    }
 
     td.td-prices {
 
@@ -143,10 +137,7 @@
         margin: 2em 11em;
     }
 
-    .wp-block-table table tbody tr td.td-numbers {
-        width: 3em;
 
-    }
 
     td.td-prices {
 
@@ -175,10 +166,7 @@
         margin: 2em 7em;
     }
 
-    .wp-block-table table tbody tr td.td-numbers {
-        width: 2em;
 
-    }
 
     td.td-prices {
 
@@ -206,10 +194,7 @@
         padding: 1.5em;
     }
 
-    figure .wp-block-table table tbody tr td.td-numbers {
-        width: auto;
 
-    }
 
     figure .wp-block-table table {
         display: block;
