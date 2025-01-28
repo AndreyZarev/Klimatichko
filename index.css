@@ -185,6 +185,13 @@ img.phone-in-menu {
     height: 2em;
 }
 
+
+.general-h1 {
+    text-align: center;
+    border: 2px solid #0E2E50;
+    padding: 1em;
+}
+
 /* search bar starts here */
 .expanded {
     width: 100%;

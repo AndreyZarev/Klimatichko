@@ -43,6 +43,16 @@
 
 /* 
 montaje page and profi page */
+.first-p {
+    display: block;
+    color: #0E2E50;
+    text-align: center;
+    margin: auto;
+    max-width: 1000px;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
 .profi-h2 {
     margin: 2em 3em;
 }
@@ -88,13 +98,29 @@ montaje page and profi page */
 }
 
 
+.header-element {
+    background-color: #0E2E50;
+    margin-top: 1em;
+    /* border-radius: 1em; */
+    padding: 1em 0.5em 1em 0.5em;
+}
+
+.header-element h2,
+.header-element p {
+    color: white;
+
+}
 
 h2 {
     display: block;
     text-align: center;
+    margin: 0 auto 1em auto;
+}
+
+h3 {
+    display: block;
+    text-align: center;
     margin: 2em auto 2em auto;
-    color: #227ae5;
-    font-size: 1.5em;
 
 }
 
