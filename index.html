@@ -173,10 +173,10 @@
         <!-- Search End -->
 
         <!-- Search Start test-->
-        <div class=" search-bar-2" data-wow-delay="0.1s">
+        <div class="search-bar-2" data-wow-delay="0.1s">
             <div class="test-search">
                 <div class="fields keyword-div">
-                    <input type="text" class="form-control search-field border-0 py-3" placeholder="Търси">
+                    <input type="text" class="keyword2 form-control search-field border-0 py-3" placeholder="Търси">
                 </div>
                 <div class="fields type-div">
                     <select class="form-select type-ac-options type-field border-0 py-3">
@@ -228,7 +228,7 @@
 
                 </div>
                 <div class="row g-4  ac-categories-div">
-                    <div class="col-sm-6 wow fadeInUp inventor-ac ac-categories " data-wow-delay="0.01s">
+                    <!-- <div class="col-sm-6 wow fadeInUp inventor-ac ac-categories " data-wow-delay="0.01s">
                         <a class="cat-item d-block bg-light text-center rounded p-3 "
                             href="inventor-ac/inventor-acs.html#products-section">
                             <div class="rounded p-4 ">
@@ -241,80 +241,86 @@
                                 <span>123 Модела</span>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
 
-                    <div class="col-sm-6 wow fadeInUp ac-categories" data-wow-delay="0.05s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <div class="icon  img-models">
-                                    <img class="img-fluid img-models" src="img/new/models/floor-standing-ac-200x200.jpg"
-                                        alt="Icon">
+                    <div class="floorAc col-sm-6 wow fadeInUp ac-categories" id="floorAc" onclick="typeSearch()"
+                        data-wow-delay="0.05s">
+                        <a class="floorAc cat-item d-block bg-light text-center rounded p-3" href="#">
+                            <div class="floorAc rounded p-4">
+                                <div class="floorAc icon  img-models">
+                                    <img class="floorAc img-fluid img-models"
+                                        src="img/new/models/floor-standing-ac-200x200.jpg" alt="Icon">
                                 </div>
-                                <h6 class="title-ac-models"> Подови
+                                <h6 class="floorAc title-ac-models"> Подови
                                 </h6>
-                                <h6 class="title-ac-models"> климатици
+                                <h6 class="floorAc title-ac-models"> климатици
                                 </h6>
-                                <span>123 Модела</span>
-
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 wow fadeInUp ac-categories" data-wow-delay="0.07s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <div class="icon  img-models">
-                                    <img class="img-fluid img-models" src="img/new/models/column-ac-200x200.jpg"
-                                        alt="Icon">
-                                </div>
-                                <h6 class="title-ac-models"> Колонни
-                                </h6>
-                                <h6 class="title-ac-models"> климатици
-                                </h6>
-                                <span>123 Модела</span>
+                                <span class="floorAc">123 Модела</span>
 
                             </div>
                         </a>
                     </div>
-                    <div class=" col-sm-6 wow fadeInUp ac-categories" data-wow-delay="0.01s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <div class="icon img-models">
-                                    <img class="img-fluid img-models" src="img/new/models/cassette-ac-200x200.jpg"
-                                        alt="Icon">
+                    <div class="columnsAc col-sm-6 wow fadeInUp ac-categories" onclick="typeSearch()"
+                        data-wow-delay="0.07s">
+                        <a class="columnsAc cat-item d-block bg-light text-center rounded p-3" href="#">
+                            <div class="columnsAc rounded p-4">
+                                <div class="columnsAc icon  img-models">
+                                    <img class="columnsAc img-fluid img-models"
+                                        src="img/new/models/column-ac-200x200.jpg" alt="Icon">
                                 </div>
-                                <h6 class="title-ac-models"> Касетъчни
+                                <h6 class="columnsAc title-ac-models"> Колонни
                                 </h6>
-                                <h6 class="title-ac-models"> климатици
+                                <h6 class="columnsAc title-ac-models"> климатици
                                 </h6>
-                                <span>123 Модела</span>
+                                <span class="columnsAc">123 Модела</span>
 
                             </div>
                         </a>
                     </div>
-                    <div class="col-sm-6 wow fadeInUp ac-categories" data-wow-delay="0.03s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded p-4">
-                                <div class="icon  img-models">
-                                    <img class="img-fluid img-models" src="img/new/models/ceiling-ac-200x200.jpg"
-                                        alt="Icon">
+                    <div class="cassetteAc col-sm-6 wow fadeInUp ac-categories" onclick="typeSearch()"
+                        data-wow-delay="0.01s">
+                        <a class="cassetteAc cat-item d-block bg-light text-center rounded p-3" href="#">
+                            <div class="cassetteAc rounded p-4">
+                                <div class="cassetteAc icon img-models">
+                                    <img class="cassetteAc img-fluid img-models"
+                                        src="img/new/models/cassette-ac-200x200.jpg" alt="Icon">
                                 </div>
-                                <h6 class="title-ac-models"> Подово-таванни климатици
+                                <h6 class="cassetteAc title-ac-models"> Касетъчни
                                 </h6>
-                                <span>123 Модела</span>
+                                <h6 class="cassetteAc title-ac-models"> климатици
+                                </h6>
+                                <span class="cassetteAc">123 Модела</span>
 
                             </div>
                         </a>
                     </div>
-                    <div class=" col-sm-6 wow fadeInUp ac-categories convector-div" data-wow-delay="0.05s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3" href="">
-                            <div class="rounded convector p-4">
-                                <div class="icon img-models convector">
-                                    <img class="img-fluid img-models" src="img/new/models/convector.jfif" alt="Icon">
+                    <div class="floorSealingAc col-sm-6 wow fadeInUp ac-categories" onclick="typeSearch()"
+                        data-wow-delay="0.03s">
+                        <a class="floorSealingAc cat-item d-block bg-light text-center rounded p-3" href="#">
+                            <div class="floorSealingAc rounded p-4">
+                                <div class="floorSealingAc icon  img-models">
+                                    <img class="floorSealingAc img-fluid img-models"
+                                        src="img/new/models/ceiling-ac-200x200.jpg" alt="Icon">
                                 </div>
-                                <h6 class="title-ac-models "> Конвектори
+                                <h6 class="floorSealingAc title-ac-models"> Подово-таванни климатици
                                 </h6>
-                                <span class="convector-span">123 Модела</span>
-                                <p class="invisible ">none</p>
+                                <span class="floorSealingAc">123 Модела</span>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="convectorAc col-sm-6 wow fadeInUp ac-categories convector-div" onclick="typeSearch()"
+                        data-wow-delay="0.05s">
+                        <a class="convectorAc cat-item d-block bg-light text-center rounded p-3" href="#">
+                            <div class="convectorAc rounded convector p-4">
+                                <div class="convectorAc icon img-models convector">
+                                    <img class="convectorAc img-fluid img-models" src="img/new/models/convector.jfif"
+                                        alt="Icon">
+                                </div>
+                                <h6 class="convectorAc title-ac-models "> Конвектори
+                                </h6>
+                                <span class="convectorAc convector-span">123 Модела</span>
+                                <p class="convectorAc invisible ">none</p>
                             </div>
                         </a>
                     </div>

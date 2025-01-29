@@ -2,128 +2,88 @@ window.addEventListener("DOMContentLoaded", () => {
     let searchButton1 = document.getElementsByClassName("search-button")[0];
     let searchButton2 = document.getElementsByClassName("search-button")[1];
 
-    let typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
-    let labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
-
-    let keywordField1 = document.getElementsByClassName("search-field")[0];
     let keywordField2 = document.getElementsByClassName("search-field")[1];
 
-    let selectedKeyword = JSON.parse(localStorage.getItem("keyword"))
-
-    const typeField = document.getElementsByClassName('type-field')[0];
-
-    const labelField = document.getElementsByClassName('label-field')[0];
 
 
 
-
-
-
-    if (selectedKeyword) {
-        keywordField1.value = selectedKeyword
-        keywordField2.value = selectedKeyword
-
-        localStorage.removeItem("keyword")
-
-    }
-
-    let selectedTypeValue = JSON.parse(localStorage.getItem("type"))
-
-    if (selectedTypeValue) {
-        typeAcOptions.value = selectedTypeValue
-        typeField.value = selectedTypeValue
-        localStorage.removeItem("type")
-
-    }
-
-    let selectedLabelValue = JSON.parse(localStorage.getItem("label"))
-    if (selectedLabelValue) {
-        labelsAcOptions.value = selectedLabelValue
-        labelField.value = selectedLabelValue
-        localStorage.removeItem("label")
-
-    }
-
-    // search bar functionallyty for phone fields
-
-    const keywordDiv = document.getElementsByClassName("keyword-div")[0];
-
-
-    const typeDiv = document.getElementsByClassName("type-div")[0]
-
-
-    const labelDiv = document.getElementsByClassName("label-div")[0]
-
-
-    if (keywordField2) {
-
-        debugger
-        // Add focus event listener to the input field
-        keywordField2.addEventListener('focus', () => {
-            // Expand the input field
-            keywordField2.classList.add('expanded');
-            keywordDiv.classList.add('expanded2');
-            // Hide the other fields
-            typeDiv.classList.add('contract');
-
-            labelDiv.classList.add('contract');
-
-            searchButton2.classList.add('contract');
-
-        });
-
-        // Add blur event listener to the input field
-        keywordField2.addEventListener('blur', () => {
-            // Shrink the input field back to normal
-            keywordField2.classList.remove('expanded');
-            keywordDiv.classList.remove('expanded2');
-
-            // Show the other fields
-            typeDiv.classList.remove('contract');
-
-            labelDiv.classList.remove('contract');
-
-            searchButton2.classList.remove('contract');
-        });
-
-
-    }
-
-
-
-    let currentPage = JSON.parse(localStorage.getItem("currentPage")) || 1;
-    const itemsPerPage = 9;
-
-    searchButton1.addEventListener("click", products)
-    searchButton1.addEventListener("click", changeTitle)
-    searchButton2.addEventListener("click", products)
-    searchButton2.addEventListener("click", changeTitle)
-
-
-    function changeTitle() {
-        debugger
-        let title = document.getElementsByClassName("h1-promo")[0]
-        title.textContent = "Резултат от търсенето"
-    }
 
     function products() {
 
+        let typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
+        let labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
+
+        let keywordField1 = document.getElementsByClassName("search-field")[0];
+        let keywordField2 = document.getElementsByClassName("search-field")[1];
+
+
+
+
+        const typeField = document.getElementsByClassName('type-field')[0];
+
+        const labelField = document.getElementsByClassName('label-field')[0];
+
+
+
+
+        let selectedKeyword = JSON.parse(localStorage.getItem("keyword"))
+
+        if (selectedKeyword) {
+            if (window.innerWidth > 863) {
+                keywordField1.value = selectedKeyword
+            } else {
+
+                keywordField2.value = selectedKeyword
+            }
+            localStorage.removeItem("keyword")
+
+        }
+
+        let selectedTypeValue = JSON.parse(localStorage.getItem("type"))
+
+        if (selectedTypeValue) {
+            if (window.innerWidth > 863) {
+                typeAcOptions.value = selectedTypeValue
+
+            } else {
+                typeField.value = selectedTypeValue
+
+            }
+            localStorage.removeItem("type")
+
+        }
+
+        let selectedLabelValue = JSON.parse(localStorage.getItem("label"))
+
+        if (selectedLabelValue) {
+            if (window.innerWidth > 863) {
+
+                labelsAcOptions.value = selectedLabelValue
+            } else {
+                labelField.value = selectedLabelValue
+            }
+            localStorage.removeItem("label")
+
+        }
+
+        debugger
         let container = document.getElementsByClassName("product-div")[0]
-        let selectedKeyword = ''
+        selectedKeyword = ''
+
         if (keywordField1.value) {
             selectedKeyword = keywordField1.value
         } else {
             selectedKeyword = keywordField2.value
         }
-        let selectedTypeValue = ""
+        selectedTypeValue = ""
 
-        if (typeField.value) {
+        if (typeField.value !== "Категории") {
             selectedTypeValue = typeField.value
         } else {
             selectedTypeValue = typeAcOptions.value
         }
-        let selectedLabelValue = ""
-        if (labelField.value) {
+        selectedLabelValue = ""
+        if (labelField.value !== "Марка") {
             selectedLabelValue = labelField.value
         } else {
             selectedLabelValue = labelsAcOptions.value
@@ -168,6 +128,64 @@ window.addEventListener("DOMContentLoaded", () => {
             })
             .catch(error => console.error('Error fetching product data:', error));
     }
+
+
+    // search bar functionallyty for phone fields
+
+
+
+    if (keywordField2.classList[0] === "keyword2") {
+
+        const keywordDiv = document.getElementsByClassName("keyword-div")[0];
+
+
+        const typeDiv = document.getElementsByClassName("type-div")[0]
+
+
+        const labelDiv = document.getElementsByClassName("label-div")[0]
+
+        keywordField2.addEventListener('focus', () => {
+            keywordField2.classList.add('expanded');
+            keywordDiv.classList.add('expanded2');
+            typeDiv.classList.add('contract');
+
+            labelDiv.classList.add('contract');
+
+            searchButton2.classList.add('contract');
+
+        });
+
+        keywordField2.addEventListener('blur', () => {
+            keywordField2.classList.remove('expanded');
+            keywordDiv.classList.remove('expanded2');
+
+            typeDiv.classList.remove('contract');
+
+            labelDiv.classList.remove('contract');
+
+            searchButton2.classList.remove('contract');
+        });
+
+
+    }
+
+
+
+    let currentPage = JSON.parse(localStorage.getItem("currentPage")) || 1;
+    const itemsPerPage = 12;
+
+    searchButton1.addEventListener("click", products)
+    searchButton1.addEventListener("click", changeTitle)
+    searchButton2.addEventListener("click", products)
+    searchButton2.addEventListener("click", changeTitle)
+
+
+    function changeTitle() {
+
+        let title = document.getElementsByClassName("h1-promo")[0]
+        title.textContent = "Резултат от търсенето"
+    }
+
 
     products()
 

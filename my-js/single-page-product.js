@@ -57,32 +57,32 @@ window.addEventListener("DOMContentLoaded", () => {
         
       
         <div class="left-side">
-            <img src="${product.img}" alt="" srcset="">
+            <img src="${product.img}" alt="AC image" srcset="">
         </div>
 
         <div class="right-side">
             <h4>Характеристики:</h4>
                 <ul>
-                    <li>Икономичен
+                    <li>${product.details1}
                     </li>
                     <li>
-                        С вграден онлайн контролер
+                    ${product.details2}
 
                     </li>
                     <li>
-                        Безшумен /19db/ за вътрешно тяло
+                    ${product.details3}
 
                     </li>
                     <li>
-                        Самодиагностика при проява на проблем
+                    ${product.details4}
 
                     </li>
                     <li>
-                        Авторестарт
+                    ${product.details5}
 
                     </li>
                     <li>
-                        Турбо режим
+                    ${product.details6}
                     </li>
                 </ul>
         </div>
@@ -93,107 +93,107 @@ window.addEventListener("DOMContentLoaded", () => {
             <tbody>
                 <tr>
                     <td>За помещения (кв.м.)</td>
-                    <td>&nbsp;до 10-12 кв.м.</td>
+                    <td>${product.forPlaces}</td>
                 </tr>
                 <tr>
                     <td>Енергиен клас охлаждане</td>
-                    <td>А++</td>
+                    <td>${product.coolingEnergyClass}</td>
                 </tr>
                 <tr>
                     <td>Енергиен клас отопление</td>
-                    <td>А++</td>
+                    <td>${product.heatEnergyClass}</td>
                 </tr>
                 <tr>
                     <td>Мощност</td>
-                    <td>7 000 BTU</td>
+                    <td>${product.size} BTU</td>
                 </tr>
                 <tr>
                     <td>Препоръчителен обем (охлаждане) (куб. м.)</td>
-                    <td>30</td>
+                    <td>${product.recommendedCoolingCapacity}</td>
                 </tr>
                 <tr>
                     <td>Препоръчителен обем (отопление) (куб. м.)</td>
-                    <td>25</td>
+                    <td>${product.recommendedheatingCapacity}</td>
                 </tr>
                 <tr>
                     <td>Отдавана мощност (охлаждане) (kW)</td>
-                    <td>1.30 – 2.00 – 2.60</td>
+                    <td>${product.coolingPowerExert}</td>
                 </tr>
                 <tr>
                     <td>Отдавана мощност (отопление) (kW)</td>
-                    <td>1.30 – 2.50 – 3.50</td>
+                    <td>${product.heatingPowerExert}</td>
                 </tr>
                 <tr>
                     <td>Консумирана мощност (охлаждане) (kW)</td>
-                    <td>0.50</td>
+                    <td>${product.coolingPowerConsumption}</td>
                 </tr>
                 <tr>
                     <td>Консумирана мощност (отопление) (kW)</td>
-                    <td>0.59</td>
+                    <td>${product.heatingPowerConsumption}</td>
                 </tr>
                 <tr>
                     <td>Захранващо напрежение (V)</td>
-                    <td>220-240</td>
+                    <td>${product.voltage}</td>
                 </tr>
                 <tr>
                     <td>SEER (сезонна ефективност в режим на охлаждане)</td>
-                    <td>6.79 – клас А++</td>
+                    <td>${product.seer}</td>
                 </tr>
                 <tr>
                     <td>SCOP (сезонна ефективност в режим на отопление)</td>
-                    <td>4.65 – клас А++</td>
+                    <td>${product.scop}</td>
                 </tr>
                 <tr>
                     <td>Ниво на шум (вътрешно тяло) (dB)</td>
-                    <td>20 – 25 – 39</td>
+                    <td>${product.insideNoise}</td>
                 </tr>
                 <tr>
                     <td>Ниво на шум (външно тяло) (dB)</td>
-                    <td>46</td>
+                    <td>${product.outsideNoise}</td>
                 </tr>
                 <tr>
                     <td>Размери В х Ш х Д (вътрешно тяло) (мм)</td>
-                    <td>286 x 770 x 225</td>
+                    <td>${product.sizeInsideBody}</td>
                 </tr>
                 <tr>
                     <td>Размери В х Ш х Д (външно тяло) (мм)</td>
-                    <td>550 x 658 x 275</td>
+                    <td>${product.sizeOutsideBody}</td>
                 </tr>
                 <tr>
                     <td>Тегло (вътрешно тяло) (кг.)</td>
-                    <td>9</td>
+                    <td>${product.weightInsideBody}</td>
                 </tr>
                 <tr>
                     <td>Тегло (външно тяло) (кг.)</td>
-                    <td>32</td>
+                    <td>${product.weightOutsideBody}</td>
                 </tr>
                 <tr>
                     <td>Работен диапазон при охлаждане (°C)</td>
-                    <td>-10 до +46</td>
+                    <td>${product.workingTempraturesForCooling}</td>
                 </tr>
                 <tr>
                     <td>Работен диапазон при отопление (°C)</td>
-                    <td>-15 до +18</td>
+                    <td>${product.workingTempraturesForHeating}</td>
                 </tr>
                 <tr>
                     <td>Хладилен агент</td>
-                    <td>R32</td>
+                    <td>${product.agent}</td>
                 </tr>
                 <tr>
                     <td>Диаметър на тръбата – течност/газ (mm)</td>
-                    <td>6.35/9.52</td>
+                    <td>${product.diameter}</td>
                 </tr>
                 <tr>
                     <td>Захранване</td>
-                    <td>Външно</td>
+                    <td>${product.power}</td>
                 </tr>
                 <tr>
                     <td>Произход</td>
-                    <td>Чехия/Турция</td>
+                    <td>${product.madeIn}</td>
                 </tr>
                 <tr>
                     <td>Гаранция</td>
-                    <td>24/36 месеца</td>
+                    <td>${product.warranty}</td>
                 </tr>
             </tbody>
             </table>

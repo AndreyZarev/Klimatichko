@@ -10,8 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-    let currentPage = 1;
-    const itemsPerPage = 9;
+
 
 
 
@@ -29,19 +28,13 @@ window.addEventListener("DOMContentLoaded", () => {
     const labelField = document.getElementsByClassName('label-field')[0];
 
     if (keywordInput) {
-        console.log(keywordInput);
 
-        debugger
-        // Add focus event listener to the input field
         keywordInput.addEventListener('focus', () => {
-            // Expand the input field
             keywordInput.classList.add('expanded');
             keywordDiv.classList.add('expanded2');
-            // Hide the other fields
-            // typeField.classList.add('contract');
+
             typeDiv.classList.add('contract');
 
-            // labelField.classList.add('contract');
             labelDiv.classList.add('contract');
 
             searchButton2.classList.add('contract');
@@ -106,167 +99,259 @@ window.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    function pullProducts() {
-        let container = document.getElementsByClassName("promo-div")[0];
-
-        container.innerHTML = ""; // Clear previous content
-
-        fetch("data-json/all-products.json")
-            .then(response => response.json())
-            .then(products => {
-                const filteredResults = products.filter(item => {
-                    return (
-                        (selectedKeyword === "" || item.keyword.toLowerCase().includes(selectedKeyword.toLowerCase())) &&
-                        (selectedTypeValue === "Категории" || item.type === selectedTypeValue) &&
-                        (selectedLabelValue === "Марка" || item.label === selectedLabelValue)
-                    );
-                });
-
-                // Paginate filtered results
-                const totalPages = Math.ceil(filteredResults.length / itemsPerPage);
-                const paginatedResults = filteredResults.slice(
-                    (currentPage - 1) * itemsPerPage,
-                    currentPage * itemsPerPage
-                );
-
-                // Display products for the current page
-                paginatedResults.forEach(product => {
-                    const sectionHTML = createProductSection(product);
-                    let sectionElement = document.createElement('div');
-
-                    sectionElement.innerHTML = sectionHTML;
-                    sectionElement.classList.add("col-lg-4", "col-md-6", "wow", "ac-products");
-                    sectionElement.addEventListener("click", () => { getToSingleProductPage(product.id) })
-                    container.appendChild(sectionElement);
-
-                });
-                // let productHtml = document.getElementsByClassName("product-html")[0]
-
-                let title = document.getElementsByClassName("h1-promo")[0]
-
-                title.textContent = "Резултати от търсенето"
 
 
 
-                // Update pagination controls
+    let typeAcDiv = document.getElementsByClassName("ac-categories")
+    console.log(typeAcDiv);
+    debugger
 
-                renderPaginationControls(totalPages);
+    for (const typeAc of typeAcDiv) {
+        typeAc.addEventListener("click", typeSearch)
+
+    }
+});
 
 
-            })
-            .catch(error => console.error('Error fetching product data:', error));
+
+function typeSearch(e) {
+
+    let selectedTypeValue = e.target.classList[0]
+    console.log(selectedTypeValue);
+    let seletedType = ''
+    if (selectedTypeValue == "floorAc") {
+
+        seletedType = "Подови климатици"
+
+    } else if (selectedTypeValue == "convectorAc") {
+        seletedType = "Конвектори"
+
+
+    } else if (selectedTypeValue == "columnsAc") {
+        seletedType = "Колонни климатици"
+
+
+
+    } else if (selectedTypeValue == "cassetteAc") {
+        seletedType = "Касетъчни климатици"
     }
 
-
-    function renderPaginationControls(totalPages) {
-        const paginationContainer = document.getElementById("pagination-controls");
-        paginationContainer.innerHTML = ""; // Clear existing controls
-
-        const dynamicSection = document.getElementById("dynamic-section"); // The section to scroll to
-
-        // Previous Button
-        const prevButton = document.createElement("button");
-        prevButton.textContent = "Предишна";
-        prevButton.disabled = currentPage === 1;
-        prevButton.addEventListener("click", () => {
-            if (currentPage > 1) {
-                currentPage--;
-                pullProducts(e);
-                dynamicSection.scrollIntoView({ behavior: "smooth" });
-            }
-        });
-        paginationContainer.appendChild(prevButton);
-
-        // Page Numbers
-        for (let i = 1; i <= totalPages; i++) {
-            const pageButton = document.createElement("button");
-            pageButton.textContent = i;
-            pageButton.classList.toggle("active", i === currentPage);
-            pageButton.addEventListener("click", () => {
-                currentPage = i;
-                pullProducts();
-                dynamicSection.scrollIntoView({ behavior: "smooth" });
-            });
-            paginationContainer.appendChild(pageButton);
-        }
-
-        // Next Button
-        const nextButton = document.createElement("button");
-        nextButton.textContent = "Следваща";
-        nextButton.disabled = currentPage === totalPages;
-        nextButton.addEventListener("click", () => {
-            if (currentPage < totalPages) {
-                currentPage++;
-                pullProducts();
-                dynamicSection.scrollIntoView({ behavior: "smooth" });
-            }
-        });
-        paginationContainer.appendChild(nextButton);
-    }
+    // else if (selectedTypeValue == "floorSealingAc") {
+    //     seletedType = "Подово-таванни климатици"
 
 
+    // }  else if (selectedTypeValue == "Касетъчни климатици") {
+    // }
+    // else if (selectedTypeValue == "Подово-таванни климатици") {
+    //     seletedType = "За много ниски температури"
 
 
-    function createProductSection(product) {
-        return `
-           <div class="property-item rounded overflow-hidden product-html id= "${product.id}">
-                                <div class="position-relative overflow-hidden img-ac-products ">
-                                    <a href="#"><img class="img-fluid img-ac-products"
-                                            src="${product.img}"
-                                            alt=""></a>
-                                
-                                <div class=" pb-0 div-price">
-                
-                                    <h5 class = "normal-price">${product.price.toFixed(2)}лв</h5>
+    // }
 
-                                    <a class="d-block " href="#">${product.name}</a>
-
-                                </div>
-                                <a class="call-us" href="tel: 0896081213">
-                                 <span>
-                                    <img class="call-us-icon" src="img/new/icons8-phone-50.png" alt="" srcset="">
-                                </span>
-                                Обади се</a>
-                                <div class="d-flex border-top">
-                                    <small class="flex-fill text-center border-end py-2">${product.size} BTU</small>
-                                    <small class="flex-fill text-center border-end py-2"><a class="label-link" href="#">${product.label}</a></small>
-                                    <small class="flex-fill text-center py-2">Клас: ${product.energy}</small>
-                                </div>
-                            </div>
-         
-                          
-                   
-            `;
-    }
-    function getToSingleProductPage(id) {
-
-
-        debugger
-        fetch('data-json/all-products.json')
-            .then(response => response.json())
-            .then(data => {
-                const specificItem = data.find(item => item.id === id);
-                const specificItems = data.filter(item => (item.id == id + 1) ||
-                    (item.id == id + 2) || (item.id == id - 1));
-
-
-                let container = document.createElement('div')
-                container.classList.add("g-4", "row", "promo-div")
-
-                localStorage.setItem("selectedProduct", JSON.stringify(specificItem));
-                localStorage.setItem("similarProduct", JSON.stringify(specificItems));
-
-                // Navigate to the new page
-                window.location.href = "single-product-page.html";
-
-            })
-            .catch(error => console.error('Error fetching JSON:', error));
-    }
-
-
+    localStorage.setItem("type", JSON.stringify(seletedType))
+    debugger
+    window.location.href = "products.html";
 }
 
-)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function pullProducts() {
+//     let container = document.getElementsByClassName("promo-div")[0];
+
+//     container.innerHTML = ""; // Clear previous content
+
+//     fetch("data-json/all-products.json")
+//         .then(response => response.json())
+//         .then(products => {
+//             const filteredResults = products.filter(item => {
+//                 return (
+//                     (selectedKeyword === "" || item.keyword.toLowerCase().includes(selectedKeyword.toLowerCase())) &&
+//                     (selectedTypeValue === "Категории" || item.type === selectedTypeValue) &&
+//                     (selectedLabelValue === "Марка" || item.label === selectedLabelValue)
+//                 );
+//             });
+
+//             // Paginate filtered results
+//             const totalPages = Math.ceil(filteredResults.length / itemsPerPage);
+//             const paginatedResults = filteredResults.slice(
+//                 (currentPage - 1) * itemsPerPage,
+//                 currentPage * itemsPerPage
+//             );
+
+//             // Display products for the current page
+//             paginatedResults.forEach(product => {
+//                 const sectionHTML = createProductSection(product);
+//                 let sectionElement = document.createElement('div');
+
+//                 sectionElement.innerHTML = sectionHTML;
+//                 sectionElement.classList.add("col-lg-4", "col-md-6", "wow", "ac-products");
+//                 sectionElement.addEventListener("click", () => { getToSingleProductPage(product.id) })
+//                 container.appendChild(sectionElement);
+
+//             });
+//             // let productHtml = document.getElementsByClassName("product-html")[0]
+
+//             let title = document.getElementsByClassName("h1-promo")[0]
+
+//             title.textContent = "Резултати от търсенето"
+
+
+
+//             // Update pagination controls
+
+//             renderPaginationControls(totalPages);
+
+
+//         })
+//         .catch(error => console.error('Error fetching product data:', error));
+// }
+
+
+// function renderPaginationControls(totalPages) {
+//     const paginationContainer = document.getElementById("pagination-controls");
+//     paginationContainer.innerHTML = ""; // Clear existing controls
+
+//     const dynamicSection = document.getElementById("dynamic-section"); // The section to scroll to
+
+//     // Previous Button
+//     const prevButton = document.createElement("button");
+//     prevButton.textContent = "Предишна";
+//     prevButton.disabled = currentPage === 1;
+//     prevButton.addEventListener("click", () => {
+//         if (currentPage > 1) {
+//             currentPage--;
+//             pullProducts(e);
+//             dynamicSection.scrollIntoView({ behavior: "smooth" });
+//         }
+//     });
+//     paginationContainer.appendChild(prevButton);
+
+//     // Page Numbers
+//     for (let i = 1; i <= totalPages; i++) {
+//         const pageButton = document.createElement("button");
+//         pageButton.textContent = i;
+//         pageButton.classList.toggle("active", i === currentPage);
+//         pageButton.addEventListener("click", () => {
+//             currentPage = i;
+//             pullProducts();
+//             dynamicSection.scrollIntoView({ behavior: "smooth" });
+//         });
+//         paginationContainer.appendChild(pageButton);
+//     }
+
+//     // Next Button
+//     const nextButton = document.createElement("button");
+//     nextButton.textContent = "Следваща";
+//     nextButton.disabled = currentPage === totalPages;
+//     nextButton.addEventListener("click", () => {
+//         if (currentPage < totalPages) {
+//             currentPage++;
+//             pullProducts();
+//             dynamicSection.scrollIntoView({ behavior: "smooth" });
+//         }
+//     });
+//     paginationContainer.appendChild(nextButton);
+// }
+
+
+
+
+// function createProductSection(product) {
+//     return `
+//        <div class="property-item rounded overflow-hidden product-html id= "${product.id}">
+//                             <div class="position-relative overflow-hidden img-ac-products ">
+//                                 <a href="#"><img class="img-fluid img-ac-products"
+//                                         src="${product.img}"
+//                                         alt=""></a>
+
+//                             <div class=" pb-0 div-price">
+
+//                                 <h5 class = "normal-price">${product.price.toFixed(2)}лв</h5>
+
+//                                 <a class="d-block " href="#">${product.name}</a>
+
+//                             </div>
+//                             <a class="call-us" href="tel: 0896081213">
+//                              <span>
+//                                 <img class="call-us-icon" src="img/new/icons8-phone-50.png" alt="" srcset="">
+//                             </span>
+//                             Обади се</a>
+//                             <div class="d-flex border-top">
+//                                 <small class="flex-fill text-center border-end py-2">${product.size} BTU</small>
+//                                 <small class="flex-fill text-center border-end py-2"><a class="label-link" href="#">${product.label}</a></small>
+//                                 <small class="flex-fill text-center py-2">Клас: ${product.energy}</small>
+//                             </div>
+//                         </div>
+
+
+
+//         `;
+// }
+// function getToSingleProductPage(id) {
+
+
+//     debugger
+//     fetch('data-json/all-products.json')
+//         .then(response => response.json())
+//         .then(data => {
+//             const specificItem = data.find(item => item.id === id);
+//             const specificItems = data.filter(item => (item.id == id + 1) ||
+//                 (item.id == id + 2) || (item.id == id - 1));
+
+
+//             let container = document.createElement('div')
+//             container.classList.add("g-4", "row", "promo-div")
+
+//             localStorage.setItem("selectedProduct", JSON.stringify(specificItem));
+//             localStorage.setItem("similarProduct", JSON.stringify(specificItems));
+
+//             // Navigate to the new page
+//             window.location.href = "single-product-page.html";
+
+//         })
+//         .catch(error => console.error('Error fetching JSON:', error));
+// }
+
+
 
 
 
@@ -283,28 +368,6 @@ window.addEventListener("DOMContentLoaded", () => {
 //     let url = 'data-json/types/inventor-ac.json'
 //     pullProducts(url)
 
-
-// } else if (selectedTypeValue == "Конвектори") {
-
-
-// } else if (selectedTypeValue == "Стенни климатици") {
-//     console.log("wall acs");
-
-
-// } else if (selectedTypeValue == "Подови климатици") {
-//     console.log("flor acs");
-
-
-// } else if (selectedTypeValue == "Колонни климатици") {
-//     console.log("colon acs");
-
-
-// } else if (selectedTypeValue == "Касетъчни климатици") {
-//     console.log("kaset acs");
-
-
-// } else if (selectedTypeValue == "Всички климатици") {
-//     console.log("all acs");
 
 // }
 
