@@ -21,9 +21,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
         attachProduct.appendChild(productElement)
 
-        let title = document.getElementsByClassName("h1-promo")[0]
+        let title = document.getElementsByClassName("h3-promo")[0]
 
-        title.textContent = `${productData.name}`;
+        title.textContent = `${productData.keyword}`;
         let otherProducts = document.getElementById("other-products")
         debugger
         if (products.length > 0) {
@@ -85,6 +85,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     ${product.details6}
                     </li>
                 </ul>
+
+               <h3><span class="h3-span-price">Намалена цена:</span>  ${product.price}.00 лв. </h3>
+
+                <h3><span class="h3-span-price">Намалена цена:</span> ${(product.price * 0.95).toFixed(2)} лв. </h3>
         </div>
         </div>
 

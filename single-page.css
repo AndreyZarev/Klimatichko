@@ -11,6 +11,8 @@
 
 .left-side img {
     max-width: 80%;
+    margin-left: 10em;
+
 }
 
 .details-table {
@@ -29,6 +31,11 @@
     border: 2px solid black;
     padding: 0.5em;
     padding-right: 8em;
+    color: black;
+}
+
+h3 span.h3-span-price {
+    font-size: 0.9em;
 }
 
 #other-products {
