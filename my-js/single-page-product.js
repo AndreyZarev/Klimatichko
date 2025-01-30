@@ -51,6 +51,20 @@ window.addEventListener("DOMContentLoaded", () => {
     singleProduct(productData, products)
 
     function createSingleProduct(product) {
+        let discoutPrice = `
+                 <p class="">Намалена цена:</p> 
+        
+        `
+        let discoutH3 = `
+                  <p class=""> Нормална цена:</p> 
+                        <h3 class="h3-price-single h3-first">${product.price}.00 лв.</h3>
+        
+        `
+        let normalH3 = `
+                  <p class="">Цена:</p> 
+                        <h3 class="h3-price-single">${product.price}.00 лв.</h3>
+        
+        `
         return `
         
         <div class="container single-product">
@@ -86,9 +100,25 @@ window.addEventListener("DOMContentLoaded", () => {
                     </li>
                 </ul>
 
-               <h3><span class="h3-span-price">Намалена цена:</span>  ${product.price}.00 лв. </h3>
+                <div class="div-h3-span-price">
+                 ${product.discount ? discoutH3 : normalH3}
+                        
+    
+                </div>
+    
+                <div class="div-h3-span-price">
 
-                <h3><span class="h3-span-price">Намалена цена:</span> ${(product.price * 0.95).toFixed(2)} лв. </h3>
+                ${product.discount ? discoutPrice : ""}
+                  <h3 class="h3-price-single h3-second">
+   
+  
+                    
+                
+                 ${product.discount ? (product.price * 0.95).toFixed(2) + " лв." : ""}
+
+                 </h3>
+                </div>
+
         </div>
         </div>
 
