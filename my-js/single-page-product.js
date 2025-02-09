@@ -21,9 +21,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
         attachProduct.appendChild(productElement)
 
-        let title = document.getElementsByClassName("h3-promo")[0]
-
-        title.textContent = `${productData.keyword}`;
         let otherProducts = document.getElementById("other-products")
         debugger
         if (products.length > 0) {
@@ -88,7 +85,8 @@ window.addEventListener("DOMContentLoaded", () => {
         </div>
 
         <div class="right-side">
-            <h4>Описание:</h4>
+        <h4>${product.model}</h4>
+            <h5>Описание:</h5>
                 <ul>
                     <li class="single-item-top-text">${product.details1}
                     </li>
