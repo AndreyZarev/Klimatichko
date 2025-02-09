@@ -12,7 +12,7 @@
 
 .left-side img {
     max-width: 80%;
-    margin-left: 10em;
+    margin-left: 7em;
 
 }
 
@@ -21,26 +21,37 @@
 
 }
 
+.big-btn {
+    padding: 0.7em;
+    font-size: 1em;
+}
+
+.price-p {
+    padding-top: 0.21em;
+    font-size: 1.2em;
+}
+
 .details-table table {
     /* border: 2px solid black; */
-    padding: 2em;
+    padding: 0.5em;
     display: block;
     margin: auto;
+
 }
 
 .details-table table tr td {
     border: 2px solid black;
     padding: 0.5em;
-    padding-right: 8em;
     color: black;
 }
 
-div.div-h3-span-price {
+.div-h3-span-price {
     display: flex;
 }
 
-div.div-h3-span-price p {
-    margin-top: 0.5em;
+
+table tr td.td-pre-build {
+    padding-right: 10em;
 }
 
 

@@ -12,6 +12,11 @@
 
     }
 
+    .details-table table,
+    .single-item-top-text {
+        font-size: 1.5em;
+    }
+
     figure.wp-block-table {
         max-width: 1500px;
         margin: auto;
@@ -24,6 +29,11 @@
         margin: 2em 15em;
         font-size: 1.2em;
 
+    }
+
+    .details-table table,
+    .single-item-top-text {
+        font-size: 1.4em;
     }
 
     .wp-block-table table {
@@ -46,6 +56,11 @@
 
     }
 
+    .details-table table,
+    .single-item-top-text {
+        font-size: 1.3em;
+    }
+
     .wp-block-table table {
         display: block;
         margin: auto;
@@ -64,6 +79,11 @@
         margin: 2em 15em;
         font-size: 1.1em;
 
+    }
+
+    .details-table table,
+    .single-item-top-text {
+        font-size: 1.2em;
     }
 
     .wp-block-table table {
@@ -116,6 +136,15 @@
         margin: 2em 13em;
     }
 
+    div.left-side {
+        width: 60%;
+    }
+
+    div.left-side img {
+        max-width: 85%;
+        margin-left: 5em;
+
+    }
 
 
     td.td-prices {
@@ -155,9 +184,23 @@
         margin: 2em 9em;
     }
 
+    .other-product div div a img {
+        max-width: 250px;
+    }
+
     .wp-block-table table {
         display: block;
         margin: auto;
+    }
+
+    div.left-side {
+        width: 60%;
+    }
+
+    div.left-side img {
+        max-width: 100%;
+        margin-left: 1em;
+
     }
 }
 
@@ -166,7 +209,45 @@
         margin: 2em 7em;
     }
 
+    .other-product div div a img {
+        max-width: 250px;
+    }
 
+    div#other-products {
+        flex-wrap: wrap;
+    }
+
+
+    div.single-product {
+        padding: 2em;
+        display: block;
+    }
+
+
+
+    div.left-side {
+        width: 80%;
+    }
+
+    div.left-side {
+        display: block;
+        margin: auto;
+    }
+
+    div.left-side img {
+        max-width: 100%;
+        margin: auto;
+
+    }
+
+    div.right-side {
+        display: block;
+        margin: 2em 18%;
+    }
+
+    .details-table table tr td.td-pre-build {
+        padding-right: 3em;
+    }
 
     td.td-prices {
 
@@ -186,6 +267,47 @@
 }
 
 @media (min-width: 480px) and (max-width: 630px) {
+    div.left-side {
+        width: 90%;
+    }
+
+
+
+    div#other-products {
+        flex-wrap: wrap;
+    }
+
+    div.single-product {
+        padding: 1em;
+        display: block;
+    }
+
+
+
+    h3.h3-first::after {
+        top: 35%;
+    }
+
+    div.left-side {
+        display: block;
+        margin: auto;
+    }
+
+    div.left-side img {
+        max-width: 100%;
+        margin: auto;
+
+    }
+
+    div.right-side {
+        display: block;
+        margin: 2em 7%;
+    }
+
+    div.other-product {
+        padding: 0.2em;
+    }
+
     article.working-hours-article {
         margin: 2em 3em;
     }
@@ -194,7 +316,9 @@
         padding: 1.5em;
     }
 
-
+    .details-table table tr td.td-pre-build {
+        padding-right: 2em;
+    }
 
     figure .wp-block-table table {
         display: block;
@@ -217,11 +341,80 @@
         margin: 1em auto 3em auto;
     }
 
+
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
     article.working-hours-article {
         margin: 2em 2em;
+    }
+
+    div.other-product {
+        padding: 0.2em;
+    }
+
+    div#other-products {
+        flex-wrap: wrap;
+    }
+
+    .details-table table tr td.td-pre-build {
+        padding-right: 0.3em;
+    }
+
+    div.left-side {
+        width: 100%;
+    }
+
+    div.single-product {
+        padding: 0.5em;
+        display: block;
+    }
+
+    h3.h3-first::after {
+        top: 35%;
+    }
+
+    div.left-side {
+        display: block;
+        margin: auto;
+    }
+
+    div.left-side img {
+        max-width: 100%;
+        margin: auto;
+
+    }
+
+    a.big-btn {
+        max-width: 55%;
+    }
+
+    div.div-h3-span-price {
+        display: block;
+        text-align: center;
+    }
+
+    h3.h3-first::after {
+        top: 60%;
+    }
+
+    h3.h3-price-single {
+        max-width: 7em;
+        text-align: center;
+        margin: auto;
+    }
+
+    div.right-side {
+        display: block;
+        margin: 2em 3%;
+    }
+
+    section.details-table table {
+        padding: 0.5em;
+    }
+
+    section.details-table table tr td {
+        padding-right: 0.3em;
     }
 
     div.entry-content {
@@ -243,6 +436,69 @@
 @media (max-width: 320px) {
     article.working-hours-article {
         margin: 2em 1.5em;
+    }
+
+    div.left-side {
+        width: 100%;
+    }
+
+    div.single-product {
+        padding: 0.5em;
+        display: block;
+    }
+
+    div#other-products {
+        display: block;
+        margin: auto;
+    }
+
+    a.big-btn {
+        max-width: 70%;
+    }
+
+    h3.h3-first::after {
+        top: 35%;
+    }
+
+    div.left-side {
+        display: block;
+        margin: auto;
+    }
+
+    div.left-side img {
+        max-width: 100%;
+        margin: auto;
+
+    }
+
+    div.div-h3-span-price {
+        display: block;
+        text-align: center;
+    }
+
+    h3.h3-first::after {
+        top: 60%;
+    }
+
+    h3.h3-price-single {
+        max-width: 7em;
+        text-align: center;
+        margin: auto;
+    }
+
+    div.right-side {
+        display: block;
+        margin: 2em 3%;
+    }
+
+    section.details-table table tr td.td-pre-build {
+        padding-right: 0.2em;
+    }
+
+
+
+    section.details-table table tr td {
+        padding-right: 0.2em;
     }
 
     div.entry-content {

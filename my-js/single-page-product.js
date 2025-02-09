@@ -38,7 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
         products.forEach(product => {
 
             let div = document.createElement("div")
-            div.classList.add("col-lg-4", "col-md-6", "wow", "ac-products");
+            div.classList.add("col-lg-4", "col-md-6", "wow", "ac-products", "other-product");
             div.addEventListener("click", () => { getToSingleProductPage(product.id) })
             div.innerHTML = createProductSection(product)
             otherProducts.appendChild(div)
@@ -52,18 +52,31 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function createSingleProduct(product) {
         let discoutPrice = `
-                 <p class="">Намалена цена:</p> 
+                 <p class="price-p">Намалена цена:</p> 
         
         `
         let discoutH3 = `
-                  <p class=""> Нормална цена:</p> 
+                  <p class="price-p"> Нормална цена:</p> 
                         <h3 class="h3-price-single h3-first">${product.price}.00 лв.</h3>
         
         `
         let normalH3 = `
-                  <p class="">Цена:</p> 
+                  <p class="price-p">Цена:</p> 
                         <h3 class="h3-price-single">${product.price}.00 лв.</h3>
         
+        `
+
+        let coolingCapacity = `
+         <tr>
+                    <td>Препоръчителен обем (охлаждане) (куб. м.)</td>
+                    <td>${product.recommendedCoolingCapacity}</td>
+                </tr>
+        `
+        let heatingCapacity = `
+         <tr>
+                    <td>Препоръчителен обем (охлаждане) (куб. м.)</td>
+                    <td>${product.recommendedheatingCapacity}</td>
+                </tr>
         `
         return `
         
@@ -75,27 +88,27 @@ window.addEventListener("DOMContentLoaded", () => {
         </div>
 
         <div class="right-side">
-            <h4>Характеристики:</h4>
+            <h4>Описание:</h4>
                 <ul>
-                    <li>${product.details1}
+                    <li class="single-item-top-text">${product.details1}
                     </li>
-                    <li>
+                    <li class="single-item-top-text">
                     ${product.details2}
 
-                    </li>
-                    <li>
+                    </li >
+                    <li class="single-item-top-text">
                     ${product.details3}
 
                     </li>
-                    <li>
+                    <li  class="single-item-top-text">
                     ${product.details4}
 
                     </li>
-                    <li>
+                    <li class="single-item-top-text">
                     ${product.details5}
 
                     </li>
-                    <li>
+                    <li class="single-item-top-text">
                     ${product.details6}
                     </li>
                 </ul>
@@ -118,115 +131,123 @@ window.addEventListener("DOMContentLoaded", () => {
 
                  </h3>
                 </div>
+                <p class="single-item-top-text">За консултация или поръчка можете да се свържете с нас.</p> 
+                
+                <div class="call-us-block">
 
+                    <a class="call-us big-btnbig-btn" href="tel: 0896081213">
+                        <span>
+                            <img class="call-us-icon" src="img/new/icons8-phone-50.png" alt="" srcset="">
+                        </span>
+                         Обади се</a>
+                </div>
+                <p class="single-item-top-text">Можете и да разгледата опцията за разсрочено плащане тук.</p>
         </div>
+         
         </div>
+        <h4 class="char-h4">Характеристики:</h4>
 
         <section class="details-table">
        <table>
             <tbody>
                 <tr>
-                    <td>За помещения (кв.м.)</td>
+                    <td class="td-pre-build">За помещения (кв.м.)</td>
                     <td>${product.forPlaces}</td>
                 </tr>
                 <tr>
-                    <td>Енергиен клас охлаждане</td>
+                    <td class="td-pre-build">Енергиен клас охлаждане</td>
                     <td>${product.coolingEnergyClass}</td>
                 </tr>
                 <tr>
-                    <td>Енергиен клас отопление</td>
+                    <td class="td-pre-build">Енергиен клас отопление</td>
                     <td>${product.heatEnergyClass}</td>
                 </tr>
                 <tr>
-                    <td>Мощност</td>
+                    <td class="td-pre-build">Мощност</td>
                     <td>${product.size} BTU</td>
                 </tr>
+                ${product.recommendedCoolingCapacity ? coolingCapacity : ""}
+                ${product.recommendedheatingCapacity ? heatingCapacity : ""}
+              
+               
                 <tr>
-                    <td>Препоръчителен обем (охлаждане) (куб. м.)</td>
-                    <td>${product.recommendedCoolingCapacity}</td>
-                </tr>
-                <tr>
-                    <td>Препоръчителен обем (отопление) (куб. м.)</td>
-                    <td>${product.recommendedheatingCapacity}</td>
-                </tr>
-                <tr>
-                    <td>Отдавана мощност (охлаждане) (kW)</td>
+                    <td class="td-pre-build">Отдавана мощност (охлаждане) (kW)</td>
                     <td>${product.coolingPowerExert}</td>
                 </tr>
                 <tr>
-                    <td>Отдавана мощност (отопление) (kW)</td>
+                    <td class="td-pre-build">Отдавана мощност (отопление) (kW)</td>
                     <td>${product.heatingPowerExert}</td>
                 </tr>
                 <tr>
-                    <td>Консумирана мощност (охлаждане) (kW)</td>
+                    <td class="td-pre-build">Консумирана мощност (охлаждане) (kW)</td>
                     <td>${product.coolingPowerConsumption}</td>
                 </tr>
                 <tr>
-                    <td>Консумирана мощност (отопление) (kW)</td>
+                    <td class="td-pre-build">Консумирана мощност (отопление) (kW)</td>
                     <td>${product.heatingPowerConsumption}</td>
                 </tr>
                 <tr>
-                    <td>Захранващо напрежение (V)</td>
+                    <td class="td-pre-build">Захранващо напрежение (V)</td>
                     <td>${product.voltage}</td>
                 </tr>
                 <tr>
-                    <td>SEER (сезонна ефективност в режим на охлаждане)</td>
+                    <td class="td-pre-build">SEER (сезонна ефективност в режим на охлаждане)</td>
                     <td>${product.seer}</td>
                 </tr>
                 <tr>
-                    <td>SCOP (сезонна ефективност в режим на отопление)</td>
+                    <td class="td-pre-build">SCOP (сезонна ефективност в режим на отопление)</td>
                     <td>${product.scop}</td>
                 </tr>
                 <tr>
-                    <td>Ниво на шум (вътрешно тяло) (dB)</td>
+                    <td class="td-pre-build">Ниво на шум (вътрешно тяло) (dB)</td>
                     <td>${product.insideNoise}</td>
                 </tr>
                 <tr>
-                    <td>Ниво на шум (външно тяло) (dB)</td>
+                    <td class="td-pre-build">Ниво на шум (външно тяло) (dB)</td>
                     <td>${product.outsideNoise}</td>
                 </tr>
                 <tr>
-                    <td>Размери В х Ш х Д (вътрешно тяло) (мм)</td>
+                    <td class="td-pre-build">Размери Д х В х Ш (вътрешно тяло) (мм)</td>
                     <td>${product.sizeInsideBody}</td>
                 </tr>
                 <tr>
-                    <td>Размери В х Ш х Д (външно тяло) (мм)</td>
+                    <td class="td-pre-build">Размери Д х В х Ш (външно тяло) (мм)</td>
                     <td>${product.sizeOutsideBody}</td>
                 </tr>
                 <tr>
-                    <td>Тегло (вътрешно тяло) (кг.)</td>
+                    <td class="td-pre-build">Тегло (вътрешно тяло) (кг.)</td>
                     <td>${product.weightInsideBody}</td>
                 </tr>
                 <tr>
-                    <td>Тегло (външно тяло) (кг.)</td>
+                    <td class="td-pre-build">Тегло (външно тяло) (кг.)</td>
                     <td>${product.weightOutsideBody}</td>
                 </tr>
                 <tr>
-                    <td>Работен диапазон при охлаждане (°C)</td>
+                    <td class="td-pre-build">Работен диапазон при охлаждане (°C)</td>
                     <td>${product.workingTempraturesForCooling}</td>
                 </tr>
                 <tr>
-                    <td>Работен диапазон при отопление (°C)</td>
+                    <td class="td-pre-build">Работен диапазон при отопление (°C)</td>
                     <td>${product.workingTempraturesForHeating}</td>
                 </tr>
                 <tr>
-                    <td>Хладилен агент</td>
+                    <td class="td-pre-build">Хладилен агент</td>
                     <td>${product.agent}</td>
                 </tr>
                 <tr>
-                    <td>Диаметър на тръбата – течност/газ (mm)</td>
+                    <td class="td-pre-build">Диаметър на тръбата – течност/газ (mm)</td>
                     <td>${product.diameter}</td>
                 </tr>
                 <tr>
-                    <td>Захранване</td>
+                    <td class="td-pre-build">Захранване</td>
                     <td>${product.power}</td>
                 </tr>
                 <tr>
-                    <td>Произход</td>
+                    <td class="td-pre-build">Произход</td>
                     <td>${product.madeIn}</td>
                 </tr>
                 <tr>
-                    <td>Гаранция</td>
+                    <td class="td-pre-build">Гаранция</td>
                     <td>${product.warranty}</td>
                 </tr>
             </tbody>
