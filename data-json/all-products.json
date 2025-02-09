@@ -108,7 +108,7 @@
         "heatingPowerExert": "1.40 - 5.60 - 6.70",
         "coolingPowerConsumption": "1.53 (0.14 - 2.36)",
         "heatingPowerConsumption": "1.48 (0.20 - 2.41)",
-        "voltage": "220-240",
+        "voltage": "2200-240",
         "seer": "7.10 – клас А++",
         "scop": "4.00 – клас А+",
         "insideNoise": "25 / 30 / 37 / 43 dB",
