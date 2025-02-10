@@ -95,7 +95,16 @@ window.addEventListener("DOMContentLoaded", () => {
             .then(response => response.json())
             .then(products => {
                 const filteredResults = products.filter(item => {
+                    debugger
+                    console.log(
+                        (selectedKeyword === "" || item.keyword.toLowerCase().includes(selectedKeyword.toLowerCase())) &&
+                        (selectedTypeValue === "Категории" || item.type === selectedTypeValue) &&
+                        (selectedLabelValue === "Марка" || item.label === selectedLabelValue)
+                    );
+
+
                     return (
+
                         (selectedKeyword === "" || item.keyword.toLowerCase().includes(selectedKeyword.toLowerCase())) &&
                         (selectedTypeValue === "Категории" || item.type === selectedTypeValue) &&
                         (selectedLabelValue === "Марка" || item.label === selectedLabelValue)

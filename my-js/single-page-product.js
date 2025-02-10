@@ -65,13 +65,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
         let coolingCapacity = `
          <tr>
-                    <td>Препоръчителен обем (охлаждане) (куб. м.)</td>
+                    <td>Препоръчителен обем (охлаждане)</td>
                     <td>${product.recommendedCoolingCapacity}</td>
                 </tr>
         `
         let heatingCapacity = `
          <tr>
-                    <td>Препоръчителен обем (охлаждане) (куб. м.)</td>
+                    <td>Препоръчителен обем (отопление)</td>
                     <td>${product.recommendedheatingCapacity}</td>
                 </tr>
         `
@@ -149,25 +149,13 @@ window.addEventListener("DOMContentLoaded", () => {
        <table>
             <tbody>
                 <tr>
-                    <td class="td-pre-build">За помещения (кв.м.)</td>
-                    <td>${product.forPlaces}</td>
-                </tr>
-                <tr>
-                    <td class="td-pre-build">Енергиен клас охлаждане</td>
-                    <td>${product.coolingEnergyClass}</td>
-                </tr>
-                <tr>
-                    <td class="td-pre-build">Енергиен клас отопление</td>
-                    <td>${product.heatEnergyClass}</td>
-                </tr>
-                <tr>
                     <td class="td-pre-build">Мощност</td>
                     <td>${product.size} BTU</td>
                 </tr>
-                ${product.recommendedCoolingCapacity ? coolingCapacity : ""}
+                  ${product.recommendedCoolingCapacity ? coolingCapacity : ""}
                 ${product.recommendedheatingCapacity ? heatingCapacity : ""}
               
-               
+              
                 <tr>
                     <td class="td-pre-build">Отдавана мощност (охлаждане) (kW)</td>
                     <td>${product.coolingPowerExert}</td>
@@ -184,6 +172,15 @@ window.addEventListener("DOMContentLoaded", () => {
                     <td class="td-pre-build">Консумирана мощност (отопление) (kW)</td>
                     <td>${product.heatingPowerConsumption}</td>
                 </tr>
+                  <tr>
+                    <td class="td-pre-build">Енергиен клас охлаждане</td>
+                    <td>${product.coolingEnergyClass}</td>
+                </tr>
+                <tr>
+                    <td class="td-pre-build">Енергиен клас отопление</td>
+                    <td>${product.heatEnergyClass}</td>
+                </tr>
+                
                 <tr>
                     <td class="td-pre-build">Захранващо напрежение (V)</td>
                     <td>${product.voltage}</td>
