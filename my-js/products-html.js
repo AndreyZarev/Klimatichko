@@ -49,6 +49,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 typeField.value = selectedTypeValue
 
             }
+            debugger
             localStorage.removeItem("type")
 
         }
@@ -66,7 +67,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
         }
 
-        debugger
         let container = document.getElementsByClassName("product-div")[0]
         selectedKeyword = ''
 
@@ -95,7 +95,6 @@ window.addEventListener("DOMContentLoaded", () => {
             .then(response => response.json())
             .then(products => {
                 const filteredResults = products.filter(item => {
-                    debugger
                     console.log(
                         (selectedKeyword === "" || item.keyword.toLowerCase().includes(selectedKeyword.toLowerCase())) &&
                         (selectedTypeValue === "Категории" || item.type === selectedTypeValue) &&
@@ -283,7 +282,6 @@ window.addEventListener("DOMContentLoaded", () => {
         // let currentPage = document.getElementsByClassName('active')[2]
         localStorage.setItem("currentPage", JSON.stringify(currentPage));
 
-        debugger
 
         fetch('data-json/all-products.json')
             .then(response => response.json())

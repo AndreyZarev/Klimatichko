@@ -74,7 +74,6 @@ window.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("keyword", JSON.stringify(selectedKeyword2))
 
         }
-        debugger
         let selectedTypeValue = ""
         if (typeField.value !== "Категории") {
             selectedTypeValue = typeField.value
@@ -104,7 +103,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let typeAcDiv = document.getElementsByClassName("ac-categories")
     console.log(typeAcDiv);
-    debugger
 
     for (const typeAc of typeAcDiv) {
         typeAc.addEventListener("click", typeSearch)
@@ -149,7 +147,6 @@ function typeSearch(e) {
     // }
 
     localStorage.setItem("type", JSON.stringify(seletedType))
-    debugger
     window.location.href = "products.html";
 }
 
@@ -329,7 +326,6 @@ function typeSearch(e) {
 // function getToSingleProductPage(id) {
 
 
-//     debugger
 //     fetch('data-json/all-products.json')
 //         .then(response => response.json())
 //         .then(data => {
