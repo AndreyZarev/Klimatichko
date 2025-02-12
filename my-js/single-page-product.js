@@ -65,13 +65,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
         let coolingCapacity = `
          <tr>
-                    <td>Препоръчителен обем (охлаждане)</td>
+                    <td>Препоръчителен обем (охлаждане) (куб. м.)</td>
                     <td>${product.recommendedCoolingCapacity}</td>
                 </tr>
         `
         let heatingCapacity = `
          <tr>
-                    <td>Препоръчителен обем (отопление)</td>
+                    <td>Препоръчителен обем (отопление) (куб. м.)</td>
                     <td>${product.recommendedheatingCapacity}</td>
                 </tr>
         `
@@ -149,13 +149,16 @@ window.addEventListener("DOMContentLoaded", () => {
        <table>
             <tbody>
                 <tr>
+                    <td class="td-pre-build">За помещения (кв. м.)</td>
+                    <td>${product.forPlaces}</td>
+                </tr>
+                ${product.recommendedCoolingCapacity ? coolingCapacity : ""}
+                ${product.recommendedheatingCapacity ? heatingCapacity : ""}
+                <tr>
                     <td class="td-pre-build">Мощност</td>
                     <td>${product.size} BTU</td>
                 </tr>
-                  ${product.recommendedCoolingCapacity ? coolingCapacity : ""}
-                ${product.recommendedheatingCapacity ? heatingCapacity : ""}
-              
-              
+                
                 <tr>
                     <td class="td-pre-build">Отдавана мощност (охлаждане) (kW)</td>
                     <td>${product.coolingPowerExert}</td>

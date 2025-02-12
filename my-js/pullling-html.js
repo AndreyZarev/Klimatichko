@@ -117,6 +117,9 @@ function typeSearch(e) {
     let selectedTypeValue = e.target.classList[0]
     console.log(selectedTypeValue);
     let seletedType = ''
+    if (selectedTypeValue == "wallAc") {
+        seletedType = "Стенни Климатици"
+    }
     if (selectedTypeValue == "floorAc") {
 
         seletedType = "Подови климатици"
@@ -134,17 +137,18 @@ function typeSearch(e) {
         seletedType = "Касетъчни климатици"
     }
 
-    // else if (selectedTypeValue == "floorSealingAc") {
-    //     seletedType = "Подово-таванни климатици"
+    else if (selectedTypeValue == "floorSealingAc") {
+        seletedType = "Подово-таванни климатици"
 
 
-    // }  else if (selectedTypeValue == "Касетъчни климатици") {
-    // }
-    // else if (selectedTypeValue == "Подово-таванни климатици") {
-    //     seletedType = "За много ниски температури"
+    }
+    else if (selectedTypeValue == "Касетъчни климатици") {
+    }
+    else if (selectedTypeValue == forVeryCold) {
+        seletedType = "За много ниски температури"
 
 
-    // }
+    }
 
     localStorage.setItem("type", JSON.stringify(seletedType))
     window.location.href = "products.html";

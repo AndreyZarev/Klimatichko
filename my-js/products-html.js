@@ -95,11 +95,6 @@ window.addEventListener("DOMContentLoaded", () => {
             .then(response => response.json())
             .then(products => {
                 const filteredResults = products.filter(item => {
-                    console.log(
-                        (selectedKeyword === "" || item.keyword.toLowerCase().includes(selectedKeyword.toLowerCase())) &&
-                        (selectedTypeValue === "Категории" || item.type === selectedTypeValue) &&
-                        (selectedLabelValue === "Марка" || item.label === selectedLabelValue)
-                    );
 
 
                     return (
@@ -183,11 +178,16 @@ window.addEventListener("DOMContentLoaded", () => {
     const itemsPerPage = 12;
 
     searchButton1.addEventListener("click", products)
+    searchButton1.addEventListener("click", save)
     searchButton1.addEventListener("click", changeTitle)
     searchButton2.addEventListener("click", products)
+    searchButton2.addEventListener("click", save)
     searchButton2.addEventListener("click", changeTitle)
 
+    function save() {
+        window.location.href = "products.html";
 
+    }
     function changeTitle() {
 
         let title = document.getElementsByClassName("h1-promo")[0]
