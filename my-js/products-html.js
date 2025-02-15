@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
     function products() {
-
+        debugger
         let typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
         let labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
 
@@ -22,6 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const typeField = document.getElementsByClassName('type-field')[0];
 
         const labelField = document.getElementsByClassName('label-field')[0];
+
 
 
 
@@ -49,7 +50,6 @@ window.addEventListener("DOMContentLoaded", () => {
                 typeField.value = selectedTypeValue
 
             }
-            debugger
             localStorage.removeItem("type")
 
         }
@@ -178,16 +178,10 @@ window.addEventListener("DOMContentLoaded", () => {
     const itemsPerPage = 12;
 
     searchButton1.addEventListener("click", products)
-    searchButton1.addEventListener("click", save)
     searchButton1.addEventListener("click", changeTitle)
     searchButton2.addEventListener("click", products)
-    searchButton2.addEventListener("click", save)
     searchButton2.addEventListener("click", changeTitle)
 
-    function save() {
-        window.location.href = "products.html";
-
-    }
     function changeTitle() {
 
         let title = document.getElementsByClassName("h1-promo")[0]
