@@ -228,3 +228,21 @@ h3 a:hover {
 .h3-working {
     margin: 1em 0.5em 1em 2em;
 }
+
+.entry-content,
+.payment-methods {
+    padding: 1em;
+    display: block;
+    max-width: 70%;
+    color: black;
+    text-align: justify;
+    margin: 2em auto;
+    border: 4px solid #227ae5;
+    border-radius: 0.5em;
+}
+
+.how-to-purchase-second {
+
+    list-style: url("img/new/circle.png");
+
+}
