@@ -927,6 +927,11 @@
 
     }
 
+    p.phone-in-menu-p {
+        font-size: 0.3em;
+        margin: 3.2em 0 0 0;
+    }
+
     div.nav-bar {
         margin: 2 0;
         padding: 0.5em;
