@@ -241,6 +241,10 @@ h3 a:hover {
     border-radius: 0.5em;
 }
 
+.how-to-purchase {
+    list-style: none;
+}
+
 .how-to-purchase-second {
 
     list-style: url("img/new/circle.png");
