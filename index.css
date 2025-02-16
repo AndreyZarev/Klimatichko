@@ -510,3 +510,8 @@ body {
 .display-none {
     display: none;
 }
+
+
+.type-field-div {
+    margin-right: 0.4em;
+}
