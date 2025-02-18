@@ -1,6 +1,6 @@
 @media (min-width: 2030px) {
     .working-hours-article {
-        margin: 2em 15em;
+        margin: 2em 3em;
         font-size: 1.3em;
 
     }
@@ -26,7 +26,7 @@
 
 @media (min-width: 1870px) and (max-width: 2030px) {
     .working-hours-article {
-        margin: 2em 15em;
+        margin: 2em 3em;
         font-size: 1.2em;
 
     }
@@ -51,7 +51,7 @@
 
 @media (min-width: 1700px) and (max-width: 1870px) {
     .working-hours-article {
-        margin: 2em 15em;
+        margin: 2em 3em;
         font-size: 1.15em;
 
     }
@@ -76,7 +76,7 @@
 
 @media (min-width: 1520px) and (max-width: 1700px) {
     .working-hours-article {
-        margin: 2em 15em;
+        margin: 2em 3em;
         font-size: 1.1em;
 
     }
@@ -104,7 +104,7 @@
 
 @media (min-width: 1360px) and (max-width: 1520px) {
     article.working-hours-article {
-        margin: 2em 15em;
+        margin: 2em 3em;
     }
 
 
@@ -133,7 +133,7 @@
 
 @media (min-width: 1200px) and (max-width: 1360px) {
     article.working-hours-article {
-        margin: 2em 13em;
+        margin: 2em 3em;
     }
 
     div.left-side {
@@ -163,7 +163,7 @@
 
 @media (min-width: 1070px) and (max-width: 1200px) {
     article.working-hours-article {
-        margin: 2em 11em;
+        margin: 2em 3em;
     }
 
 
@@ -181,7 +181,7 @@
 
 @media (min-width: 900px) and (max-width: 1070px) {
     article.working-hours-article {
-        margin: 2em 9em;
+        margin: 2em 3em;
     }
 
     .other-product div div a img {
@@ -206,7 +206,7 @@
 
 @media (min-width: 630px) and (max-width: 900px) {
     article.working-hours-article {
-        margin: 2em 7em;
+        margin: 2em 3em;
     }
 
     .other-product div div a img {
