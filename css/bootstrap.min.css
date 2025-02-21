@@ -236,6 +236,10 @@ a {
     text-decoration: none
 }
 
+a:hover .btn-small {
+    color: black;
+}
+
 a:hover {
     color: black;
 }
