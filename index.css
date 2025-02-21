@@ -515,3 +515,20 @@ body {
 .type-field-div {
     margin-right: 0.4em;
 }
+
+.btn-small {
+    display: block;
+    margin: auto;
+}
+
+.btn-small img {
+
+    border-radius: 0.4em;
+    height: 2em;
+    margin: 0.15em auto;
+    background-color: #0e2e50;
+}
+
+.btn-small img:hover {
+    background-color: black;
+}
