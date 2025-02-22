@@ -529,6 +529,10 @@ body {
     background-color: #0e2e50;
 }
 
-.btn-small img:hover {
-    background-color: black;
+/* .btn-small:hover img {
+    background-color: rgb(35, 35, 35);
+} */
+
+.btn-small:hover {
+    color: white;
 }

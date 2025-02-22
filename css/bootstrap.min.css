@@ -232,17 +232,14 @@ sup {
 }
 
 a {
-    color: white;
+    color: rgba(255, 255, 255, 0.5);
     text-decoration: none
 }
 
 a:hover .btn-small {
-    color: black;
+    color: white;
 }
 
-a:hover {
-    color: black;
-}
 
 a:not([href]):not([class]),
 a:not([href]):not([class]):hover {
