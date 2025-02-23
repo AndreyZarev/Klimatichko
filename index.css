@@ -541,3 +541,30 @@ body {
     background-color: #227ae5;
     border: #227ae5;
 }
+
+.footer-links-div {
+    display: flex;
+}
+
+.footer-links {
+    display: block;
+    margin: auto;
+}
+
+.footer-phone:hover,
+.footer-links a:hover {
+    color: white;
+    /* cursor: pointer; */
+}
+
+.container-footer {
+    padding-bottom: 0 !important
+}
+
+.copy-right {
+    text-align: center !important
+}
+
+.footer-links-internal:hover {
+    color: white !important
+}
