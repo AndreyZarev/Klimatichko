@@ -536,3 +536,8 @@ body {
 .btn-small:hover {
     color: white;
 }
+
+.back-to-top {
+    background-color: #227ae5;
+    border: #227ae5;
+}
