@@ -112,47 +112,47 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-// function typeSearch(e) {
-//     debugger
-//     let selectedTypeValue = e.target.classList[0]
-//     console.log(selectedTypeValue);
-//     let seletedType = ''
-//     if (selectedTypeValue == "wallAc") {
-//         seletedType = "Стенни Климатици"
-//     }
-//     if (selectedTypeValue == "floorAc") {
+function typeSearch(e) {
+    debugger
+    let selectedTypeValue = e.target.classList[0]
+    console.log(selectedTypeValue);
+    let seletedType = ''
+    if (selectedTypeValue == "wallAc") {
+        seletedType = "Стенни Климатици"
+    }
+    if (selectedTypeValue == "floorAc") {
 
-//         seletedType = "Подови климатици"
+        seletedType = "Подови климатици"
 
-//     } else if (selectedTypeValue == "convectorAc") {
-//         seletedType = "Конвектори"
-
-
-//     } else if (selectedTypeValue == "columnsAc") {
-//         seletedType = "Колонни климатици"
+    } else if (selectedTypeValue == "convectorAc") {
+        seletedType = "Конвектори"
 
 
-
-//     } else if (selectedTypeValue == "cassetteAc") {
-//         seletedType = "Касетъчни климатици"
-//     }
-
-//     else if (selectedTypeValue == "floorSealingAc") {
-//         seletedType = "Подово-таванни климатици"
+    } else if (selectedTypeValue == "columnsAc") {
+        seletedType = "Колонни климатици"
 
 
-//     }
-//     else if (selectedTypeValue == "Касетъчни климатици") {
-//     }
-//     else if (selectedTypeValue == forVeryCold) {
-//         seletedType = "За много ниски температури"
+
+    } else if (selectedTypeValue == "cassetteAc") {
+        seletedType = "Касетъчни климатици"
+    }
+
+    else if (selectedTypeValue == "floorSealingAc") {
+        seletedType = "Подово-таванни климатици"
 
 
-//     }
+    }
+    else if (selectedTypeValue == "Касетъчни климатици") {
+    }
+    else if (selectedTypeValue == forVeryCold) {
+        seletedType = "За много ниски температури"
 
-//     localStorage.setItem("type", JSON.stringify(seletedType))
-//     window.location.href = "products.html";
-// }
+
+    }
+
+    localStorage.setItem("type", JSON.stringify(seletedType))
+    window.location.href = "products.html";
+}
 
 
 
