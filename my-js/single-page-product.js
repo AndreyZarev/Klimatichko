@@ -62,6 +62,7 @@ window.addEventListener("DOMContentLoaded", () => {
                         <h3 class="h3-price-single">${product.price}.00 лв.</h3>
         
         `
+        let secondImg = `<img src="${product.img1}" id="img1"class="small-images" onclick="${changeImage}" alt="AC image" srcset="">`
 
         let coolingCapacity = `
          <tr>
@@ -81,7 +82,9 @@ window.addEventListener("DOMContentLoaded", () => {
         
       
         <div class="left-side">
-            <img src="${product.img}" alt="AC image" srcset="">
+            <img src="${product.img}" id="img" onclick="${changeImage}" alt="AC image" srcset="">
+              <div class="zoom-lens"></div>
+            ${product.img1 ? secondImg : ""}
         </div>
 
         <div class="right-side">
@@ -312,7 +315,80 @@ window.addEventListener("DOMContentLoaded", () => {
             .catch(error => console.error('Error fetching JSON:', error));
     }
 
+    const leftSideDiv = document.querySelector(".left-side");
+    const images = leftSideDiv.children;
+    const lens = document.querySelector(".zoom-lens");
+
+    for (let img of images) {
+        img.addEventListener("click", changeImage);
+    }
+
+    function changeImage(e) {
+        let img = document.getElementById("img")
+        let img1 = document.getElementById("img1")
+
+
+        if (img1 == e.target) {
+            img1?.classList.remove("small-images")
+            img.classList.add("small-images")
+            debugger
+            leftSideDiv.removeChild(img)
+            leftSideDiv.removeChild(lens)
+            leftSideDiv.append(lens)
+
+            leftSideDiv.append(img)
+        } else {
+            img?.classList.remove("small-images")
+            img1.classList.add("small-images")
+            debugger
+            leftSideDiv.removeChild(img1)
+            leftSideDiv.removeChild(lens)
+            leftSideDiv.append(lens)
+            leftSideDiv.append(img1)
+        }
+
+        addLence()
+
+
+    }
+
+
+    function addLence() {
+
+        let image = leftSideDiv.children[0];
+        image.addEventListener("mousemove", function (e) {
+            {
+                const { left, top, width, height } = image.getBoundingClientRect();
+                const lensSize = lens.offsetWidth / 3;
+
+
+                let x = e.clientX - left - lensSize;
+                let y = e.clientY - top - lensSize;
+
+                x = Math.max(0, Math.min(x, width - lens.offsetWidth));
+                y = Math.max(0, Math.min(y, height - lens.offsetHeight));
+
+                lens.style.left = `${x}px`;
+                lens.style.top = `${y}px`;
+                lens.style.display = "block";
+
+
+                lens.style.backgroundImage = `url(${image.src})`;
+                lens.style.backgroundPosition = `-${x * 2}px -${y * 2}px`; /* Adjust for zoom */
+
+            }
+
+
+        })
 
 
 
+        image.addEventListener("mouseleave", function () {
+            lens.style.display = "none";
+        })
+
+    }
+
+    addLence()
 })
+

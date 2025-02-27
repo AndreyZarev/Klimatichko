@@ -8,12 +8,41 @@
 
 .left-side {
     width: 60%;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    cursor: zoom-in;
+
 }
 
 .left-side img {
+    height: 20em;
     max-width: 80%;
     margin-left: 7em;
+    display: block;
 
+
+}
+
+
+
+.zoom-lens {
+    position: absolute;
+    width: 120px;
+    border-radius: 5em;
+    height: 120px;
+    border: 2px solid #fff;
+    background-repeat: no-repeat;
+    background-size: 800px auto;
+    /* Make this larger than the original image */
+    pointer-events: none;
+    display: none;
+}
+
+img.small-images {
+    height: 7em;
+    border: 1px solid #227ae5;
+    cursor: pointer;
 }
 
 .details-table {
