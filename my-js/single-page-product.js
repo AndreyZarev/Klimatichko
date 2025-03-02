@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
         attachProduct.appendChild(productElement)
 
         let otherProducts = document.getElementById("other-products")
-        debugger
+
         if (products.length > 0) {
             let h1 = document.createElement("h1")
             h1.classList.add("other-products-h1")
@@ -83,7 +83,10 @@ window.addEventListener("DOMContentLoaded", () => {
       
         <div class="left-side">
             <img src="${product.img}" id="img" onclick="${changeImage}" alt="AC image" srcset="">
-              <div class="zoom-lens"></div>
+            <div class="fullscreen-overlay" id="fullscreenOverlay">
+                <button class="close-btn" id="closeBtn">&times;</button>
+                <img id="fullscreenImage">
+            </div>
             ${product.img1 ? secondImg : ""}
         </div>
 
@@ -316,79 +319,99 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     const leftSideDiv = document.querySelector(".left-side");
-    const images = leftSideDiv.children;
-    const lens = document.querySelector(".zoom-lens");
+    let images = leftSideDiv.children;
+    const fullscreenDiv = document.getElementById("fullscreenOverlay");
 
-    for (let img of images) {
-        img.addEventListener("click", changeImage);
-    }
+    images[0].addEventListener("click", changeImage)
+    images[0].addEventListener("click", openFullScreen)
+    images[2]?.addEventListener("click", changeImage)
+
+
+
+    let openFullscreen = true
+
+
 
     function changeImage(e) {
+        debugger
+
+
         let img = document.getElementById("img")
         let img1 = document.getElementById("img1")
 
-
+        debugger
         if (img1 == e.target) {
             img1?.classList.remove("small-images")
             img.classList.add("small-images")
-            debugger
+
             leftSideDiv.removeChild(img)
-            leftSideDiv.removeChild(lens)
-            leftSideDiv.append(lens)
+            leftSideDiv.removeChild(fullscreenDiv)
+            leftSideDiv.append(fullscreenDiv)
 
             leftSideDiv.append(img)
+
         } else {
             img?.classList.remove("small-images")
             img1.classList.add("small-images")
-            debugger
             leftSideDiv.removeChild(img1)
-            leftSideDiv.removeChild(lens)
-            leftSideDiv.append(lens)
+            leftSideDiv.removeChild(fullscreenDiv)
+            leftSideDiv.append(fullscreenDiv)
             leftSideDiv.append(img1)
+
+            openFullscreen = true
+
         }
 
-        addLence()
-
+        images = leftSideDiv.children;
+        openFullScreen()
 
     }
 
+    function openFullScreen() {
 
-    function addLence() {
+        debugger
 
-        let image = leftSideDiv.children[0];
-        image.addEventListener("mousemove", function (e) {
-            {
-                const { left, top, width, height } = image.getBoundingClientRect();
-                const lensSize = lens.offsetWidth / 3;
+        let img = images[0]
 
 
-                let x = e.clientX - left - lensSize;
-                let y = e.clientY - top - lensSize;
+        let fullscreenImage = document.getElementById("fullscreenImage")
 
-                x = Math.max(0, Math.min(x, width - lens.offsetWidth));
-                y = Math.max(0, Math.min(y, height - lens.offsetHeight));
-
-                lens.style.left = `${x}px`;
-                lens.style.top = `${y}px`;
-                lens.style.display = "block";
+        img.addEventListener("click", () => {
 
 
-                lens.style.backgroundImage = `url(${image.src})`;
-                lens.style.backgroundPosition = `-${x * 2}px -${y * 2}px`; /* Adjust for zoom */
+            fullscreenImage.src = img.src;
+            fullscreenOverlay.style.opacity = "1";
+            fullscreenOverlay.style.pointerEvents = "auto";
 
+
+        })
+
+
+        // Close full-screen image when clicking the X button
+        closeBtn.addEventListener("click", () => {
+            fullscreenOverlay.style.opacity = "0";
+            fullscreenOverlay.style.pointerEvents = "none";
+        });
+
+        // Close full-screen when clicking outside the image
+        fullscreenOverlay.addEventListener("click", (e) => {
+            if (e.target === fullscreenOverlay) {
+                fullscreenOverlay.style.opacity = "0";
+                fullscreenOverlay.style.pointerEvents = "none";
             }
+        });
 
 
-        })
+        openFullscreen = false
 
 
-
-        image.addEventListener("mouseleave", function () {
-            lens.style.display = "none";
-        })
 
     }
 
-    addLence()
+    if (openFullscreen) {
+        openFullScreen()
+
+    }
+
 })
 
