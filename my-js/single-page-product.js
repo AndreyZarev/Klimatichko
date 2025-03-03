@@ -1,6 +1,7 @@
+import { setupImageGallery } from "../my-js/utils/imageGallery.js";
 window.addEventListener("DOMContentLoaded", () => {
 
-
+    let imagePaths = []
     const productData = JSON.parse(localStorage.getItem("selectedProduct"));
     const products = JSON.parse(localStorage.getItem("similarProduct"));
 
@@ -47,6 +48,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     singleProduct(productData, products)
 
+
     function createSingleProduct(product) {
         let discoutPrice = `
                  <p class="price-p">Намалена цена:</p> 
@@ -62,7 +64,20 @@ window.addEventListener("DOMContentLoaded", () => {
                         <h3 class="h3-price-single">${product.price}.00 лв.</h3>
         
         `
-        let secondImg = `<img src="${product.img1}" id="img1"class="small-images" onclick="${changeImage}" alt="AC image" srcset="">`
+        let secondImg = `${product?.img1 ? product?.img1 : ""}`
+        let thirdImg = `${product?.img2 ? product?.img2 : ""}`
+        let fourthImg = `${product?.img3 ? product?.img3 : ""}`
+        let fifthImg = `${product?.img4 ? product?.img4 : ""}`
+
+
+        imagePaths = [
+            product.img,
+            secondImg,
+            thirdImg,
+            fourthImg,
+            fifthImg
+        ]
+
 
         let coolingCapacity = `
          <tr>
@@ -82,12 +97,10 @@ window.addEventListener("DOMContentLoaded", () => {
         
       
         <div class="left-side">
-            <img src="${product.img}" id="img" onclick="${changeImage}" alt="AC image" srcset="">
-            <div class="fullscreen-overlay" id="fullscreenOverlay">
-                <button class="close-btn" id="closeBtn">&times;</button>
-                <img id="fullscreenImage">
-            </div>
-            ${product.img1 ? secondImg : ""}
+           <div id="galleryContainer"></div>
+                
+              
+            
         </div>
 
         <div class="right-side">
@@ -318,100 +331,15 @@ window.addEventListener("DOMContentLoaded", () => {
             .catch(error => console.error('Error fetching JSON:', error));
     }
 
-    const leftSideDiv = document.querySelector(".left-side");
-    let images = leftSideDiv.children;
-    const fullscreenDiv = document.getElementById("fullscreenOverlay");
-
-    images[0].addEventListener("click", changeImage)
-    images[0].addEventListener("click", openFullScreen)
-    images[2]?.addEventListener("click", changeImage)
 
 
 
-    let openFullscreen = true
 
+    document.addEventListener("DOMContentLoaded", function () {
+        setupImageGallery("galleryContainer", imagePaths);
 
-
-    function changeImage(e) {
-        debugger
-
-
-        let img = document.getElementById("img")
-        let img1 = document.getElementById("img1")
-
-        debugger
-        if (img1 == e.target) {
-            img1?.classList.remove("small-images")
-            img.classList.add("small-images")
-
-            leftSideDiv.removeChild(img)
-            leftSideDiv.removeChild(fullscreenDiv)
-            leftSideDiv.append(fullscreenDiv)
-
-            leftSideDiv.append(img)
-
-        } else {
-            img?.classList.remove("small-images")
-            img1.classList.add("small-images")
-            leftSideDiv.removeChild(img1)
-            leftSideDiv.removeChild(fullscreenDiv)
-            leftSideDiv.append(fullscreenDiv)
-            leftSideDiv.append(img1)
-
-            openFullscreen = true
-
-        }
-
-        images = leftSideDiv.children;
-        openFullScreen()
-
-    }
-
-    function openFullScreen() {
-
-        debugger
-
-        let img = images[0]
-
-
-        let fullscreenImage = document.getElementById("fullscreenImage")
-
-        img.addEventListener("click", () => {
-
-
-            fullscreenImage.src = img.src;
-            fullscreenOverlay.style.opacity = "1";
-            fullscreenOverlay.style.pointerEvents = "auto";
-
-
-        })
-
-
-        // Close full-screen image when clicking the X button
-        closeBtn.addEventListener("click", () => {
-            fullscreenOverlay.style.opacity = "0";
-            fullscreenOverlay.style.pointerEvents = "none";
-        });
-
-        // Close full-screen when clicking outside the image
-        fullscreenOverlay.addEventListener("click", (e) => {
-            if (e.target === fullscreenOverlay) {
-                fullscreenOverlay.style.opacity = "0";
-                fullscreenOverlay.style.pointerEvents = "none";
-            }
-        });
-
-
-        openFullscreen = false
-
-
-
-    }
-
-    if (openFullscreen) {
-        openFullScreen()
-
-    }
+    });
+    setupImageGallery("galleryContainer", imagePaths);
 
 })
 
