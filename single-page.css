@@ -376,3 +376,77 @@ h3 a:hover {
 .div-border {
     border: 4px solid #227ae5;
 }
+
+.phone-number {
+    color: #227ae5;
+}
+
+.phone-number:hover {
+    color: #0E2E50;
+}
+
+div.call-us-section-right-div {
+    display: flex;
+}
+
+.call-us-section-right {
+    margin-top: 0;
+}
+
+.call-us-section-right div a {
+    /* display: block; */
+    margin-right: 0.4em;
+}
+
+.call-us-section-right div {
+    display: flex;
+    margin: 1.5em 0;
+}
+
+.call-us-section-right h3 {
+    display: block;
+    margin: auto;
+    text-align: left;
+
+}
+
+.call-us-section-right h5 {
+    display: block;
+    margin: auto;
+    text-align: left;
+
+}
+
+.call-buttons-tiktok,
+.call-buttons-facebook,
+.call-buttons-instagram,
+.call-buttons-viber,
+.call-buttons-youtube {
+    padding: 0.1em;
+
+    display: inline-block;
+    margin-right: 0.1em;
+    margin-bottom: 0.3em;
+    color: white;
+}
+
+
+
+.call-buttons-tiktok:hover,
+.call-buttons-facebook:hover,
+.call-buttons-instagram:hover,
+.call-buttons-viber:hover,
+.call-buttons-youtube:hover {
+    background-color: rgba(81, 70, 240, 0.826);
+    color: white;
+
+
+}
+
+.call-buttons-tiktok img,
+.call-buttons-facebook img,
+.call-buttons-instagram img,
+.call-buttons-viber img,
+.call-buttons-youtube img {
+    height: 4em;
+}
