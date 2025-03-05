@@ -78,7 +78,9 @@ window.addEventListener("DOMContentLoaded", () => {
             fifthImg
         ]
 
-
+        let details6 = `<li class="single-item-top-text">
+                    ${product.details6}
+                    </li>`
         let coolingCapacity = `
          <tr>
                     <td>Препоръчителен обем (охлаждане) (куб. м.)</td>
@@ -125,9 +127,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     ${product.details5}
 
                     </li>
-                    <li class="single-item-top-text">
-                    ${product.details6}
-                    </li>
+                    ${product.details6 ? details6 : ""}
                 </ul>
 
                 <div class="div-h3-span-price">

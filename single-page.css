@@ -431,14 +431,14 @@ div.call-us-section-right-div {
 }
 
 
-
 .call-buttons-tiktok:hover,
 .call-buttons-facebook:hover,
 .call-buttons-instagram:hover,
 .call-buttons-viber:hover,
 .call-buttons-youtube:hover {
-    background-color: rgba(81, 70, 240, 0.826);
+    background-color: #227ae5;
     color: white;
+
 
 
 }
@@ -449,4 +449,8 @@ div.call-us-section-right-div {
 .call-buttons-viber img,
 .call-buttons-youtube img {
     height: 4em;
+}
+
+.call-buttons-youtube img {
+    border-radius: 0.8em;
 }

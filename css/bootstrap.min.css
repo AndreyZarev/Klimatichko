@@ -3110,7 +3110,7 @@ fieldset:disabled .btn {
 .btn-primary:active:focus,
 .btn-primary.active:focus,
 .show>.btn-primary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 .25rem rgba(0, 157, 121, 0.5)
+    box-shadow: 0 0 0 .25rem #0E2E50;
 }
 
 .btn-primary:disabled,
@@ -3182,7 +3182,7 @@ fieldset:disabled .btn {
     color: #fff;
     background-color: #157347;
     border-color: #146c43;
-    box-shadow: 0 0 0 .25rem rgba(60, 153, 110, 0.5)
+    box-shadow: 0 0 0 .25rem #0E2E50;
 }
 
 .btn-check:checked+.btn-success,
