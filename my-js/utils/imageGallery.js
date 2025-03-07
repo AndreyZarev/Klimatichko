@@ -1,5 +1,5 @@
 export function setupImageGallery(containerId, images) {
-
+    debugger
     let imags = [];
     for (let i = 0; i < 5; i++) {
         const url = images[i];
