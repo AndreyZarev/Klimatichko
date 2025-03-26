@@ -507,7 +507,13 @@ body {
 .footer-links {
     display: block;
     margin: auto;
+    margin-top: 0;
 }
+
+.footer-links-middle {
+    margin-bottom: 0.8em;
+}
+
 
 .footer-phone:hover,
 .footer-links a:hover {

@@ -1,6 +1,6 @@
 
 window.addEventListener("DOMContentLoaded", () => {
-    localStorage.removeItem("currentPage")
+
     let typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
     let labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
 
