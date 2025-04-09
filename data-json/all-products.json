@@ -820,7 +820,7 @@
     {  
         "id": 20,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai podov vutreshno.jpg",
-        "img": "img/new/ac-types/inventor-ac/kaisai/kaisai podov vunshno.jpg",
+        "img1": "img/new/ac-types/inventor-ac/kaisai/kaisai podov vunshno.jpg",
         "type": "Подови климатици",
         "name": "Инверторен подов климатик KAISAI KFAU-17HRG32X",
         "price": 2359.00,
