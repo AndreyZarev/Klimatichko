@@ -187,12 +187,10 @@
         padding: 7em;
     }
 
-    .call-us {
-        max-width: 15%;
-    }
+
 
     .call-us-icon {
-        height: 1.4em;
+        height: 1.05em
     }
 
     .div-price h5.first-price {
@@ -228,12 +226,10 @@
         margin-bottom: 0.15em;
     }
 
-    .call-us {
-        max-width: 22%;
-    }
+
 
     .call-us-icon {
-        height: 1.1em;
+        height: 1.05em
     }
 
     .div-price h5.second-price {
@@ -262,12 +258,10 @@
         padding: 4em;
     }
 
-    .call-us {
-        max-width: 25%;
-    }
+
 
     .call-us-icon {
-        height: 1.1em;
+        height: 1.05em
     }
 
     .div-price h5.first-price {
@@ -303,12 +297,10 @@
         font-size: 1em;
     }
 
-    .call-us {
-        max-width: 25%;
-    }
+
 
     .call-us-icon {
-        height: 1.1em;
+        height: 1.05em
     }
 
     .div-price h5.first-price {
@@ -340,7 +332,7 @@
     }
 
     .call-us-icon {
-        height: 1.1em;
+        height: 1.05em
     }
 
     .discount {
@@ -373,15 +365,13 @@
 
     }
 
-    .call-us {
-        max-width: 25%;
-    }
+
 }
 
 
 @media (min-width:801px) and (max-width: 998px) {
     .call-us {
-        max-width: 25%;
+        max-width: 36%;
     }
 
     .discount {
@@ -389,7 +379,7 @@
     }
 
     .call-us-icon {
-        height: 1.1em;
+        height: 1.05em
     }
 
     .div-price h5.first-price {
@@ -417,11 +407,11 @@
 
 @media (min-width: 631px) and (max-width: 800px) {
     .call-us {
-        max-width: 25%;
+        max-width: 37%;
     }
 
     .call-us-icon {
-        height: 1.1em;
+        height: 1.05em
     }
 
     .discount {
@@ -453,7 +443,7 @@
 
 @media (min-width: 518px) and (max-width: 630px) {
     .call-us {
-        max-width: 25%;
+        max-width: 50%;
     }
 
     .call-us-icon {
@@ -516,16 +506,20 @@
         padding: 1.2em;
     }
 
+    a.call-us span {
+        font-size: 1em;
+    }
+
     .discount {
         font-size: 0.65em;
     }
 
     .call-us {
-        max-width: 25%;
+        max-width: 55%;
     }
 
     .call-us-icon {
-        height: 1.1em;
+        height: 1.05em
     }
 
     .div-price {
@@ -584,7 +578,7 @@
     }
 
     .call-us-icon {
-        height: 1.2em;
+        height: 1.05em
     }
 
     .div-price h5.first-price {
@@ -602,7 +596,11 @@
     }
 
     .call-us {
-        max-width: 30%;
+        max-width: 55%;
+    }
+
+    a.call-us span {
+        font-size: 1em;
     }
 
     .border-top small {
@@ -642,6 +640,10 @@
         font-size: 0.7em;
     }
 
+    a.call-us span {
+        font-size: 1em;
+    }
+
     .pagination-container button {
         margin: 2px;
         padding: 2px 4px;
@@ -661,11 +663,11 @@
     }
 
     .call-us {
-        max-width: 50%;
+        max-width: 55%;
     }
 
     .call-us-icon {
-        height: 1.2em;
+        height: 1.05em
     }
 
     .div-price {
