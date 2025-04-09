@@ -77,6 +77,21 @@ window.addEventListener("DOMContentLoaded", () => {
             fourthImg,
             fifthImg
         ]
+        let details1 = `<li class="single-item-top-text">
+        ${product.details1}
+        </li>`
+        let details2 = `<li class="single-item-top-text">
+        ${product.details2}
+        </li>`
+        let details3 = `<li class="single-item-top-text">
+        ${product.details3}
+        </li>`
+        let details4 = `<li class="single-item-top-text">
+        ${product.details4}
+        </li>`
+        let details5 = `<li class="single-item-top-text">
+        ${product.details5}
+        </li>`
 
         let details6 = `<li class="single-item-top-text">
                     ${product.details6}
@@ -109,24 +124,25 @@ window.addEventListener("DOMContentLoaded", () => {
         <h4>${product.model}</h4>
             <h5>Описание:</h5>
                 <ul>
-                    <li class="single-item-top-text">${product.details1}
-                    </li>
-                    <li class="single-item-top-text">
-                    ${product.details2}
+                  
+                    ${product.details1 ? details1 : ""}
+                    
+                    
+                    ${product.details2 ? details2 : ""}
 
-                    </li >
-                    <li class="single-item-top-text">
-                    ${product.details3}
+                   
+                    
+                    ${product.details3 ? details3 : ""}
 
-                    </li>
-                    <li  class="single-item-top-text">
-                    ${product.details4}
+                   
+                    
+                    ${product.details4 ? details4 : ""}
 
-                    </li>
-                    <li class="single-item-top-text">
-                    ${product.details5}
+                   
+                   
+                    ${product.details5 ? details5 : ""}
 
-                    </li>
+                   
                     ${product.details6 ? details6 : ""}
                 </ul>
 

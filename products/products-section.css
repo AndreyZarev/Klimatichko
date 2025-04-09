@@ -187,6 +187,14 @@
         padding: 7em;
     }
 
+    .call-us {
+        max-width: 15%;
+    }
+
+    .call-us-icon {
+        height: 1.4em;
+    }
+
     .div-price h5.first-price {
         font-size: 1.2em;
         margin-bottom: 0.15em;
@@ -220,13 +228,21 @@
         margin-bottom: 0.15em;
     }
 
+    .call-us {
+        max-width: 22%;
+    }
+
+    .call-us-icon {
+        height: 1.1em;
+    }
+
     .div-price h5.second-price {
         font-size: 1.1em;
         margin-bottom: 0.15em;
     }
 
     .normal-price {
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
 
     .ac-products {
@@ -244,6 +260,14 @@
 @media (min-width: 1400px) and (max-width: 1639px) {
     .container-xxl .container-products {
         padding: 4em;
+    }
+
+    .call-us {
+        max-width: 25%;
+    }
+
+    .call-us-icon {
+        height: 1.1em;
     }
 
     .div-price h5.first-price {
@@ -279,6 +303,14 @@
         font-size: 1em;
     }
 
+    .call-us {
+        max-width: 25%;
+    }
+
+    .call-us-icon {
+        height: 1.1em;
+    }
+
     .div-price h5.first-price {
         font-size: 0.9em;
         margin-bottom: 0.15em;
@@ -305,6 +337,10 @@
 @media (min-width: 999px) and (max-width: 1200px) {
     .container-xxl .container-products {
         padding: 2em;
+    }
+
+    .call-us-icon {
+        height: 1.1em;
     }
 
     .discount {
@@ -352,6 +388,10 @@
         font-size: 0.8em;
     }
 
+    .call-us-icon {
+        height: 1.1em;
+    }
+
     .div-price h5.first-price {
         font-size: 0.8em;
         margin-bottom: 0.15em;
@@ -378,6 +418,10 @@
 @media (min-width: 631px) and (max-width: 800px) {
     .call-us {
         max-width: 25%;
+    }
+
+    .call-us-icon {
+        height: 1.1em;
     }
 
     .discount {
@@ -410,6 +454,10 @@
 @media (min-width: 518px) and (max-width: 630px) {
     .call-us {
         max-width: 25%;
+    }
+
+    .call-us-icon {
+        height: 1.2em;
     }
 
     .discount {
@@ -477,7 +525,7 @@
     }
 
     .call-us-icon {
-        height: 1em;
+        height: 1.1em;
     }
 
     .div-price {
