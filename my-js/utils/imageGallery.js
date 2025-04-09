@@ -91,7 +91,11 @@ export function setupImageGallery(containerId, images) {
 
         // If a valid image is found, update the fullscreen image source.
         if (imageArray[currentIndex] && imageArray[currentIndex].trim() !== "") {
-            fullscreenImage.src = imageArray[currentIndex];
+            if (fullscreenImage.src != imageArray[currentIndex]) {
+                fullscreenImage.src = imageArray[currentIndex];
+            } else {
+                fullscreenImage.src = imageArray[currentIndex + 1];
+            }
         }
     }
 
