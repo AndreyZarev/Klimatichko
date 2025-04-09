@@ -646,9 +646,9 @@
         "warranty": "24/36 месеца"
     },
     {
-       "id": 16,
+        "id": 16,
         "img": "img/new/ac-types/inventor-ac/fujitsu/general kv podov vutreshno.jpg",
-        "img": "img/new/ac-types/inventor-ac/fujitsu/general kv podov vunshno.jpg",
+        "img1": "img/new/ac-types/inventor-ac/fujitsu/general kv podov vunshno.jpg",
         "type": "Подови климатици",
         "name": "Инверторен подов климатик General Fujitsu AGHG09KVCA",
         "price": 2749.00,
@@ -691,7 +691,7 @@
     {
         "id": 17,
         "img": "img/new/ac-types/inventor-ac/fujitsu/general kv podov vutreshno.jpg",
-        "img": "img/new/ac-types/inventor-ac/fujitsu/general kv podov vunshno.jpg",
+        "img1": "img/new/ac-types/inventor-ac/fujitsu/general kv podov vunshno.jpg",
         "type": "Подови климатици",
         "name": "Инверторен подов климатик General Fujitsu AGHG12KVCA",
         "price": 3099.00,
@@ -732,9 +732,9 @@
         "warranty": "24/36 месеца"
     },
     {
-       "id": 18,
+        "id": 18,
         "img": "img/new/ac-types/inventor-ac/fujitsu/general kv podov vutreshno.jpg",
-        "img": "img/new/ac-types/inventor-ac/fujitsu/general kv podov vunshno.jpg",
+        "img1": "img/new/ac-types/inventor-ac/fujitsu/general kv podov vunshno.jpg",
         "type": "Подови климатици",
         "name": "Инверторен подов климатик General Fujitsu AGHG14KVCA",
         "price": 3749.00,
@@ -777,7 +777,7 @@
     {
         "id": 19,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai podov vutreshno.jpg",
-        "img": "img/new/ac-types/inventor-ac/kaisai/kaisai podov vunshno.jpg",
+        "img1": "img/new/ac-types/inventor-ac/kaisai/kaisai podov vunshno.jpg",
         "type": "Подови климатици",
         "name": "Инверторен подов климатик KAISAI KFAU-12HRG32X",
         "price": 1899.00,
@@ -818,7 +818,7 @@
         "warranty": "24/36 месеца"
     },
     {  
-       "id": 20,
+        "id": 20,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai podov vutreshno.jpg",
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai podov vunshno.jpg",
         "type": "Подови климатици",
@@ -861,7 +861,7 @@
         "warranty": "24/36 месеца"
     },
     {  
-         "id": 18,
+        "id": 18,
         "img": "img/new/ac-types/inventor-ac/kaisai/proheat-black.jpg",
         "img1": "img/new/ac-types/inventor-ac/kaisai/proheat1.jpg",
         "img2": "img/new/ac-types/inventor-ac/kaisai/proheat2.jpg",
