@@ -1229,7 +1229,7 @@
         "agent": "R32",
         "diameter": "6.35/9.52",
         "power": "Външно",
-        "madeIn": "Турция",
+        "madeIn": "Турция/Тайланд",
         "warranty": "24/36 месеца"
     },
     {
@@ -1274,7 +1274,7 @@
         "agent": "R32",
         "diameter": "6.35/12.7",
         "power": "Външно",
-        "madeIn": "Турция",
+        "madeIn": "Тайланд",
         "warranty": "24/36 месеца"
     },
     {
@@ -1318,7 +1318,7 @@
         "agent": "R32",
         "diameter": "6.35/12.7",
         "power": "Външно",
-        "madeIn": "Турция",
+        "madeIn": "Тайланд",
         "warranty": "24/36 месеца"
     },
     {
@@ -1354,18 +1354,18 @@
         "voltage": "220-240",
         "seer": "9.1",
         "scop": "4.7",
-        "insideNoise": "18 -24 - 30 - 36 - 42",
-        "outsideNoise": "50",
-        "sizeInsideBody": "798 x 299 x 245",
+        "insideNoise": "19 - 23 - 29 - 36 - 42",
+        "outsideNoise": "47",
+        "sizeInsideBody": "885 x 299 x 195",
         "sizeOutsideBody": "800 x 550 x 285",
-        "weightInsideBody": "10.5",
-        "weightOutsideBody": "28.5",
+        "weightInsideBody": "11.5",
+        "weightOutsideBody": "31",
         "workingTempraturesForCooling": "-10 до +46",
-        "workingTempraturesForHeating": "-20 до +24",
+        "workingTempraturesForHeating": "-15 до +24",
         "agent": "R32",
         "diameter": "6.35/9.52",
         "power": "Външно",
-        "madeIn": "Турция",
+        "madeIn": "Тайланд",
         "warranty": "24/36 месеца"
     },
     {
