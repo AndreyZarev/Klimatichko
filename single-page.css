@@ -83,23 +83,50 @@
     position: relative;
 }
 
+.fullscreen-image.zoomed {
+    max-width: none;
+    max-height: none;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    cursor: zoom-out;
+}
+
 .fullscreen-overlay img:hover {
     transform: scale(1);
 
 }
 
-/* Zoom glass effect */
-.zoom-lens {
-    position: absolute;
-    border: 2px solid #fff;
-    width: 120px;
-    height: 120px;
-    visibility: hidden;
-    pointer-events: none;
-    background-repeat: no-repeat;
-    background-size: 200% 200%;
-    /* This is critical for zoom effect */
-    z-index: 1001;
+.close-btn {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 10000;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.close-btn:hover {
+    background: rgba(255, 0, 0, 0.8);
+}
+
+.open-new-tab-link {
+    color: white;
+    text-decoration: underline;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 10001;
+}
+
+.open-new-tab-link:hover {
+    color: #00ccff;
 }
 
 .close-btn,
@@ -113,10 +140,7 @@
     font-size: 2em;
 }
 
-.close-btn {
-    top: 10px;
-    right: 20px;
-}
+
 
 .arrow-left {
     left: 20px;
