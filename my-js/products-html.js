@@ -1,10 +1,16 @@
 window.addEventListener("DOMContentLoaded", () => {
     const searchButton1 = document.getElementsByClassName("search-button")[0];
     const searchButton2 = document.getElementsByClassName("search-button")[1];
+    const keywordField1 = document.getElementsByClassName("search-field")[0];
     const keywordField2 = document.getElementsByClassName("search-field")[1];
+    const typeField = document.getElementsByClassName("type-field")[0];
+    const labelField = document.getElementsByClassName("label-field")[0];
+    const typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
+    const labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
 
     const itemsPerPage = 12;
     let currentPage = getPageFromURL();
+    let hasLoadedFromLocalStorage = false;
 
     function getPageFromURL() {
         const url = new URL(window.location);
@@ -13,44 +19,69 @@ window.addEventListener("DOMContentLoaded", () => {
         return !isNaN(page) && page > 0 ? page : 1;
     }
 
-    function products() {
-        const typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
-        const labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
-        const keywordField1 = document.getElementsByClassName("search-field")[0];
-        const typeField = document.getElementsByClassName("type-field")[0];
-        const labelField = document.getElementsByClassName("label-field")[0];
+    function getFiltersFromURL() {
+        debugger
+        if (hasLoadedFromLocalStorage) {
+            triggerSearchFromInput()
+        }
+        const url = new URL(window.location);
+        return {
+            keyword: url.searchParams.get("keyword") || "",
+            type: url.searchParams.get("type") || "Категории",
+            label: url.searchParams.get("label") || "Марка",
+        };
+    }
+
+    function setFiltersToURL(keyword, type, label, page = 1) {
+        const url = new URL(window.location);
+        url.searchParams.set("keyword", keyword);
+        url.searchParams.set("type", type);
+        url.searchParams.set("label", label);
+        url.searchParams.set("page", page);
+        history.pushState({}, "", url.toString());
+    }
+
+    function restoreFiltersOnce() {
+        if (hasLoadedFromLocalStorage || window.location.search !== ""){
+            hasLoadedFromLocalStorage = true;
+            return;
+        } 
+   
+        const keyword = localStorage.getItem("keyword") ;
+        const type = localStorage.getItem("type");
+        const label = localStorage.getItem("label");
+   
+        if (keyword || type || label) {
+            setFiltersToURL(
+                keyword ? JSON.parse(keyword) : "",
+                type ? JSON.parse(type) : "Категории",
+                label ? JSON.parse(label) : "Марка"
+            );
+        }
+   
+        localStorage.removeItem("keyword");
+        localStorage.removeItem("type");
+        localStorage.removeItem("label");
+   
+        hasLoadedFromLocalStorage = true;
+    }
+
+    function products(filters = getFiltersFromURL()) {
+        restoreFiltersOnce();
+debugger
+        // Update UI fields
+        if (window.innerWidth < 863) {
+            keywordField1.value = filters.keyword;
+            typeField.value = filters.type;
+        labelField.value = filters.label;
+        }
+        else{keywordField2.value = filters.keyword;
+
+        
+        typeAcOptions.value = filters.type;
+        labelsAcOptions.value = filters.label;
+        }
         const container = document.getElementsByClassName("product-div")[0];
-
-        // Restore from localStorage
-        let selectedKeyword = localStorage.getItem("keyword");
-        if (selectedKeyword) {
-            selectedKeyword = JSON.parse(selectedKeyword);
-            if (window.innerWidth > 863) keywordField1.value = selectedKeyword;
-            else keywordField2.value = selectedKeyword;
-            localStorage.removeItem("keyword");
-        }
-
-        let selectedTypeValue = localStorage.getItem("type");
-        if (selectedTypeValue) {
-            selectedTypeValue = JSON.parse(selectedTypeValue);
-            if (window.innerWidth > 863) typeAcOptions.value = selectedTypeValue;
-            else typeField.value = selectedTypeValue;
-            localStorage.removeItem("type");
-        }
-
-        let selectedLabelValue = localStorage.getItem("label");
-        if (selectedLabelValue) {
-            selectedLabelValue = JSON.parse(selectedLabelValue);
-            if (window.innerWidth > 863) labelsAcOptions.value = selectedLabelValue;
-            else labelField.value = selectedLabelValue;
-            localStorage.removeItem("label");
-        }
-
-        // Gather current filter values
-        selectedKeyword = keywordField1.value || keywordField2.value || "";
-        selectedTypeValue = typeField.value !== "Категории" ? typeField.value : typeAcOptions.value;
-        selectedLabelValue = labelField.value !== "Марка" ? labelField.value : labelsAcOptions.value;
-
         container.innerHTML = "";
 
         fetch("data-json/all-products.json")
@@ -58,9 +89,9 @@ window.addEventListener("DOMContentLoaded", () => {
             .then((products) => {
                 const filteredResults = products.filter(item => {
                     return (
-                        (selectedKeyword === "" || item.keyword.toLowerCase().includes(selectedKeyword.toLowerCase())) &&
-                        (selectedTypeValue === "Категории" || item.type === selectedTypeValue) &&
-                        (selectedLabelValue === "Марка" || item.label === selectedLabelValue)
+                        (filters.keyword === "" || item.keyword.toLowerCase().includes(filters.keyword.toLowerCase())) &&
+                        (filters.type === "Категории" || item.type === filters.type) &&
+                        (filters.label === "Марка" || item.label === filters.label)
                     );
                 });
 
@@ -72,14 +103,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
                 paginatedResults.forEach(product => {
                     const sectionHTML = createProductSection(product);
-                    let sectionElement = document.createElement("div");
+                    const sectionElement = document.createElement("div");
                     sectionElement.innerHTML = sectionHTML;
                     sectionElement.classList.add("col-lg-4", "col-md-6", "wow", "ac-products");
                     sectionElement.addEventListener("click", () => getToSingleProductPage(product.id));
                     container.appendChild(sectionElement);
                 });
 
-                renderPaginationControls(totalPages);
+                renderPaginationControls(totalPages, filters);
             })
             .catch(error => console.error("Error fetching product data:", error));
     }
@@ -107,7 +138,7 @@ window.addEventListener("DOMContentLoaded", () => {
         `;
     }
 
-    function renderPaginationControls(totalPages) {
+    function renderPaginationControls(totalPages, filters) {
         const paginationContainer = document.getElementById("pagination-controls");
         paginationContainer.innerHTML = "";
 
@@ -116,11 +147,8 @@ window.addEventListener("DOMContentLoaded", () => {
         function goToPage(page) {
             if (page < 1 || page > totalPages) return;
             currentPage = page;
-            const url = new URL(window.location);
-            url.searchParams.set("page", page);
-            history.pushState({ page }, "", url.toString());
-
-            products();
+            setFiltersToURL(filters.keyword, filters.type, filters.label, page);
+            products(filters);
             if (dynamicSection) dynamicSection.scrollIntoView({ behavior: "smooth" });
         }
 
@@ -154,7 +182,7 @@ window.addEventListener("DOMContentLoaded", () => {
         window.location.href = `single-product-page.html?id=${id}`;
     }
 
-    if (keywordField2.classList[0] === "keyword2") {
+    if (keywordField2?.classList[0] === "keyword2") {
         const keywordDiv = document.getElementsByClassName("keyword-div")[0];
         const typeDiv = document.getElementsByClassName("type-div")[0];
         const labelDiv = document.getElementsByClassName("label-div")[0];
@@ -176,31 +204,48 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Attach search event handlers
-    searchButton1.addEventListener("click", () => {
+    function triggerSearchFromInput() {
+        debugger
+        let keyword;
+        let type;
+        let label;
+        if(window.innerWidth < 863){
+            keyword = keywordField2.value
+            type = typeField.value
+            label = labelField.value
+        } else{
+             keyword = keywordField1.value;
+             type = typeAcOptions.value;
+             label = labelsAcOptions.value;
+        }
+       
+         
+      
+    
+        // Set the updated filters to the URL
+        setFiltersToURL(keyword, type, label, 1); // Reset to page 1 on new search
+    
+        // Re-fetch the filtered products based on updated URL parameters
+        const filters = { keyword, type, label };
         currentPage = 1;
-        products();
+        products(filters); // Call to re-fetch products with updated filters
         changeTitle();
-    });
+    }
+    searchButton1.addEventListener("click", triggerSearchFromInput);
+    searchButton2.addEventListener("click", triggerSearchFromInput);
 
-    searchButton2.addEventListener("click", () => {
-        currentPage = 1;
-        products();
-        changeTitle();
-    });
-
-    // Handle browser back/forward buttons
     window.addEventListener("popstate", () => {
-        currentPage = getPageFromURL();
-        products();
+        currentPage = getPageFromURL(); // Get the current page from the URL
+        const filters = getFiltersFromURL(); // Get the updated filters from the URL
+        products(filters); // Use the updated filters to re-fetch products
+        changeTitle();
         const dynamicSection = document.getElementById("products-section");
         if (dynamicSection) dynamicSection.scrollIntoView({ behavior: "smooth" });
     });
 
-    products(); // Initial load
+    // Initial load
+    products();
 });
-
-
 
 // window.addEventListener("DOMContentLoaded", () => {
 //     let searchButton1 = document.getElementsByClassName("search-button")[0];
