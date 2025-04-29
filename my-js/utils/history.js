@@ -1,40 +1,19 @@
 $(function () {
-    let historyStack = [];
-    let index = -1;
-
     // Click event on navigation links
     $('.links').on('click', function () {
         let address = $(this).attr('data-ref');
-
-        if (index < historyStack.length - 1) {
-            historyStack = historyStack.slice(0, index + 1); // Trim forward history
-        }
-
-        historyStack.push(address);
-        index++;
-        window.history.pushState({ index: index }, '', `#${address}`);
-
+        window.history.pushState({ address: address }, '', `#${address}`);
         loadExternalPage(address);
     });
 
-    // Back button event
+    // Back button event (browser-like behavior)
     $('#back').on('click', function () {
-        if (index > 0) {
-            index--;
-            let address = historyStack[index];
-            window.history.pushState({ index: index }, '', `#${address}`);
-            loadExternalPage(address);
-        }
+        window.history.back();
     });
 
-    // Forward button event
+    // Forward button event (browser-like behavior)
     $('#forward').on('click', function () {
-        if (index < historyStack.length - 1) {
-            index++;
-            let address = historyStack[index];
-            window.history.pushState({ index: index }, '', `#${address}`);
-            loadExternalPage(address);
-        }
+        window.history.forward();
     });
 
     // Function to load external page content
@@ -50,10 +29,22 @@ $(function () {
 
     // Handle browser back/forward buttons
     window.onpopstate = function (event) {
-        if (event.state) {
-            index = event.state.index;
-            let address = historyStack[index];
+        debugger
+        let address;
+        if (event.state && event.state.address) {
+            address = event.state.address;
+        } else {
+            // fallback: get address from URL hash
+            address = window.location.hash.substring(1);
+        }
+        if (address) {
             loadExternalPage(address);
         }
     };
+
+    // Handle first page load
+    if (window.location.hash) {
+        let initialAddress = window.location.hash.substring(1);
+        loadExternalPage(initialAddress);
+    }
 });

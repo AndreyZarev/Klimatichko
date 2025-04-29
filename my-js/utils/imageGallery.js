@@ -51,6 +51,7 @@ export function setupImageGallery(containerId, images) {
     // 🔹 Swap small image with big image
     smallImages.forEach((img, index) => {
         img.addEventListener("click", () => {
+            debugger
             let tempSrc = bigImage.src;
             bigImage.src = img.src;
             img.src = tempSrc;
@@ -94,7 +95,7 @@ export function setupImageGallery(containerId, images) {
             if (fullscreenImage.src != imageArray[currentIndex]) {
                 fullscreenImage.src = imageArray[currentIndex];
             } else {
-                fullscreenImage.src = imageArray[currentIndex + 1];
+                fullscreenImage.src = imageArray[currentIndex + direction];
             }
         }
     }

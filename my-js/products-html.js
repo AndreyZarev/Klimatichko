@@ -197,15 +197,26 @@ window.addEventListener("DOMContentLoaded", () => {
 
         const dynamicSection = document.getElementById("products-section"); // The section to scroll to
 
+        function goToPage(page) {
+            if (page < 1 || page > totalPages) return;
+
+            currentPage = page;
+            products(); // Load the products for this page
+            dynamicSection.scrollIntoView({ behavior: "smooth" });
+
+            // Push new state into history
+            const url = new URL(window.location);
+            url.searchParams.set('page', currentPage);
+            window.history.pushState({ page: currentPage }, "", url.toString());
+        }
+
         // Previous Button
         const prevButton = document.createElement("button");
         prevButton.textContent = "Предишна";
         prevButton.disabled = currentPage === 1;
         prevButton.addEventListener("click", () => {
             if (currentPage > 1) {
-                currentPage--;
-                products();
-                dynamicSection.scrollIntoView({ behavior: "smooth" });
+                goToPage(currentPage - 1);
             }
         });
         paginationContainer.appendChild(prevButton);
@@ -216,9 +227,7 @@ window.addEventListener("DOMContentLoaded", () => {
             pageButton.textContent = i;
             pageButton.classList.toggle("active", i === currentPage);
             pageButton.addEventListener("click", () => {
-                currentPage = i;
-                products();
-                dynamicSection.scrollIntoView({ behavior: "smooth" });
+                goToPage(i);
             });
             paginationContainer.appendChild(pageButton);
         }
@@ -229,16 +238,45 @@ window.addEventListener("DOMContentLoaded", () => {
         nextButton.disabled = currentPage === totalPages;
         nextButton.addEventListener("click", () => {
             if (currentPage < totalPages) {
-                currentPage++;
-                products();
-                dynamicSection.scrollIntoView({ behavior: "smooth" });
+                goToPage(currentPage + 1);
             }
         });
         paginationContainer.appendChild(nextButton);
     }
 
+    // Handle browser back and forward buttons
+    window.addEventListener('popstate', function (event) {
+        const url = new URL(window.location);
+        const pageParam = url.searchParams.get('page');
+        let page = parseInt(pageParam);
 
+        if (!isNaN(page)) {
+            currentPage = page;
+        } else {
+            currentPage = 1; // default
+        }
 
+        products(); // RELOAD products for the new page!
+        const dynamicSection = document.getElementById("products-section");
+        if (dynamicSection) {
+            dynamicSection.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+
+    // Handle first page load (refresh or direct open)
+    document.addEventListener("DOMContentLoaded", function () {
+        const url = new URL(window.location);
+        const pageParam = url.searchParams.get('page');
+        let page = parseInt(pageParam);
+
+        if (!isNaN(page)) {
+            currentPage = page;
+        } else {
+            currentPage = 1;
+        }
+
+        products(); // Initial load of products
+    });
 
     function createProductSection(product) {
         return `
@@ -273,30 +311,9 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     function getToSingleProductPage(id) {
-        // let currentPage = document.getElementsByClassName('active')[2]
-        localStorage.setItem("currentPage", JSON.stringify(currentPage));
-
-
-        fetch('data-json/all-products.json')
-            .then(response => response.json())
-            .then(data => {
-                const specificItem = data.find(item => item.id === id);
-                const specificItems = data.filter(item => (item.id == id + 1) ||
-                    (item.id == id + 2) || (item.id == id - 1));
-
-
-                let container = document.createElement('div')
-                container.classList.add("g-4", "row", "promo-div")
-
-                localStorage.setItem("selectedProduct", JSON.stringify(specificItem));
-                localStorage.setItem("similarProduct", JSON.stringify(specificItems));
-
-                // Navigate to the new page
-                window.location.href = "single-product-page.html";
-
-            })
-            .catch(error => console.error('Error fetching JSON:', error));
+        window.location.href = `single-product-page.html?id=${id}`;
     }
+
 }
 
 )
