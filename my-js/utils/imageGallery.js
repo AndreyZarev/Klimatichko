@@ -47,10 +47,43 @@ export function setupImageGallery(containerId, images) {
 
     let imageArray = imags.slice();
     let currentIndex = 0;
+    const lens = document.createElement("div");
+    lens.classList.add("zoom-lens");
+    document.body.appendChild(lens);
 
+    fullscreenImage.addEventListener("mousemove", moveLens);
+    fullscreenImage.addEventListener("mouseenter", () => {
+        lens.style.visibility = "visible";
+    });
+    fullscreenImage.addEventListener("mouseleave", () => {
+        lens.style.visibility = "hidden";
+    });
+
+    function moveLens(e) {
+        const rect = fullscreenImage.getBoundingClientRect();
+
+        // Cursor position relative to image
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // Prevent lens from going outside image bounds
+        const lensHalfWidth = lens.offsetWidth / 2;
+        const lensHalfHeight = lens.offsetHeight / 2;
+        const lensX = Math.max(rect.left, Math.min(e.pageX - lensHalfWidth, rect.right - lens.offsetWidth));
+        const lensY = Math.max(rect.top, Math.min(e.pageY - lensHalfHeight, rect.bottom - lens.offsetHeight));
+
+        lens.style.left = `${lensX}px`;
+        lens.style.top = `${lensY}px`;
+
+        // Set background image & zoom
+        lens.style.backgroundImage = `url('${fullscreenImage.src}')`;
+        lens.style.backgroundSize = `${fullscreenImage.width * 2}px ${fullscreenImage.height * 2}px`;
+        lens.style.backgroundPosition = `-${x * 2 - lensHalfWidth}px -${y * 2 - lensHalfHeight}px`;
+    }
     // 🔹 Swap small image with big image
     smallImages.forEach((img, index) => {
         img.addEventListener("click", () => {
+            debugger
             let tempSrc = bigImage.src;
             bigImage.src = img.src;
             img.src = tempSrc;
@@ -94,7 +127,7 @@ export function setupImageGallery(containerId, images) {
             if (fullscreenImage.src != imageArray[currentIndex]) {
                 fullscreenImage.src = imageArray[currentIndex];
             } else {
-                fullscreenImage.src = imageArray[currentIndex + 1];
+                fullscreenImage.src = imageArray[currentIndex + direction];
             }
         }
     }

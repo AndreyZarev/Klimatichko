@@ -705,3 +705,7 @@
 
     }
 }
+
+.img-ac-products a:hover {
+    cursor: pointer;
+}
