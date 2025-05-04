@@ -145,32 +145,36 @@ export function setupImageGallery(containerId, images) {
     if (!container) return;
 
     container.innerHTML = `
-    <div class="gallery-container">
-        <div class="gallery">
-            <img id="bigImage" class="big-image" src="${images[0]}" alt="Main Image">
-            <div class="small-images-container">
-                ${images.slice(1)
-            .filter(src => src.trim() !== "")
-            .map((src, index) =>
-                `<img class="small-images" src="${src}" alt="Image ${index + 1}">`
-            ).join('')}
+        <div class="gallery-container">
+            <div class="gallery">
+                <img id="bigImage" class="big-image" src="${validImages[0]}" alt="Main Image">
+                <div class="small-images-container">
+                    ${validImages.slice(1).map((src, index) =>
+        `<img class="small-images" src="${src}" alt="Image ${index + 1}">`
+    ).join('')}
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="fullscreen-overlay" id="fullscreenOverlay">
-        <button class="close-btn" id="closeBtn">&times;</button>
-        <img id="fullscreenImage" class="fullscreen-image" alt="Fullscreen Image">
-      
-    </div>
-`;
+        <div class="fullscreen-overlay" id="fullscreenOverlay">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            <button class="arrow arrow-left" id="arrowLeft">❮</button>
+            <img id="fullscreenImage" class="fullscreen-image" alt="Fullscreen Image">
+            <button class="arrow arrow-right" id="arrowRight">❯</button>
+        </div>
+    `;
 
     const bigImage = document.getElementById("bigImage");
     const smallImages = document.querySelectorAll(".small-images");
     const fullscreenOverlay = document.getElementById("fullscreenOverlay");
     const fullscreenImage = document.getElementById("fullscreenImage");
     const closeBtn = document.getElementById("closeBtn");
+    const arrowLeft = document.getElementById("arrowLeft");
+    const arrowRight = document.getElementById("arrowRight");
 
+    let currentIndex = 0;
+
+    // Swap big and small images
     smallImages.forEach(img => {
         img.addEventListener("click", () => {
             const temp = bigImage.src;
@@ -179,44 +183,55 @@ export function setupImageGallery(containerId, images) {
         });
     });
 
+    // Show fullscreen overlay
     bigImage.addEventListener("click", () => {
-        fullscreenImage.src = bigImage.src;
-
-
-        fullscreenOverlay.style.display = "flex";
+        currentIndex = validImages.indexOf(bigImage.src);
+        if (currentIndex === -1) currentIndex = 0;
+        openFullscreenImage(currentIndex);
     });
 
+    function openFullscreenImage(index) {
+        fullscreenImage.src = validImages[index];
+        fullscreenOverlay.style.display = "flex";
+    }
+
+    // Close fullscreen overlay
     closeBtn.addEventListener("click", () => {
         fullscreenOverlay.style.display = "none";
-        exitFullscreen();
     });
 
     fullscreenOverlay.addEventListener("click", (e) => {
         if (e.target === fullscreenOverlay) {
             fullscreenOverlay.style.display = "none";
-            exitFullscreen();
         }
     });
 
+    // Navigate fullscreen images
+    arrowLeft.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + validImages.length) % validImages.length;
+        openFullscreenImage(currentIndex);
+    });
+
+    arrowRight.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % validImages.length;
+        openFullscreenImage(currentIndex);
+    });
+
+    // Zoom toggle
     fullscreenImage.addEventListener("click", () => {
         fullscreenImage.classList.toggle("zoomed");
     });
 
-    function exitFullscreen() {
-        if (document.fullscreenElement) {
-            document.exitFullscreen();
-        } else if (document.webkitFullscreenElement) {
-            document.webkitExitFullscreen();
-        } else if (document.msFullscreenElement) {
-            document.msExitFullscreen();
-        }
-    }
-
-    // Listen for ESC key to also close overlay
+    // ESC key closes overlay
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
             fullscreenOverlay.style.display = "none";
-            exitFullscreen();
+        } else if (e.key === "ArrowLeft") {
+            arrowLeft.click();
+        } else if (e.key === "ArrowRight") {
+            arrowRight.click();
         }
     });
 }
