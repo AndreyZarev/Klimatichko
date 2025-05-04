@@ -2297,7 +2297,7 @@
     
     
     {
-        "id": 50,
+        "id": 52,
         "img": "img/new/ac-types/inventor-ac/mitsubishi-electric/FH.png",
         "img1": "img/new/ac-types/inventor-ac/mitsubishi-electric/FH1.png",
         "img2": "img/new/ac-types/inventor-ac/mitsubishi-electric/FH2.jpg",
@@ -2480,12 +2480,12 @@
         "power": "Външно",
         "madeIn": "Тайланд",
         "warranty": "24/36 месеца"
-    },
-    {
-
-
-
-
+    
     }]
+
+
+
+
+    
     
 
