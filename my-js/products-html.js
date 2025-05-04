@@ -11,17 +11,69 @@ window.addEventListener("DOMContentLoaded", () => {
     const itemsPerPage = 12;
     let currentPage = getPageFromURL();
     let hasLoadedFromLocalStorage = false;
+let hasLocaleStorage = true
+
+    if(searchButton1 ||
+        searchButton2 ||
+        keywordField1 ||
+        keywordField2 ||
+        typeField ||
+        labelField ||
+        typeAcOptions ||
+        labelsAcOptions){
+            let selectedKeyword = JSON.parse(localStorage.getItem("keyword"))
+
+            if (selectedKeyword) {
+                if (window.innerWidth > 863) {
+                    keywordField1.value = selectedKeyword
+                } else {
+    
+                    keywordField2.value = selectedKeyword
+                }
+                localStorage.removeItem("keyword")
+    
+            }
+    
+            let selectedTypeValue = JSON.parse(localStorage.getItem("type"))
+    
+            if (selectedTypeValue) {
+                if (window.innerWidth > 863) {
+                    typeAcOptions.value = selectedTypeValue
+    
+                } else {
+                    typeField.value = selectedTypeValue
+    
+                }
+                localStorage.removeItem("type")
+    
+            }
+    
+            let selectedLabelValue = JSON.parse(localStorage.getItem("label"))
+    
+            if (selectedLabelValue) {
+                if (window.innerWidth > 863) {
+    
+                    labelsAcOptions.value = selectedLabelValue
+                } else {
+                    labelField.value = selectedLabelValue
+                }
+                localStorage.removeItem("label")
+    
+            }
+    
+        }
 
     function getPageFromURL() {
         const url = new URL(window.location);
         const pageParam = url.searchParams.get("page");
-        const page = parseInt(pageParam);
+        const page = parseInt(pageParam, 10);
         return !isNaN(page) && page > 0 ? page : 1;
     }
+    
 
     function getFiltersFromURL() {
         debugger
-        if (hasLoadedFromLocalStorage) {
+        if (hasLoadedFromLocalStorage || hasLocaleStorage) {
             triggerSearchFromInput()
         }
         const url = new URL(window.location);
@@ -40,7 +92,6 @@ window.addEventListener("DOMContentLoaded", () => {
         url.searchParams.set("page", page);
         history.pushState({}, "", url.toString());
     }
-
     function restoreFiltersOnce() {
         if (hasLoadedFromLocalStorage || window.location.search !== ""){
             hasLoadedFromLocalStorage = true;
@@ -68,22 +119,24 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function products(filters = getFiltersFromURL()) {
         restoreFiltersOnce();
-debugger
-        // Update UI fields
+    
+        // 🔁 Ensure currentPage is always accurate
+        currentPage = getPageFromURL();
+    
+        // ✅ Sync UI input fields based on screen size
         if (window.innerWidth < 863) {
             keywordField1.value = filters.keyword;
             typeField.value = filters.type;
-        labelField.value = filters.label;
+            labelField.value = filters.label;
+        } else {
+            keywordField2.value = filters.keyword;
+            typeAcOptions.value = filters.type;
+            labelsAcOptions.value = filters.label;
         }
-        else{keywordField2.value = filters.keyword;
-
-        
-        typeAcOptions.value = filters.type;
-        labelsAcOptions.value = filters.label;
-        }
+    
         const container = document.getElementsByClassName("product-div")[0];
         container.innerHTML = "";
-
+    
         fetch("data-json/all-products.json")
             .then((response) => response.json())
             .then((products) => {
@@ -94,13 +147,13 @@ debugger
                         (filters.label === "Марка" || item.label === filters.label)
                     );
                 });
-
+    
                 const totalPages = Math.ceil(filteredResults.length / itemsPerPage);
                 const paginatedResults = filteredResults.slice(
                     (currentPage - 1) * itemsPerPage,
                     currentPage * itemsPerPage
                 );
-
+    
                 paginatedResults.forEach(product => {
                     const sectionHTML = createProductSection(product);
                     const sectionElement = document.createElement("div");
@@ -109,12 +162,12 @@ debugger
                     sectionElement.addEventListener("click", () => getToSingleProductPage(product.id));
                     container.appendChild(sectionElement);
                 });
-
-                renderPaginationControls(totalPages, filters);
+    debugger
+                renderPaginationControls(totalPages, filters); // ✅ Updated here
             })
             .catch(error => console.error("Error fetching product data:", error));
     }
-
+    
     function createProductSection(product) {
         return `
             <div class="property-item rounded overflow-hidden" id="${product.id}">
@@ -137,41 +190,43 @@ debugger
             </div>
         `;
     }
-
     function renderPaginationControls(totalPages, filters) {
         const paginationContainer = document.getElementById("pagination-controls");
         paginationContainer.innerHTML = "";
-
+    console.log(totalPages);
+    
         const dynamicSection = document.getElementById("products-section");
-
+    debugger
         function goToPage(page) {
             if (page < 1 || page > totalPages) return;
             currentPage = page;
             setFiltersToURL(filters.keyword, filters.type, filters.label, page);
-            products(filters);
+            products(filters); // Will re-sync currentPage again
             if (dynamicSection) dynamicSection.scrollIntoView({ behavior: "smooth" });
         }
-
+    
         const prevButton = document.createElement("button");
         prevButton.textContent = "Предишна";
         prevButton.disabled = currentPage === 1;
         prevButton.addEventListener("click", () => goToPage(currentPage - 1));
         paginationContainer.appendChild(prevButton);
-
+    
         for (let i = 1; i <= totalPages; i++) {
+            debugger
             const pageButton = document.createElement("button");
             pageButton.textContent = i;
-            pageButton.classList.toggle("active", i === currentPage);
+            if (i === currentPage) pageButton.classList.add("active"); // ✅ Fix: Only now add 'active'
             pageButton.addEventListener("click", () => goToPage(i));
             paginationContainer.appendChild(pageButton);
         }
-
+    
         const nextButton = document.createElement("button");
         nextButton.textContent = "Следваща";
         nextButton.disabled = currentPage === totalPages;
         nextButton.addEventListener("click", () => goToPage(currentPage + 1));
         paginationContainer.appendChild(nextButton);
     }
+    
 
     function changeTitle() {
         const title = document.getElementsByClassName("h1-promo")[0];
@@ -223,21 +278,22 @@ debugger
       
     
         // Set the updated filters to the URL
-        setFiltersToURL(keyword, type, label, 1); // Reset to page 1 on new search
+        setFiltersToURL(keyword, type, label, currentPage); 
     
         // Re-fetch the filtered products based on updated URL parameters
         const filters = { keyword, type, label };
-        currentPage = 1;
+    
         products(filters); // Call to re-fetch products with updated filters
         changeTitle();
     }
     searchButton1.addEventListener("click", triggerSearchFromInput);
     searchButton2.addEventListener("click", triggerSearchFromInput);
 
+    
     window.addEventListener("popstate", () => {
-        currentPage = getPageFromURL(); // Get the current page from the URL
-        const filters = getFiltersFromURL(); // Get the updated filters from the URL
-        products(filters); // Use the updated filters to re-fetch products
+        currentPage = getPageFromURL();
+        const filters = getFiltersFromURL();
+        products(filters);
         changeTitle();
         const dynamicSection = document.getElementById("products-section");
         if (dynamicSection) dynamicSection.scrollIntoView({ behavior: "smooth" });
@@ -276,46 +332,7 @@ debugger
 
 
 
-//         let selectedKeyword = JSON.parse(localStorage.getItem("keyword"))
-
-//         if (selectedKeyword) {
-//             if (window.innerWidth > 863) {
-//                 keywordField1.value = selectedKeyword
-//             } else {
-
-//                 keywordField2.value = selectedKeyword
-//             }
-//             localStorage.removeItem("keyword")
-
-//         }
-
-//         let selectedTypeValue = JSON.parse(localStorage.getItem("type"))
-
-//         if (selectedTypeValue) {
-//             if (window.innerWidth > 863) {
-//                 typeAcOptions.value = selectedTypeValue
-
-//             } else {
-//                 typeField.value = selectedTypeValue
-
-//             }
-//             localStorage.removeItem("type")
-
-//         }
-
-//         let selectedLabelValue = JSON.parse(localStorage.getItem("label"))
-
-//         if (selectedLabelValue) {
-//             if (window.innerWidth > 863) {
-
-//                 labelsAcOptions.value = selectedLabelValue
-//             } else {
-//                 labelField.value = selectedLabelValue
-//             }
-//             localStorage.removeItem("label")
-
-//         }
-
+       
 //         let container = document.getElementsByClassName("product-div")[0]
 //         selectedKeyword = ''
 
