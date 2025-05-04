@@ -112,12 +112,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 function typeSearch(e) {
-
+    debugger
     let selectedTypeValue = e.target.classList[0]
     console.log(selectedTypeValue);
     let seletedType = ''
-    if (selectedTypeValue == "wallAc") {
-        seletedType = "Стенни Климатици"
+    if (selectedTypeValue == "highWallAc") {
+        seletedType = "Високостенни климатици"
     }
     if (selectedTypeValue == "floorAc") {
 
@@ -142,12 +142,12 @@ function typeSearch(e) {
 
     }
     else if (selectedTypeValue == "Касетъчни климатици") {
+        seletedType = "Касетъчни климатици"
     }
-    else if (selectedTypeValue == forVeryCold) {
-        seletedType = "За много ниски температури"
 
 
-    }
+
+
 
     localStorage.setItem("type", JSON.stringify(seletedType))
     window.location.href = "products.html";
