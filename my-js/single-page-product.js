@@ -180,14 +180,37 @@ function singleProduct(productData, products) {
 }
 
 function getToSingleProductPage(id) {
-    history.pushState(null, "", `single-product-page.html?id=${id}`);
-    loadProductFromURL();
+    if (window.location.pathname.includes("single-product-page.html")) {
+        history.pushState(null, "", `single-product-page.html?id=${id}`);
+        loadProductFromURL();
+    } else {
+        window.location.href = `single-product-page.html?id=${id}`;
+    }
 }
 
 function loadProductFromURL() {
     const params = new URLSearchParams(window.location.search);
-    const id = parseInt(params.get("id"));
+    let id = parseInt(params.get("id"));
+    if (!id) {
+       id  = JSON.parse(localStorage.getItem("selectedProduct")).id;
+  
+    fetch("data-json/types/promo-ac.json")
+            .then(response => response.json())
+            .then(data => {
+                const specificItem = data.find(item => item.id === id);
+                const similarItems = data.filter(item =>
+                    item.id === id + 1 ||
+                    item.id === id + 2 ||
+                    item.id === id - 1
+                );
 
+                if (specificItem) {
+                    singleProduct(specificItem, similarItems);
+                }
+            })
+            .catch(error => console.error("Error loading product:", error));
+    }
+debugger
     if (!isNaN(id)) {
         fetch("data-json/all-products.json")
             .then(response => response.json())

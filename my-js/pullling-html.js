@@ -13,7 +13,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-
     searchButton1.addEventListener("click", search)
     searchButton2.addEventListener("click", search)
 
@@ -103,7 +102,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let typeAcDiv = document.getElementsByClassName("ac-categories")
     console.log(typeAcDiv);
-
+    debugger
     for (const typeAc of typeAcDiv) {
         typeAc.addEventListener("click", typeSearch)
 
@@ -113,7 +112,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 function typeSearch(e) {
-    debugger
+
     let selectedTypeValue = e.target.classList[0]
     console.log(selectedTypeValue);
     let seletedType = ''
