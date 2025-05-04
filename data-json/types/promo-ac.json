@@ -1,6 +1,6 @@
 [
     {
-        "id": "1",
+        "id": 101,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5 Процента",
         "type": "Инверторен стенен климатик ",
@@ -44,7 +44,7 @@
         "warranty": "24/36 месеца"
     },
     {
-        "id": "1",
+        "id": 102,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5% Процента",
         "type": "Инверторен стенен климатик ",
@@ -88,7 +88,7 @@
         "warranty": "24/36 месеца"
     },
     {
-        "id": "1",
+        "id": 103,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5%",
         "type": "Инверторен стенен климатик ",
@@ -132,7 +132,7 @@
         "warranty": "24/36 месеца"
     },
     {
-        "id": "1",
+        "id": 104,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5%",
         "type": "Инверторен стенен климатик ",
@@ -176,7 +176,7 @@
         "warranty": "24/36 месеца"
     },
     {
-        "id": "1",
+        "id": 105,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5%",
         "type": "Инверторен стенен климатик ",
@@ -220,7 +220,7 @@
         "warranty": "24/36 месеца"
     },
     {
-        "id": "1",
+        "id": 106,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5%",
         "type": "Инверторен стенен климатик ",
@@ -264,7 +264,7 @@
         "warranty": "24/36 месеца"
     },
     {
-        "id": "1",
+        "id": 107,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5%",
         "type": "Инверторен стенен климатик ",
@@ -308,7 +308,7 @@
         "warranty": "24/36 месеца"
     },
     {
-        "id": "1",
+        "id": 108,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5%",
         "type": "Инверторен стенен климатик ",
@@ -352,7 +352,7 @@
         "warranty": "24/36 месеца"
     },
     {
-        "id": "1",
+        "id": 109,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5%",
         "type": "Инверторен стенен климатик ",
