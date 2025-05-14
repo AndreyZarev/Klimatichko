@@ -189,12 +189,12 @@ export function setupImageGallery(containerId, images) {
         if (currentIndex === -1) currentIndex = 0;
         openFullscreenImage(currentIndex);
     });
-
     function openFullscreenImage(index) {
-        fullscreenImage.src = validImages[index];
+        let bigImage = document.getElementsByClassName("big-image")[0]
+
+        fullscreenImage.src = bigImage.src
         fullscreenOverlay.style.display = "flex";
     }
-
     // Close fullscreen overlay
     closeBtn.addEventListener("click", () => {
         fullscreenOverlay.style.display = "none";
@@ -210,6 +210,7 @@ export function setupImageGallery(containerId, images) {
     arrowLeft.addEventListener("click", (e) => {
         e.stopPropagation();
         currentIndex = (currentIndex - 1 + validImages.length) % validImages.length;
+
         openFullscreenImage(currentIndex);
     });
 
@@ -221,6 +222,7 @@ export function setupImageGallery(containerId, images) {
 
     // Zoom toggle
     fullscreenImage.addEventListener("click", () => {
+
         fullscreenImage.classList.toggle("zoomed");
     });
 
