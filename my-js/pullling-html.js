@@ -107,15 +107,24 @@ window.addEventListener("DOMContentLoaded", () => {
         typeAc.addEventListener("click", typeSearch)
 
     }
+
+    let labelAcDiv = document.getElementsByClassName("ac-labels")
+    for (const labelAc of labelAcDiv) {
+        labelAc.addEventListener("click", typeSearch)
+
+    }
 });
 
 
 
 function typeSearch(e) {
     debugger
+    e.preventDefault()
+
     let selectedTypeValue = e.target.classList[0]
     console.log(selectedTypeValue);
     let seletedType = ''
+    let selectedLabel = ""
     if (selectedTypeValue == "highWallAc") {
         seletedType = "Високостенни климатици"
     }
@@ -141,8 +150,27 @@ function typeSearch(e) {
 
 
     }
-    else if (selectedTypeValue == "Касетъчни климатици") {
-        seletedType = "Касетъчни климатици"
+    else if (selectedTypeValue == "auratsu") {
+        selectedLabel = "Auratsu"
+    }
+
+    else if (selectedTypeValue == "kaisai") {
+        selectedLabel = "Kaisai"
+    }
+    else if (selectedTypeValue == "daikin") {
+        selectedLabel = "Daikin"
+    }
+    else if (selectedTypeValue == "fujitsu") {
+        selectedLabel = "Fujitsu General"
+    }
+    else if (selectedTypeValue == "mitsubishi-heavy") {
+        selectedLabel = "Mitsubishi Heavy Industries"
+    }
+    else if (selectedTypeValue == "mitsubishi-electric") {
+        selectedLabel = "Mitsubishi Electric"
+    }
+    else if (selectedTypeValue == "williams") {
+        selectedLabel = "Williams"
     }
 
 
@@ -150,6 +178,7 @@ function typeSearch(e) {
 
 
     localStorage.setItem("type", JSON.stringify(seletedType))
+    localStorage.setItem("label", JSON.stringify(selectedLabel))
     window.location.href = "products.html";
 }
 
