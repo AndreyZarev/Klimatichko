@@ -12,6 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let currentPage = getPageFromURL();
     let hasLoadedFromLocalStorage = false;
 let hasLocaleStorage = true
+debugger
 
     if(searchButton1 ||
         searchButton2 ||
@@ -49,7 +50,7 @@ let hasLocaleStorage = true
             }
     
             let selectedLabelValue = JSON.parse(localStorage.getItem("label"))
-    
+    debugger
             if (selectedLabelValue) {
                 if (window.innerWidth > 863) {
     
