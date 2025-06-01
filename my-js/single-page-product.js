@@ -5,6 +5,7 @@ let imagePaths = []; // global
 // --- FUNCTIONS --- //
 function createSingleProduct(product) {
     // Handle optional images
+    debugger
     const secondImg = product?.img1 || "";
     const thirdImg = product?.img2 || "";
     const fourthImg = product?.img3 || "";

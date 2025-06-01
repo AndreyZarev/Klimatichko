@@ -185,14 +185,18 @@ export function setupImageGallery(containerId, images) {
 
     // Show fullscreen overlay
     bigImage.addEventListener("click", () => {
-        currentIndex = validImages.indexOf(bigImage.src);
+        let bigImageSrc = bigImage.src.replace("http://127.0.0.1:5500/", "")
+        console.log(bigImageSrc)
+
+        currentIndex = validImages.indexOf(bigImageSrc);
+        debugger
         if (currentIndex === -1) currentIndex = 0;
         openFullscreenImage(currentIndex);
     });
     function openFullscreenImage(index) {
-        let bigImage = document.getElementsByClassName("big-image")[0]
+        let bigImage = validImages[index]
 
-        fullscreenImage.src = bigImage.src
+        fullscreenImage.src = `http://127.0.0.1:5500/${bigImage}`
         fullscreenOverlay.style.display = "flex";
     }
     // Close fullscreen overlay
@@ -210,12 +214,13 @@ export function setupImageGallery(containerId, images) {
     arrowLeft.addEventListener("click", (e) => {
         e.stopPropagation();
         currentIndex = (currentIndex - 1 + validImages.length) % validImages.length;
-
+        debugger
         openFullscreenImage(currentIndex);
     });
 
     arrowRight.addEventListener("click", (e) => {
         e.stopPropagation();
+        debugger
         currentIndex = (currentIndex + 1) % validImages.length;
         openFullscreenImage(currentIndex);
     });
