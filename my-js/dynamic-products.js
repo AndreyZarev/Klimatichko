@@ -102,6 +102,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function getToSingleProductPage(id) {
         debugger
+
         fetch('data-json/types/promo-ac.json')
             .then(response => response.json())
             .then(data => {
@@ -115,6 +116,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
                 localStorage.setItem("selectedProduct", JSON.stringify(specificItem));
                 localStorage.setItem("similarProduct", JSON.stringify(specificItems));
+
+
                 debugger
                 // Navigate to the new page
                 window.location.href = "single-product-page.html";
