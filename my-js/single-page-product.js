@@ -114,35 +114,45 @@ function createSingleProduct(product) {
 }
 
 function createProductSection(product) {
+    // Check if product has discount and calculate discounted price
+    const hasDiscount = product.discount;
+    const currentPrice = hasDiscount ? (product.price * 0.95).toFixed(2) : null;
+
+    // Create discount badge if product has discount
+    const discountBadge = hasDiscount ?
+        `<div class="bg-primary discount rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+            ${product.discount}
+        </div>` : '';
+
+    // Create price section based on whether product has discount
+    const priceSection = hasDiscount ?
+        `<h5 class="first-price">${product.price.toFixed(2)}лв</h5>
+        <h5 class="second-price">${currentPrice}лв</h5>` :
+        `<h5 class="normal-price">${product.price.toFixed(2)}лв</h5>`;
+
     return `
-       <div class="property-item rounded overflow-hidden product-html id= "${product.id}">
-                            <div class="position-relative overflow-hidden img-ac-products ">
-                                <a ><img class="img-fluid img-ac-products"
-                                        src="${product.img}"
-                                        alt=""></a>
-                            
-                            <div class=" pb-0 div-price">
-            
-                                <h5 class = "normal-price">${product.price.toFixed(2)}лв</h5>
-
-                                <a class="d-block " >${product.name}</a>
-
-                            </div>
-                            <a class="call-us" href="tel: 0896081213">
-                             <span>
-                                <img class="call-us-icon" src="img/new/icons8-phone-50.png" alt="" srcset="">
-                            </span>
-                            Обади се</a>
-                            <div class="d-flex border-top">
-                                <small class="flex-fill text-center border-end py-2">${product.size} BTU</small>
-                                <small class="flex-fill text-center border-end py-2"><a class="label-link" >${product.label}</a></small>
-                                <small class="flex-fill text-center py-2">Клас: ${product.energy}</small>
-                            </div>
-                        </div>
-     
-                      
-               
-        `;
+       <div class="property-item rounded overflow-hidden product-html" id="${product.id}">
+            <div class="position-relative overflow-hidden img-ac-products">
+                <a><img class="img-fluid img-ac-products" src="${product.img}" alt=""></a>
+                ${discountBadge}
+            </div>
+            <div class="pb-0 div-price">
+                ${priceSection}
+                <a class="d-block">${product.name}</a>
+            </div>
+            <a class="call-us" href="tel:0896081213">
+                <span>
+                    <img class="call-us-icon" src="img/new/icons8-phone-50.png" alt="">
+                </span>
+                Обади се
+            </a>
+            <div class="d-flex border-top">
+                <small class="flex-fill text-center border-end py-2">${product.size} BTU</small>
+                <small class="flex-fill text-center border-end py-2"><a class="label-link" href="#">${product.label}</a></small>
+                <small class="flex-fill text-center py-2">Клас: ${product.energy}</small>
+            </div>
+        </div>
+    `;
 }
 
 
