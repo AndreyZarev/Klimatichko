@@ -185,7 +185,9 @@ export function setupImageGallery(containerId, images) {
 
     // Show fullscreen overlay
     bigImage.addEventListener("click", () => {
-        let bigImageSrc = bigImage.src.replace("http://127.0.0.1:5500/", "")
+        // Get the relative path from the src attribute
+        const url = new URL(bigImage.src);
+        let bigImageSrc = url.pathname.substring(1); // Remove leading slash
         console.log(bigImageSrc)
 
         currentIndex = validImages.indexOf(bigImageSrc);
@@ -196,7 +198,7 @@ export function setupImageGallery(containerId, images) {
     function openFullscreenImage(index) {
         let bigImage = validImages[index]
 
-        fullscreenImage.src = `http://127.0.0.1:5500/${bigImage}`
+        fullscreenImage.src = bigImage
         fullscreenOverlay.style.display = "flex";
     }
     // Close fullscreen overlay
