@@ -34,8 +34,16 @@ const server = http.createServer((req, res) => {
     fs.readFile(filePath, (error, content) => {
         if (error) {
             if (error.code == 'ENOENT') {
-                res.writeHead(404, { 'Content-Type': 'text/html' });
-                res.end('<h1>404 Not Found</h1>', 'utf-8');
+                // Serve custom 404 page
+                fs.readFile('./404.html', (err404, content404) => {
+                    if (err404) {
+                        res.writeHead(404, { 'Content-Type': 'text/html' });
+                        res.end('<h1>404 Not Found</h1>', 'utf-8');
+                    } else {
+                        res.writeHead(404, { 'Content-Type': 'text/html' });
+                        res.end(content404, 'utf-8');
+                    }
+                });
             } else {
                 res.writeHead(500);
                 res.end('Sorry, check with the site admin for error: ' + error.code + ' ..\n');
