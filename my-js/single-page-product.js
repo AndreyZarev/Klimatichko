@@ -192,30 +192,33 @@ function getToSingleProductPage(id) {
 function loadProductFromURL() {
     const params = new URLSearchParams(window.location.search);
     let id = parseInt(params.get("id"));
+    if (isNaN(id)) {
+        id = JSON.parse(localStorage.getItem("selectedProduct"))?.id
+    }
     debugger
     if (id > 100) {
 
 
-        if (!id) {
-            id = JSON.parse(localStorage.getItem("selectedProduct")).id;
-            debugger
-            fetch("data-json/types/promo-ac.json")
-                .then(response => response.json())
-                .then(data => {
-                    const specificItem = data.find(item => item.id === id);
-                    const similarItems = data.filter(item =>
-                        item.id === id + 1 ||
-                        item.id === id + 2 ||
-                        item.id === id - 1
-                    );
 
-                    if (specificItem) {
-                        singleProduct(specificItem, similarItems);
-                    }
-                })
-                .catch(error => console.error("Error loading product:", error));
-        }
+
         debugger
+        fetch("data-json/types/promo-ac.json")
+            .then(response => response.json())
+            .then(data => {
+                const specificItem = data.find(item => item.id === id);
+                const similarItems = data.filter(item =>
+                    item.id === id + 1 ||
+                    item.id === id + 2 ||
+                    item.id === id - 1
+                );
+
+                if (specificItem) {
+                    singleProduct(specificItem, similarItems);
+                }
+            })
+            .catch(error => console.error("Error loading product:", error));
+
+
     }
     if (!isNaN(id)) {
 

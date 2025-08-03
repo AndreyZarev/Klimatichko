@@ -67,7 +67,7 @@ window.addEventListener("DOMContentLoaded", () => {
         let container = document.createElement('div')
         container.classList.add("g-4", "row", "promo-div")
 
-        fetch('data-json/types/promo-ac.json')
+        fetch('data-json/all-products.json')
             .then(response => response.json())
             .then(products => {
                 console.log(products);
@@ -103,7 +103,7 @@ window.addEventListener("DOMContentLoaded", () => {
     function getToSingleProductPage(id) {
         debugger
 
-        fetch('data-json/types/promo-ac.json')
+        fetch('data-json/all-products.json')
             .then(response => response.json())
             .then(data => {
                 const specificItem = data.find(item => item.id === id);
