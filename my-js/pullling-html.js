@@ -13,8 +13,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-    searchButton1.addEventListener("click", search)
-    searchButton2.addEventListener("click", search)
+    if (searchButton1) {
+        searchButton1.addEventListener("click", search);
+    }
+    if (searchButton2) {
+        searchButton2.addEventListener("click", search);
+    }
 
 
     const keywordDiv = document.getElementsByClassName("keyword-div")[0];
@@ -61,40 +65,41 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
     function search() {
+        let keyword = "";
+        let selectedTypeValue = "";
+        let selectedLabelValue = "";
 
+        // Get keyword from appropriate field
+        const keywordField1 = document.getElementsByClassName("search-field")[0];
+        const keywordField2 = document.getElementsByClassName("search-field")[1];
 
-        // pullProducts()
-        let selectedKeyword1 = document.getElementsByClassName("search-field")[0].value;
-        let selectedKeyword2 = document.getElementsByClassName("search-field")[1].value;
-
-        if (selectedKeyword1) {
-            localStorage.setItem("keyword", JSON.stringify(selectedKeyword1))
-        } else {
-            localStorage.setItem("keyword", JSON.stringify(selectedKeyword2))
-
+        if (keywordField1 && keywordField1.value.trim()) {
+            keyword = keywordField1.value.trim();
+        } else if (keywordField2 && keywordField2.value.trim()) {
+            keyword = keywordField2.value.trim();
         }
-        let selectedTypeValue = ""
-        if (typeField.value !== "Категории") {
-            selectedTypeValue = typeField.value
-        } else {
+
+        // Get type value - prioritize mobile field if it has a selection
+        if (typeField && typeField.value !== "Категории") {
+            selectedTypeValue = typeField.value;
+        } else if (typeAcOptions && typeAcOptions.value !== "Категории") {
             selectedTypeValue = typeAcOptions.value;
         }
 
-        let selectedLabelValue = ""
-
-        if (labelField.value != "Марка") {
-            selectedLabelValue = labelField.value
-        } else {
+        // Get label value - prioritize mobile field if it has a selection
+        if (labelField && labelField.value !== "Марка") {
+            selectedLabelValue = labelField.value;
+        } else if (labelsAcOptions && labelsAcOptions.value !== "Марка") {
             selectedLabelValue = labelsAcOptions.value;
-
         }
 
-        localStorage.setItem("type", JSON.stringify(selectedTypeValue))
-        localStorage.setItem("label", JSON.stringify(selectedLabelValue))
+        // Store in localStorage
+        localStorage.setItem("keyword", JSON.stringify(keyword));
+        localStorage.setItem("type", JSON.stringify(selectedTypeValue));
+        localStorage.setItem("label", JSON.stringify(selectedLabelValue));
 
+        // Navigate to products page
         window.location.href = "products.html";
-
-
     }
 
 
