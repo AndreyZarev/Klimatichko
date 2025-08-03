@@ -12,7 +12,6 @@ window.addEventListener("DOMContentLoaded", () => {
     let currentPage = getPageFromURL();
     let hasLoadedFromLocalStorage = false;
 let hasLocaleStorage = true
-debugger
 
     if(searchButton1 ||
         searchButton2 ||
@@ -26,40 +25,33 @@ debugger
 
             if (selectedKeyword) {
                 if (window.innerWidth > 863) {
-                    keywordField1.value = selectedKeyword
+                    if (keywordField1) keywordField1.value = selectedKeyword
                 } else {
-    
-                    keywordField2.value = selectedKeyword
+                    if (keywordField2) keywordField2.value = selectedKeyword
                 }
                 localStorage.removeItem("keyword")
-    
             }
-    
+
             let selectedTypeValue = JSON.parse(localStorage.getItem("type"))
-    
+
             if (selectedTypeValue) {
                 if (window.innerWidth > 863) {
-                    typeAcOptions.value = selectedTypeValue
-    
+                    if (typeAcOptions) typeAcOptions.value = selectedTypeValue
                 } else {
-                    typeField.value = selectedTypeValue
-    
+                    if (typeField) typeField.value = selectedTypeValue
                 }
                 localStorage.removeItem("type")
-    
             }
-    
+
             let selectedLabelValue = JSON.parse(localStorage.getItem("label"))
-    debugger
+
             if (selectedLabelValue) {
                 if (window.innerWidth > 863) {
-    
-                    labelsAcOptions.value = selectedLabelValue
+                    if (labelsAcOptions) labelsAcOptions.value = selectedLabelValue
                 } else {
-                    labelField.value = selectedLabelValue
+                    if (labelField) labelField.value = selectedLabelValue
                 }
                 localStorage.removeItem("label")
-    
             }
     
         }
@@ -73,7 +65,6 @@ debugger
     
 
     function getFiltersFromURL() {
-        debugger
         if (hasLoadedFromLocalStorage || hasLocaleStorage) {
             triggerSearchFromInput()
         }
@@ -126,13 +117,15 @@ debugger
     
         // ✅ Sync UI input fields based on screen size
         if (window.innerWidth < 863) {
-            keywordField1.value = filters.keyword;
-            typeField.value = filters.type;
-            labelField.value = filters.label;
+            // Mobile view - sync mobile fields
+            if (keywordField2) keywordField2.value = filters.keyword;
+            if (typeField) typeField.value = filters.type;
+            if (labelField) labelField.value = filters.label;
         } else {
-            keywordField2.value = filters.keyword;
-            typeAcOptions.value = filters.type;
-            labelsAcOptions.value = filters.label;
+            // Desktop view - sync desktop fields
+            if (keywordField1) keywordField1.value = filters.keyword;
+            if (typeAcOptions) typeAcOptions.value = filters.type;
+            if (labelsAcOptions) labelsAcOptions.value = filters.label;
         }
     
         const container = document.getElementsByClassName("product-div")[0];
@@ -261,34 +254,42 @@ debugger
     }
 
     function triggerSearchFromInput() {
-        debugger
-        let keyword;
-        let type;
-        let label;
+        let keyword = "";
+        let type = "Категории";
+        let label = "Марка";
+
+        // Get values from the appropriate fields based on screen size
         if(window.innerWidth < 863){
-            keyword = keywordField2.value
-            type = typeField.value
-            label = labelField.value
-        } else{
-             keyword = keywordField1.value;
-             type = typeAcOptions.value;
-             label = labelsAcOptions.value;
+            // Mobile view - use second search bar
+            keyword = keywordField2 ? keywordField2.value : "";
+            type = typeField ? typeField.value : "Категории";
+            label = labelField ? labelField.value : "Марка";
+        } else {
+            // Desktop view - use first search bar
+            keyword = keywordField1 ? keywordField1.value : "";
+            type = typeAcOptions ? typeAcOptions.value : "Категории";
+            label = labelsAcOptions ? labelsAcOptions.value : "Марка";
         }
-       
-         
-      
-    
+
+        // Reset to page 1 when searching
+        currentPage = 1;
+
         // Set the updated filters to the URL
-        setFiltersToURL(keyword, type, label, currentPage); 
-    
+        setFiltersToURL(keyword, type, label, currentPage);
+
         // Re-fetch the filtered products based on updated URL parameters
         const filters = { keyword, type, label };
-    
+
         products(filters); // Call to re-fetch products with updated filters
         changeTitle();
     }
-    searchButton1.addEventListener("click", triggerSearchFromInput);
-    searchButton2.addEventListener("click", triggerSearchFromInput);
+    // Add event listeners only if elements exist
+    if (searchButton1) {
+        searchButton1.addEventListener("click", triggerSearchFromInput);
+    }
+    if (searchButton2) {
+        searchButton2.addEventListener("click", triggerSearchFromInput);
+    }
 
     
     window.addEventListener("popstate", () => {
