@@ -31,6 +31,9 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
+    <!-- TBI Bank Stylesheet -->
+    <link href="css/tbi-bank.css" rel="stylesheet">
+
 
 
     <!-- my own stylesheet -->
@@ -345,9 +348,25 @@
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
         <script type="module" src="./my-js/pullling-html.js"></script>
-        <script type="module" src="my-js/single-page-product.js"></script>
+        <script type="module" src="my-js/single-page-product.js?v=2"></script>
         <script src="my-js/utils/history.js"></script>
         <!-- <script src="my-js/products-html.js"></script> -->
+
+        <!-- TBI Bank Integration -->
+        <script src="tbi-bank-config.js"></script>
+        <script src="my-js/tbi-bank-integration.js"></script>
+
+        <!-- Force reload of single-page-product.js -->
+        <script>
+            // Clear any cached modules
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(function (registrations) {
+                    for (let registration of registrations) {
+                        registration.unregister();
+                    }
+                });
+            }
+        </script>
 
 </body>
 

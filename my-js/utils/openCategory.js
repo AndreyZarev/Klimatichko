@@ -1,24 +1,27 @@
 
 window.addEventListener("DOMContentLoaded", () => {
-
-
     let linkArray = document.getElementsByClassName('category-link');
-
-
 
     for (let i = 0; i < linkArray.length; i++) {
         const link = linkArray[i];
-        let selectedTypeValue = link.id
+        const selectedTypeValue = link.id; // e.g., "Високостенни климатици"
 
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            // Build URL with query params so products page loads with filters applied
+            const keyword = "";
+            const type = selectedTypeValue || "Категории";
+            const label = "Марка";
+            const page = 1;
 
+            const url = `products.html?keyword=${encodeURIComponent(keyword)}&type=${encodeURIComponent(type)}&label=${encodeURIComponent(label)}&page=${page}`;
 
-        link.addEventListener("click", () => {
+            // Keep localStorage for backward compatibility
+            localStorage.setItem("keyword", JSON.stringify(keyword));
+            localStorage.setItem("type", JSON.stringify(type));
+            localStorage.setItem("label", JSON.stringify(label));
 
-            localStorage.setItem("type", JSON.stringify(selectedTypeValue))
-
-            window.location.href = "products.html";
+            window.location.href = url;
         });
-
-
     }
 });

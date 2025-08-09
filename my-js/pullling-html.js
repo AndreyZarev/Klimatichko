@@ -93,13 +93,15 @@ window.addEventListener("DOMContentLoaded", () => {
             selectedLabelValue = labelsAcOptions.value;
         }
 
-        // Store in localStorage
+        // Store in localStorage for compatibility
         localStorage.setItem("keyword", JSON.stringify(keyword));
         localStorage.setItem("type", JSON.stringify(selectedTypeValue));
         localStorage.setItem("label", JSON.stringify(selectedLabelValue));
 
-        // Navigate to products page
-        window.location.href = "products.html";
+        // Navigate to products page with URL params so filters persist
+        const page = 1;
+        const url = `products.html?keyword=${encodeURIComponent(keyword)}&type=${encodeURIComponent(selectedTypeValue || 'Категории')}&label=${encodeURIComponent(selectedLabelValue || 'Марка')}&page=${page}`;
+        window.location.href = url;
     }
 
 
@@ -166,6 +168,9 @@ function typeSearch(e) {
         selectedLabel = "Daikin"
     }
     else if (selectedTypeValue == "fujitsu") {
+        selectedLabel = "Fujitsu"
+    }
+    else if (selectedTypeValue == "general") {
         selectedLabel = "Fujitsu General"
     }
     else if (selectedTypeValue == "mitsubishi-heavy") {
@@ -182,9 +187,14 @@ function typeSearch(e) {
 
 
 
+    // Keep localStorage for compatibility
     localStorage.setItem("type", JSON.stringify(seletedType))
     localStorage.setItem("label", JSON.stringify(selectedLabel))
-    window.location.href = "products.html";
+
+    // Navigate with query params so the products page shows correct filters
+    const page = 1;
+    const url = `products.html?keyword=&type=${encodeURIComponent(seletedType || 'Категории')}&label=${encodeURIComponent(selectedLabel || 'Марка')}&page=${page}`;
+    window.location.href = url;
 }
 
 

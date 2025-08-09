@@ -203,8 +203,11 @@ table tr td.td-pre-build {
 } */
 
 .h3-price-single {
-    margin: 0 1em;
+    margin: 0.3em 1em 0em;
+
+
     position: relative;
+    font-size: 1.2em;
 }
 
 .h3-first::after {
@@ -212,10 +215,11 @@ table tr td.td-pre-build {
     position: absolute;
     left: 0;
     right: 0;
-    top: 42%;
+    top: 22%;
     height: 1.5px;
     background: red;
     transform: translateY(-50%);
+    font-size: 1.2em;
 }
 
 .h3-second {
@@ -224,12 +228,64 @@ table tr td.td-pre-build {
 
 #other-products {
     display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    flex-wrap: nowrap;
+}
+
+#other-products .other-product {
+    flex: 1;
+    max-width: 350px;
+    min-width: 280px;
 }
 
 .other-products-h1 {
     color: #0E2E50;
     text-align: center;
     margin: 2em auto;
+}
+
+/* Responsive adjustments for other-products */
+@media (max-width: 992px) {
+    #other-products {
+        padding: 0 15px;
+        gap: 10px;
+    }
+
+    #other-products .other-product {
+        min-width: 250px;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    #other-products {
+        padding: 0 10px;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    #other-products .other-product {
+        min-width: 220px;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 576px) {
+    #other-products {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    #other-products .other-product {
+        max-width: 350px;
+        width: 100%;
+        min-width: auto;
+    }
 }
 
 /* 

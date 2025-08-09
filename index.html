@@ -33,6 +33,9 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
+    <!-- TBI Bank Stylesheet -->
+    <link href="css/tbi-bank.css" rel="stylesheet">
+
 
 
     <!-- my own stylesheet -->
@@ -172,13 +175,13 @@
                                 <select class="form-select labels-ac-options  border-0 py-3">
                                     <option selected>Марка</option>
                                     <option value="Auratsu">Auratsu</option>
-                                    <!-- <option value="Fuji Electric">Fuji Electric</option> -->
-                                    <option value="Fujitsu General">Fujitsu General </option>
+                                    <option value="Fujitsu">Fujitsu</option>
+                                    <option value="Fujitsu General">Fujitsu General</option>
                                     <option value="Kaisai">Kaisai</option>
                                     <option value="Mitsubishi Electric">Mitsubishi Electric</option>
                                     <option value="Mitsubishi Heavy Industries">Mitsubishi Heavy Industries</option>
                                     <option value="Daikin">Daikin</option>
-                                    <!-- <option value="Williams">Williams</option> -->
+                                    <option value="Williams">Williams</option>
                                 </select>
                             </div>
                         </div>
@@ -215,13 +218,13 @@
                     <select class="form-select  label-field border-0 py-3">
                         <option selected>Марка</option>
                         <option value="Auratsu">Auratsu</option>
-                        <!-- <option value="Fuji Electric">Fuji Electric</option> -->
-                        <option value="Fujitsu General">Fujitsu General </option>
+                        <option value="Fujitsu">Fujitsu</option>
+                        <option value="Fujitsu General">Fujitsu General</option>
                         <option value="Kaisai">Kaisai</option>
                         <option value="Mitsubishi Electric">Mitsubishi Electric</option>
                         <option value="Mitsubishi Heavy Industries">Mitsubishi Heavy Industries</option>
                         <option value="Daikin">Daikin</option>
-                        <!-- <option value="Williams">Williams</option> -->
+                        <option value="Williams">Williams</option>
                     </select>
                 </div>
                 <div class="col-md-2">
@@ -236,7 +239,18 @@
         <!-- Dinamic products -->
         <section id="dynamic-section"></section>
 
-
+        <!-- Products Section with Pagination -->
+        <section class="container-xxl py-5" id="products-section" style="display: none;">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3 h1-promo">Всички продукти</h1>
+                </div>
+                <div id="attach-product">
+                    <div class="g-4 row product-div"></div>
+                </div>
+                <div id="pagination-controls" class="pagination-container"></div>
+            </div>
+        </section>
 
         <!-- Category Start -->
         <div class="container-xxl py-5 category-section" id="category-section">
@@ -388,6 +402,13 @@
 
                         <a href="">
                             <div class="  mb-3">
+                                <img class="general ac-labels img-fluid labels-img" onclick="typeSearch()"
+                                    src="img/new/labels/general.png" alt="Icon">
+                            </div>
+                        </a>
+
+                        <a href="">
+                            <div class="  mb-3">
                                 <img class="williams ac-labels img-fluid labels-img" onclick="typeSearch()"
                                     src="img/new/labels/williams.png" alt="Icon">
                             </div>
@@ -494,8 +515,11 @@
             <script src="js/main.js"></script>
             <script type="module" src="./my-js/dynamic-products.js"></script>
             <script type="module" src="./my-js/pullling-html.js"></script>
-            <script src="my-js/utils/history.js"></script>
             <script src="my-js/utils/resetPages.js"></script>
+
+            <!-- TBI Bank Integration -->
+            <script src="tbi-bank-config.js"></script>
+            <script src="my-js/tbi-bank-integration.js"></script>
 </body>
 
 </html>
