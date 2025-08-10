@@ -45,11 +45,19 @@ function createSingleProduct(product) {
         ? `
         <div class="div-h3-span-price">
             <p class="price-p">Нормална цена:</p>
-            <h3 class="h3-price-single h3-first">${product.price}.00 лв. / ${(product.price / 1.96).toFixed(2)} €</h3>
+            <div class="old-price-block">
+                <span class="old-price-line">${product.price}.00 лв.</span>
+                <span class="old-price-sep">/</span>
+                <span class="old-price-line">${(product.price / 1.96).toFixed(2)} €</span>
+            </div>
         </div>
         <div class="div-h3-span-price">
             <p class="price-p">Намалена цена:</p>
-            <h3 class="h3-price-single h3-second">${(product.price * 0.95).toFixed(2)} лв. / ${((product.price * 0.95) / 1.96).toFixed(2)} €</h3>
+            <div class="new-price-block">
+                <span class="new-price-line">${(product.price * 0.95).toFixed(2)} лв.</span>
+                <span class="new-price-sep">/</span>
+                <span class="new-price-line">${((product.price * 0.95) / 1.96).toFixed(2)} €</span>
+            </div>
         </div>
         `
         : `
@@ -102,6 +110,9 @@ function createSingleProduct(product) {
                     Обади се сега
                 </a>
             </div>
+
+            <!-- Divider with "или" between Call button and TBI -->
+            <div class="or-divider"><span>или</span></div>
 
             <!-- TBI Bank Installment Calculator - Medium Size -->
             <div class="tbi-installment-section" style="margin: 15px 0;">
