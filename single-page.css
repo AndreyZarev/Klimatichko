@@ -33,11 +33,13 @@
 }
 
 .big-image {
-
-    height: 20em;
-    object-fit: cover;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    /* responsive height */
+    object-fit: contain;
+    /* show full image without cropping */
     cursor: pointer;
-
 }
 
 .big-image:hover {
@@ -55,7 +57,11 @@
 
 .small-images {
     width: auto;
-    height: 7em;
+    max-width: 100%;
+    height: auto;
+    /* responsive thumbnails */
+    max-height: 7em;
+    /* cap height on larger screens */
     cursor: pointer;
     object-fit: cover;
 }
@@ -181,6 +187,8 @@
 
 .div-h3-span-price {
     display: flex;
+    align-items: baseline;
+    /* keep label aligned with prices */
 }
 
 
@@ -224,6 +232,87 @@ table tr td.td-pre-build {
 
 .h3-second {
     color: red;
+}
+
+/* Old price block with two separate red strikethrough lines */
+.old-price-block {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    /* center content when wrapped */
+    gap: 10px;
+    /* keep on one row when space allows */
+    flex-wrap: wrap;
+    /* fall back to two lines on small screens */
+    margin: 0.3em 1em 0em;
+}
+
+.old-price-line {
+    position: relative;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #1a1a1a;
+    white-space: nowrap;
+    /* prevent breaking inside each price */
+}
+
+.old-price-sep {
+    color: #1a1a1a;
+    opacity: 0.6;
+}
+
+.old-price-line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 55%;
+    height: 2px;
+    background: red;
+    transform: translateY(-50%);
+}
+
+/* Divider between Call button and TBI with centered 'или' */
+.or-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    /* top/bottom spacing */
+}
+
+.or-divider span {
+    display: inline-block;
+    color: #666;
+    font-weight: 700;
+}
+
+/* Discounted (new) price layout — match wrapping/alignment with old price */
+.new-price-block {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+    /* keep on one row when space allows */
+    flex-wrap: wrap;
+    /* fall back to two lines on small screens */
+    margin: 0.3em 1em 0em;
+    font-size: 1.2em;
+    /* match previous size */
+}
+
+.new-price-line {
+    color: red;
+    /* keep sale color as before */
+    white-space: nowrap;
+    /* prevent breaking inside each price */
+    font-weight: 600;
+    /* make it a bit bolder so it stands out */
+}
+
+.new-price-sep {
+    color: red;
+    opacity: 0.7;
 }
 
 #other-products {
@@ -288,7 +377,7 @@ table tr td.td-pre-build {
     }
 }
 
-/* 
+/*
 montaje page and profi page */
 .first-p {
     display: block;
