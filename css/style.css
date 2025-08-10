@@ -6,6 +6,7 @@
     --light: #EFFDF5;
     --dark: #0E2E50;
     --blue-new: #227ae5;
+    --blue-click: #1b63bc; /* darker blue for active/click */
 }
 
 .back-to-top {
@@ -14,6 +15,8 @@
     right: 45px;
     bottom: 45px;
     z-index: 99;
+    background-color: var(--blue-new);
+    border: var(--blue-new);
 }
 
 
@@ -34,13 +37,17 @@
 
 /*** Button ***/
 .btn {
-    transition: .5s;
+    transition: .2s; /* snappier */
 }
 
 .btn.btn-primary,
 .btn.btn-secondary {
     color: #FFFFFF;
 }
+
+/* Back to top hover and active feedback */
+.back-to-top:hover { background-color: #2a86f0 !important; border-color: #2a86f0 !important; }
+.back-to-top:active { background-color: var(--blue-click) !important; border-color: var(--blue-click) !important; }
 
 .btn-square {
     width: 38px;
