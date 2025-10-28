@@ -3,20 +3,33 @@
 }
 
 .more-products {
-    border-radius: 0.5em;
     display: block;
-    text-align: center;
-    padding: 1em;
+    width: fit-content;
+    /* shrink to content instead of full width */
+    margin: 1rem auto;
+    /* center horizontally */
+    padding: 0.8em 1.4em;
+    /* slightly higher */
+    /* smaller size */
+    border-radius: 0.5em;
     background-color: #17c417;
-    border-color: #17c417;
-    color: white;
-    margin: auto;
-    font-weight: 600;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1000;
+    /* ensure above nearby content */
+    pointer-events: auto;
+    font-size: 1rem;
 }
 
-.more-products:hover {
-    color: white;
-    border: 2px, solid #044a0c;
+.more-products:hover,
+.more-products:focus {
+    color: #fff;
+    text-decoration: none;
     background-color: #044a0c;
 }
 

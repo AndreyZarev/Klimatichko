@@ -13,9 +13,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-    searchButton1.addEventListener("click", search)
-    searchButton2.addEventListener("click", search)
+    if (searchButton1) {
+        searchButton1.addEventListener("click", search);
+    }
+    if (searchButton2) {
+        searchButton2.addEventListener("click", search);
+    }
 
 
     const keywordDiv = document.getElementsByClassName("keyword-div")[0];
@@ -62,40 +65,43 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
     function search() {
+        let keyword = "";
+        let selectedTypeValue = "";
+        let selectedLabelValue = "";
 
+        // Get keyword from appropriate field
+        const keywordField1 = document.getElementsByClassName("search-field")[0];
+        const keywordField2 = document.getElementsByClassName("search-field")[1];
 
-        // pullProducts()
-        let selectedKeyword1 = document.getElementsByClassName("search-field")[0].value;
-        let selectedKeyword2 = document.getElementsByClassName("search-field")[1].value;
-
-        if (selectedKeyword1) {
-            localStorage.setItem("keyword", JSON.stringify(selectedKeyword1))
-        } else {
-            localStorage.setItem("keyword", JSON.stringify(selectedKeyword2))
-
+        if (keywordField1 && keywordField1.value.trim()) {
+            keyword = keywordField1.value.trim();
+        } else if (keywordField2 && keywordField2.value.trim()) {
+            keyword = keywordField2.value.trim();
         }
-        let selectedTypeValue = ""
-        if (typeField.value !== "Категории") {
-            selectedTypeValue = typeField.value
-        } else {
+
+        // Get type value - prioritize mobile field if it has a selection
+        if (typeField && typeField.value !== "Категории") {
+            selectedTypeValue = typeField.value;
+        } else if (typeAcOptions && typeAcOptions.value !== "Категории") {
             selectedTypeValue = typeAcOptions.value;
         }
 
-        let selectedLabelValue = ""
-
-        if (labelField.value != "Марка") {
-            selectedLabelValue = labelField.value
-        } else {
+        // Get label value - prioritize mobile field if it has a selection
+        if (labelField && labelField.value !== "Марка") {
+            selectedLabelValue = labelField.value;
+        } else if (labelsAcOptions && labelsAcOptions.value !== "Марка") {
             selectedLabelValue = labelsAcOptions.value;
-
         }
 
-        localStorage.setItem("type", JSON.stringify(selectedTypeValue))
-        localStorage.setItem("label", JSON.stringify(selectedLabelValue))
+        // Store in localStorage for compatibility
+        localStorage.setItem("keyword", JSON.stringify(keyword));
+        localStorage.setItem("type", JSON.stringify(selectedTypeValue));
+        localStorage.setItem("label", JSON.stringify(selectedLabelValue));
 
-        window.location.href = "products.html";
-
-
+        // Navigate to products page with URL params so filters persist
+        const page = 1;
+        const url = `products.html?keyword=${encodeURIComponent(keyword)}&type=${encodeURIComponent(selectedTypeValue || 'Категории')}&label=${encodeURIComponent(selectedLabelValue || 'Марка')}&page=${page}`;
+        window.location.href = url;
     }
 
 
@@ -103,9 +109,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let typeAcDiv = document.getElementsByClassName("ac-categories")
     console.log(typeAcDiv);
-
+    debugger
     for (const typeAc of typeAcDiv) {
         typeAc.addEventListener("click", typeSearch)
+
+    }
+
+    let labelAcDiv = document.getElementsByClassName("ac-labels")
+    for (const labelAc of labelAcDiv) {
+        labelAc.addEventListener("click", typeSearch)
 
     }
 });
@@ -114,11 +126,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
 function typeSearch(e) {
     debugger
+    e.preventDefault()
+
     let selectedTypeValue = e.target.classList[0]
     console.log(selectedTypeValue);
     let seletedType = ''
-    if (selectedTypeValue == "wallAc") {
-        seletedType = "Стенни Климатици"
+    let selectedLabel = ""
+    if (selectedTypeValue == "highWallAc") {
+        seletedType = "Високостенни климатици"
     }
     if (selectedTypeValue == "floorAc") {
 
@@ -142,16 +157,44 @@ function typeSearch(e) {
 
 
     }
-    else if (selectedTypeValue == "Касетъчни климатици") {
-    }
-    else if (selectedTypeValue == forVeryCold) {
-        seletedType = "За много ниски температури"
-
-
+    else if (selectedTypeValue == "auratsu") {
+        selectedLabel = "Auratsu"
     }
 
+    else if (selectedTypeValue == "kaisai") {
+        selectedLabel = "Kaisai"
+    }
+    else if (selectedTypeValue == "daikin") {
+        selectedLabel = "Daikin"
+    }
+    else if (selectedTypeValue == "fujitsu") {
+        selectedLabel = "Fujitsu"
+    }
+    else if (selectedTypeValue == "general") {
+        selectedLabel = "Fujitsu General"
+    }
+    else if (selectedTypeValue == "mitsubishi-heavy") {
+        selectedLabel = "Mitsubishi Heavy Industries"
+    }
+    else if (selectedTypeValue == "mitsubishi-electric") {
+        selectedLabel = "Mitsubishi Electric"
+    }
+    else if (selectedTypeValue == "williams") {
+        selectedLabel = "Williams"
+    }
+
+
+
+
+
+    // Keep localStorage for compatibility
     localStorage.setItem("type", JSON.stringify(seletedType))
-    window.location.href = "products.html";
+    localStorage.setItem("label", JSON.stringify(selectedLabel))
+
+    // Navigate with query params so the products page shows correct filters
+    const page = 1;
+    const url = `products.html?keyword=&type=${encodeURIComponent(seletedType || 'Категории')}&label=${encodeURIComponent(selectedLabel || 'Марка')}&page=${page}`;
+    window.location.href = url;
 }
 
 

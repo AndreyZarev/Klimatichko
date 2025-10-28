@@ -1,0 +1,46 @@
+# Development files
+*.log
+*.tmp
+*.temp
+*~
+
+# Backup files
+*-backup-*.json
+*-backup.json
+*.bak
+
+# Development scripts
+fix-*.js
+cleanup-*.js
+rebuild-*.js
+
+# Server files
+server.js
+start-server.bat
+*.bat
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node modules (if any)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Development documentation
+*-SETUP.md
+CLEANUP-*.md
+DEV-*.md
+
+# Temporary files
+temp/
+tmp/

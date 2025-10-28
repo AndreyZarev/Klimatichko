@@ -20,9 +20,42 @@
                 </div>
             </div>
 
-            <a href="products.html">
-                <button class="more-products">Още продукти</h2></button>
-            </a>
+            <a id="more-products-link" class="more-products" href="products.html">Още продукти</a>
+            <script>
+                // Ensure the "Още продукти" link goes to products.html with current UI selections
+                (function () {
+                    try {
+                        const link = document.getElementById('more-products-link');
+                        if (!link) return;
+
+                        // Try reading from the homepage UI if available, otherwise defaults
+                        const keywordField1 = document.getElementsByClassName("search-field")[0];
+                        const keywordField2 = document.getElementsByClassName("search-field")[1];
+                        const typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
+                        const labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
+                        const typeField = document.getElementsByClassName("type-field")[0];
+                        const labelField = document.getElementsByClassName("label-field")[0];
+
+                        let keyword = "";
+                        if (keywordField1 && keywordField1.value.trim()) keyword = keywordField1.value.trim();
+                        else if (keywordField2 && keywordField2.value.trim()) keyword = keywordField2.value.trim();
+
+                        let type = "Категории";
+                        if (typeField && typeField.value !== "Категории") type = typeField.value;
+                        else if (typeAcOptions && typeAcOptions.value !== "Категории") type = typeAcOptions.value;
+
+                        let label = "Марка";
+                        if (labelField && labelField.value !== "Марка") label = labelField.value;
+                        else if (labelsAcOptions && labelsAcOptions.value !== "Марка") label = labelsAcOptions.value;
+
+                        const page = 1;
+                        const url = `products.html?keyword=${encodeURIComponent(keyword)}&type=${encodeURIComponent(type)}&label=${encodeURIComponent(label)}&page=${page}`;
+                        link.href = url;
+                    } catch (e) {
+                        console.warn('Could not set More Products link URL:', e);
+                    }
+                })();
+            </script>
 
         </div>
     </div>

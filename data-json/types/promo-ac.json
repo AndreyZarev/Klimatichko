@@ -1,11 +1,11 @@
 [
     {
-        "id": "1",
+        "id": 201,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5 Процента",
         "type": "Инверторен стенен климатик ",
         "name": "KAISAI ICE KLB-24HRHI/KLWB-24HRHO",
-        "price": 2359.00,
+        "price": 2932.00,
         "size": "9000",
         "label": "KAISAI",
         "model": "Model name needed Teo",
@@ -44,12 +44,12 @@
         "warranty": "24/36 месеца"
     },
     {
-        "id": "1",
+        "id": 202,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5% Процента",
         "type": "Инверторен стенен климатик ",
         "name": "KAISAI ICE KLB-24HRHI/KLWB-24HRHO",
-        "price": 2359.00,
+        "price": 2029.00,
         "size": "9000",
         "label": "KAISAI",
         "model": "Model name needed Teo",
@@ -88,12 +88,12 @@
         "warranty": "24/36 месеца"
     },
     {
-        "id": "1",
+        "id": 203,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5%",
         "type": "Инверторен стенен климатик ",
         "name": "KAISAI ICE KLB-24HRHI/KLWB-24HRHO",
-        "price": 2359.00,
+        "price": 2562.00,
         "size": "9000",
         "label": "KAISAI",
         "model": "Model name needed Teo",
@@ -132,12 +132,12 @@
         "warranty": "24/36 месеца"
     },
     {
-        "id": "1",
+        "id": 204,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5%",
         "type": "Инверторен стенен климатик ",
         "name": "KAISAI ICE KLB-24HRHI/KLWB-24HRHO",
-        "price": 2359.00,
+        "price": 1432.00,
         "size": "9000",
         "label": "KAISAI",
         "model": "Model name needed Teo",
@@ -176,12 +176,12 @@
         "warranty": "24/36 месеца"
     },
     {
-        "id": "1",
+        "id": 205,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5%",
         "type": "Инверторен стенен климатик ",
         "name": "KAISAI ICE KLB-24HRHI/KLWB-24HRHO",
-        "price": 2359.00,
+        "price": 3221.00,
         "size": "9000",
         "label": "KAISAI",
         "model": "Model name needed Teo",
@@ -220,12 +220,12 @@
         "warranty": "24/36 месеца"
     },
     {
-        "id": "1",
+        "id": 206,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5%",
         "type": "Инверторен стенен климатик ",
         "name": "KAISAI ICE KLB-24HRHI/KLWB-24HRHO",
-        "price": 2359.00,
+        "price": 1823.00,
         "size": "9000",
         "label": "KAISAI",
         "model": "Model name needed Teo",
@@ -264,12 +264,12 @@
         "warranty": "24/36 месеца"
     },
     {
-        "id": "1",
+        "id": 207,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5%",
         "type": "Инверторен стенен климатик ",
         "name": "KAISAI ICE KLB-24HRHI/KLWB-24HRHO",
-        "price": 2359.00,
+        "price": 2122.00,
         "size": "9000",
         "label": "KAISAI",
         "model": "Model name needed Teo",
@@ -308,12 +308,12 @@
         "warranty": "24/36 месеца"
     },
     {
-        "id": "1",
+        "id": 208,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5%",
         "type": "Инверторен стенен климатик ",
         "name": "KAISAI ICE KLB-24HRHI/KLWB-24HRHO",
-        "price": 2359.00,
+        "price": 2322.00,
         "size": "9000",
         "label": "KAISAI",
         "model": "Model name needed Teo",
@@ -352,7 +352,7 @@
         "warranty": "24/36 месеца"
     },
     {
-        "id": "1",
+        "id": 209,
         "img": "img/new/ac-types/inventor-ac/kaisai/kaisai.jpg",
         "discount": "-5%",
         "type": "Инверторен стенен климатик ",

@@ -33,6 +33,9 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
+    <!-- TBI Bank Stylesheet -->
+    <link href="css/tbi-bank.css" rel="stylesheet">
+
 
 
     <!-- my own stylesheet -->
@@ -172,13 +175,13 @@
                                 <select class="form-select labels-ac-options  border-0 py-3">
                                     <option selected>Марка</option>
                                     <option value="Auratsu">Auratsu</option>
-                                    <!-- <option value="Fuji Electric">Fuji Electric</option> -->
-                                    <option value="Fujitsu General">Fujitsu General </option>
+                                    <option value="Fujitsu">Fujitsu</option>
+                                    <option value="Fujitsu General">Fujitsu General</option>
                                     <option value="Kaisai">Kaisai</option>
                                     <option value="Mitsubishi Electric">Mitsubishi Electric</option>
                                     <option value="Mitsubishi Heavy Industries">Mitsubishi Heavy Industries</option>
                                     <option value="Daikin">Daikin</option>
-                                    <!-- <option value="Williams">Williams</option> -->
+                                    <option value="Williams">Williams</option>
                                 </select>
                             </div>
                         </div>
@@ -215,13 +218,13 @@
                     <select class="form-select  label-field border-0 py-3">
                         <option selected>Марка</option>
                         <option value="Auratsu">Auratsu</option>
-                        <!-- <option value="Fuji Electric">Fuji Electric</option> -->
-                        <option value="Fujitsu General">Fujitsu General </option>
+                        <option value="Fujitsu">Fujitsu</option>
+                        <option value="Fujitsu General">Fujitsu General</option>
                         <option value="Kaisai">Kaisai</option>
                         <option value="Mitsubishi Electric">Mitsubishi Electric</option>
                         <option value="Mitsubishi Heavy Industries">Mitsubishi Heavy Industries</option>
                         <option value="Daikin">Daikin</option>
-                        <!-- <option value="Williams">Williams</option> -->
+                        <option value="Williams">Williams</option>
                     </select>
                 </div>
                 <div class="col-md-2">
@@ -236,7 +239,18 @@
         <!-- Dinamic products -->
         <section id="dynamic-section"></section>
 
-
+        <!-- Products Section with Pagination -->
+        <section class="container-xxl py-5" id="products-section" style="display: none;">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3 h1-promo">Всички продукти</h1>
+                </div>
+                <div id="attach-product">
+                    <div class="g-4 row product-div"></div>
+                </div>
+                <div id="pagination-controls" class="pagination-container"></div>
+            </div>
+        </section>
 
         <!-- Category Start -->
         <div class="container-xxl py-5 category-section" id="category-section">
@@ -246,16 +260,16 @@
 
                 </div>
                 <div class="row g-4  ac-categories-div">
-                    <div class="col-sm-6 wow fadeInUp inventor-ac ac-categories " data-wow-delay="0.01s">
-                        <a class="cat-item d-block bg-light text-center rounded p-3 "
-                            href="inventor-ac/inventor-acs.html#products-section">
-                            <div class="rounded p-4 ">
-                                <div class="icon img-models">
-                                    <img class="img-fluid img-models" src="img/new/models/inverter-ac-200x200.jpg"
-                                        alt="Icon">
+                    <div class="highWallAc col-sm-6 wow fadeInUp inventor-ac ac-categories " data-wow-delay="0.01s"
+                        id="highWallAc" onclick="typeSearch()">
+                        <a class="highWallAc cat-item d-block bg-light text-center rounded p-3 " href="#">
+                            <div class="highWallAc rounded p-4 ">
+                                <div class="highWallAc icon img-models">
+                                    <img class="highWallAc img-fluid img-models"
+                                        src="img/new/models/inverter-ac-200x200.jpg" alt="Icon">
                                 </div>
-                                <h6 class="title-ac-models">Високостенни</h6>
-                                <h6 class="title-ac-models">климатици</h6>
+                                <h6 class="highWallAc title-ac-models">Високостенни</h6>
+                                <h6 class="highWallAc title-ac-models">климатици</h6>
                             </div>
                         </a>
                     </div>
@@ -355,35 +369,48 @@
                         <a href="">
 
                             <div class="  mb-3">
-                                <img class="img-fluid labels-img" src="img/new/labels/auratsu.png" alt="Icon">
+                                <img class="auratsu ac-labels img-fluid labels-img" onclick="typeSearch()"
+                                    src="img/new/labels/auratsu.png" alt="Icon">
                             </div>
                         </a>
                         <a href="">
 
                             <div class="  mb-3">
-                                <img class="img-fluid labels-img" src="img/new/labels/kaisai.jfif" alt="Icon">
+                                <img class="kaisai ac-labels img-fluid labels-img" onclick="typeSearch()"
+                                    src="img/new/labels/kaisai.jfif" alt="Icon">
                             </div>
                         </a>
                         <a href="">
                             <div class="  mb-3">
-                                <img class="img-fluid labels-img" src="img/new/labels/daikin-d.png" alt="Icon">
-                            </div>
-                        </a>
-
-                        <a href="">
-                            <div class="  mb-3">
-                                <img class="img-fluid labels-img" src="img/new/labels/mitsubishi.png" alt="Icon">
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="  mb-3">
-                                <img class="img-fluid labels-img" src="img/new/labels/fujitsu.jfif" alt="Icon">
+                                <img class="daikin ac-labels img-fluid labels-img" onclick="typeSearch()"
+                                    src="img/new/labels/daikin-d.png" alt="Icon">
                             </div>
                         </a>
 
                         <a href="">
                             <div class="  mb-3">
-                                <img class="img-fluid labels-img" src="img/new/labels/williams.png" alt="Icon">
+                                <img class="mitsubishi-heavy ac-labels img-fluid labels-img" onclick="typeSearch()"
+                                    src="img/new/labels/mitsubishi.png" alt="Icon">
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="  mb-3">
+                                <img class="fujitsu ac-labels img-fluid labels-img" onclick="typeSearch()"
+                                    src="img/new/labels/fujitsu.jfif" alt="Icon">
+                            </div>
+                        </a>
+
+                        <a href="">
+                            <div class="  mb-3">
+                                <img class="general ac-labels img-fluid labels-img" onclick="typeSearch()"
+                                    src="img/new/labels/general.png" alt="Icon">
+                            </div>
+                        </a>
+
+                        <a href="">
+                            <div class="  mb-3">
+                                <img class="williams ac-labels img-fluid labels-img" onclick="typeSearch()"
+                                    src="img/new/labels/williams.png" alt="Icon">
                             </div>
                         </a>
 
@@ -488,8 +515,11 @@
             <script src="js/main.js"></script>
             <script type="module" src="./my-js/dynamic-products.js"></script>
             <script type="module" src="./my-js/pullling-html.js"></script>
-            <script src="my-js/utils/history.js"></script>
             <script src="my-js/utils/resetPages.js"></script>
+
+            <!-- TBI Bank Integration -->
+            <script src="tbi-bank-config.js"></script>
+            <script src="my-js/tbi-bank-integration.js"></script>
 </body>
 
 </html>

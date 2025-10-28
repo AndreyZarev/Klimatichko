@@ -9,6 +9,34 @@ window.addEventListener("DOMContentLoaded", () => {
     function getPromo() {
 
         let dynamicSection = document.getElementById("dynamic-section")
+        // Update the "Още продукти" link to include current filters in the URL
+        function updateMoreProductsLink() {
+            const link = document.getElementById('more-products-link');
+            if (!link) return;
+
+            const keywordField1 = document.getElementsByClassName("search-field")[0];
+            const keywordField2 = document.getElementsByClassName("search-field")[1];
+            const typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
+            const labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
+            const typeField = document.getElementsByClassName("type-field")[0];
+            const labelField = document.getElementsByClassName("label-field")[0];
+
+            let keyword = "";
+            if (keywordField1 && keywordField1.value.trim()) keyword = keywordField1.value.trim();
+            else if (keywordField2 && keywordField2.value.trim()) keyword = keywordField2.value.trim();
+
+            let type = "Категории";
+            if (typeField && typeField.value !== "Категории") type = typeField.value;
+            else if (typeAcOptions && typeAcOptions.value !== "Категории") type = typeAcOptions.value;
+
+            let label = "Марка";
+            if (labelField && labelField.value !== "Марка") label = labelField.value;
+            else if (labelsAcOptions && labelsAcOptions.value !== "Марка") label = labelsAcOptions.value;
+
+            const url = `products.html?keyword=${encodeURIComponent(keyword)}&type=${encodeURIComponent(type)}&label=${encodeURIComponent(label)}&page=1`;
+            link.setAttribute('href', url);
+        }
+
 
         fetch("products/product-section.html")
 
@@ -20,6 +48,32 @@ window.addEventListener("DOMContentLoaded", () => {
             })
             .then(data => {
                 dynamicSection.innerHTML = data;
+                // After injecting the HTML, wire up the More Products link with current filters
+                updateMoreProductsLink();
+
+                // Keep the link in sync if the user changes selections/inputs
+                const keywordField1 = document.getElementsByClassName("search-field")[0];
+                const keywordField2 = document.getElementsByClassName("search-field")[1];
+                const typeAcOptions = document.getElementsByClassName("type-ac-options")[0];
+                const labelsAcOptions = document.getElementsByClassName("labels-ac-options")[0];
+                const typeField = document.getElementsByClassName("type-field")[0];
+                const labelField = document.getElementsByClassName("label-field")[0];
+
+                keywordField1?.addEventListener('input', updateMoreProductsLink);
+                keywordField2?.addEventListener('input', updateMoreProductsLink);
+                typeAcOptions?.addEventListener('change', updateMoreProductsLink);
+                labelsAcOptions?.addEventListener('change', updateMoreProductsLink);
+                typeField?.addEventListener('change', updateMoreProductsLink);
+                labelField?.addEventListener('change', updateMoreProductsLink);
+
+                // Ensure click always navigates even if some overlay blocks default
+                const moreLink = document.getElementById('more-products-link');
+                moreLink?.addEventListener('click', (ev) => {
+                    ev.preventDefault();
+                    updateMoreProductsLink();
+                    const href = moreLink.getAttribute('href') || 'products.html';
+                    window.location.href = href;
+                });
             })
             .catch(error => console.error(error));
 
@@ -29,7 +83,7 @@ window.addEventListener("DOMContentLoaded", () => {
             let currentPrice = product.price * 0.95
             currentPrice = currentPrice.toFixed(2)
             return `
-         
+
                             <div class="property-item rounded overflow-hidden " id="klb-24hrhi"
                                 onclick="getToSingleProductPage(id)">
                                 <div class="position-relative overflow-hidden img-ac-products ">
@@ -42,8 +96,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
                                 </div>
                                 <div class=" pb-0 div-price">
-                                    <h5 class="first-price">${product.price.toFixed(2)}лв </h5>
-                                    <h5 class = "second-price">${currentPrice}лв</h5>
+                                    <h5 class="first-price">${product.price.toFixed(2)}лв / ${(product.price / 1.96).toFixed(2)}€</h5>
+                                    <h5 class = "second-price">${currentPrice}лв / ${(currentPrice / 1.96).toFixed(2)}€</h5>
 
                                     <a class="d-block" href="#">${product.type} ${product.name}</a>
 
@@ -59,7 +113,7 @@ window.addEventListener("DOMContentLoaded", () => {
                                     <small class="flex-fill text-center py-2">Клас: ${product.energy}</small>
                                 </div>
                             </div>
-                   
+
             `;
         }
 
@@ -101,26 +155,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
     function getToSingleProductPage(id) {
-
-        fetch('data-json/types/promo-ac.json')
-            .then(response => response.json())
-            .then(data => {
-                const specificItem = data.find(item => item.id === id);
-                const specificItems = data.filter(item => (item.id == id + 1) ||
-                    (item.id == id + 2) || (item.id == id - 1));
-
-
-                let container = document.createElement('div')
-                container.classList.add("g-4", "row", "promo-div")
-
-                localStorage.setItem("selectedProduct", JSON.stringify(specificItem));
-                localStorage.setItem("similarProduct", JSON.stringify(specificItems));
-
-                // Navigate to the new page
-                window.location.href = "single-product-page.html";
-
-            })
-            .catch(error => console.error('Error fetching JSON:', error));
+        // Simple navigation to single product page
+        window.location.href = `single-product-page.html?id=${id}`;
     }
 
 
